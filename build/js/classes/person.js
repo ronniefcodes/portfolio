@@ -5,6 +5,8 @@ angular.module('classes').factory('Person', function(Contact, Project) {
 	var summary;
 	var projects;
 	var contacts;
+	var project_types;
+	var technologies;
 
 	function Person(params) {
 		this.id = params.id;
@@ -12,8 +14,8 @@ angular.module('classes').factory('Person', function(Contact, Project) {
 		this.title = params.title || "";
 		this.summary = params.summary || "";
 
+		this.projects = [];
 		if(params.projects != null && params.projects.length > 0) {
-			this.projects = new Array();
 			for(var i = 0; i < params.projects.length; i++) {
 				if(params.projects[i] instanceof Project)
 					this.projects.push(params.projects[i]);
@@ -21,10 +23,9 @@ angular.module('classes').factory('Person', function(Contact, Project) {
 		}
 		else if(params.projects instanceof Project)
 			this.projects = [ params.projects ];
-		else this.contacts = {};
 
+		this.contacts = [];
 		if(params.contacts != null && params.contacts.length > 0) {
-			this.contacts = new Array();
 			for(var i = 0; i < params.contacts.length; i++) {
 				if(params.contacts[i] instanceof Contact)
 					this.contacts.push(params.contacts[i]);
@@ -32,7 +33,6 @@ angular.module('classes').factory('Person', function(Contact, Project) {
 		}
 		else if(params.contacts instanceof Contact)
 			this.contacts = [ params.contacts ];
-		else this.contacts = {};
 	}
 
 	Person.prototype = {

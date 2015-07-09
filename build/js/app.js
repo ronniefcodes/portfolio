@@ -1,4 +1,7 @@
-var classes = angular.module('classes', []);
-var controllers = angular.module('controllers', []);
+angular.module('classes', []);
+angular.module('services', []);
+angular.module('filters', []);
+angular.module('controllers', []);
+angular.module('directives', []);
 
-var app = angular.module('portfolio', ['classes', 'controllers']);
+var app = angular.module('portfolio', ['services', 'classes', 'filters', 'directives', 'controllers']);

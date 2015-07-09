@@ -75,10 +75,11 @@ module.exports = function(grunt){
 			js: {
 				files: {
 					'<%= config.dist %>/js/scripts.js': ['<%= config.build %>/js/app.js', 
+													'<%= config.build %>/js/filters.js',
 													'<%= config.build %>/js/classes/**.js', 
 													'<%= config.build %>/js/services/**.js', 
 													'<%= config.build %>/js/controllers/**.js',
-													'<%= config.build %>/js/directives/**.js' ]
+													'<%= config.build %>/js/directives.js' ]
 				}
 			}
 		},

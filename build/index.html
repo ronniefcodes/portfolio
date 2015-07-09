@@ -14,19 +14,26 @@
         <script src="js/vendor/angular.min.js"></script>
     </head>
     <body>
-        <div class="loader">
+        <div class="loader" ui-action="remove">
             <h1>LOADING</h1>
         </div>
         @@include('/includes/header.html', {"header": "person.name"})
 
         <main>
             <section>
-                <h2>About</h2>
+                @@include('/includes/section-header', {"header": "About"});
                 <p ng-bind="person.summary"></p>
             </section>
             <section>
-                <h2>The Work</h2>
+                @@include('/includes/section-header', {"header": "Projects"});
                 <div class="project" ng-repeat="project in person.projects">
+                    <h3 ng-bind="project.name"></h3>
+                    <div class="project-gallery">
+                        <div class="project-gallery__image" ng-repeat="media in project.getMedia()">
+                            <span ng-bind="media.id"></span>
+                            <span ng-bind="media.caption"></span>
+                        </div>
+                    </div>
                     <div class="project-details">
                         <h3 ng-bind="project.name"></h3>
                         <p ng-bind="project.summary"></p>
@@ -40,7 +47,6 @@
                 </div>
             </section>
         </main>
-        @@include('/includes/footer.html')
 
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>-->

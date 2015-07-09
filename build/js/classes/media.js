@@ -15,5 +15,14 @@ angular.module('classes').factory('Media', function() {
 		this.next = params.next || null;
 	}
 
+	Media.prototype = {
+		getNext: function(gallery) {
+
+		},
+		getPrevious: function(gallery) {
+
+		}
+	}
+
 	return Media;
 });
