@@ -1,0 +1,22 @@
+[{
+	"name": "phone",
+	"value": 6478283666,
+	"prefix": "tel:",
+	"icon": "fa-phone-square"
+},
+{
+	"name": "email",
+	"value": "ronniech@outlook.com",
+	"prefix": "mailto:",
+	"icon": "fa-envelope-square"
+},
+{
+	"name": "github",
+	"value": "https://github.com/ronniefcodes",
+	"icon": "fa-git-square"
+},
+{
+	"name": "linkedin",
+	"value": "http://ca.linkedin.com/in/ronniech/",
+	"icon": "fa-linkedin-square"
+}]
