@@ -20,27 +20,23 @@ angular.module('classes').factory('Project', function(ProjectType, Media, Techno
 		if(params.media != null && params.media.length > 0) {
 			this.media = new Array();
 			for(var i = 0; i < params.media.length; i++) {
-				if(params.media[i] instanceof Media) {
+				if(params.media[i] instanceof Media)
 					this.media.push(params.media[i]);
-				}
 			}
 		}
-		else if(params.media instanceof Media) {
+		else if(params.media instanceof Media)
 			this.media = [ params.media ];
-		}
 		else this.media = {};
 
 		if(params.technology != null && params.technology.length > 0) {
 			this.media = new Array();
 			for(var i = 0; i < params.technology.length; i++) {
-				if(params.technology[i] instanceof Technology) {
+				if(params.technology[i] instanceof Technology)
 					this.technology.push(params.technology[i]);
-				}
 			}
 		}
-		else if(params.technology instanceof Technology) {
+		else if(params.technology instanceof Technology)
 			this.technology = [ params.technology ];
-		}
 		else this.technology = {};
 	}
 

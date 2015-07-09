@@ -14,8 +14,32 @@
         <script src="js/vendor/angular.min.js"></script>
     </head>
     <body>
+        <div class="loader">
+            <h1>LOADING</h1>
+        </div>
         @@include('/includes/header.html', {"header": "person.name"})
 
+        <main>
+            <section>
+                <h2>About</h2>
+                <p ng-bind="person.summary"></p>
+            </section>
+            <section>
+                <h2>The Work</h2>
+                <div class="project" ng-repeat="project in person.projects">
+                    <div class="project-details">
+                        <h3 ng-bind="project.name"></h3>
+                        <p ng-bind="project.summary"></p>
+                        <a class="project-details__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">Check it out</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div ng-repeat="contact in person.contacts">
+                    <a href="{{ contact.getAnchor() }}" target="_blank" ng-bind="contact.type.name"></a>
+                </div>
+            </section>
+        </main>
         @@include('/includes/footer.html')
 
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
