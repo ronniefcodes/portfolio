@@ -1,8 +1,14 @@
 /* colors */
 $white: rgb(255,255,255);
-$black: rgb(0,0,0);
+$black: rgb(45,45,45);
+$gray: rgb(240,240,240);
+
+/* import frameworks */
+//@import "foundation";
+//@import "bootstrap";
 
 /* import components */
+//@import "grid";
 @import "mixins";
 @import "functions";
 @import "animations";

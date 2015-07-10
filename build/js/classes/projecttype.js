@@ -1,4 +1,4 @@
-angular.module('classes').factory('ProjectType', function() {
+angular.module('portfolio.classes').factory('ProjectType', function() {
 	var id;
 	var name;
 

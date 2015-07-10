@@ -2,53 +2,50 @@
 <!--[if lt IE 9]>         <html class="no-js lt-ie9" ng-app="portfolio" ng-controller="PortfolioController"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" ng-app="portfolio" ng-controller="PortfolioController"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title ng-bind="person.getNameAndTitle()">Loading...</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="css/style.css">
-
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="js/vendor/angular.min.js"></script>
+        @@include('/includes/head.html', {"title": "person.getNameAndTitle()"})
     </head>
     <body>
-        <div class="loader" ui-action="remove">
-            <h1>LOADING</h1>
-        </div>
+        @@include('/includes/loading.html')
         @@include('/includes/header.html', {"header": "person.name"})
+
         <main>
-            <section>
-                @@include('/includes/section-header.html', {"header": "About"})
-                <p ng-bind="person.summary"></p>
-            </section>
-            <section>
-                @@include('/includes/section-header.html', {"header": "Projects"})
-                <div class="project" ng-repeat="project in person.projects">
-                    <h3 ng-bind="project.name"></h3>
-                    <div class="project-gallery">
-                        <div class="project-gallery__image" ng-repeat="media in project.getMedia()">
-                            <span ng-bind="media.id"></span>
-                            <span ng-bind="media.caption"></span>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <h3 ng-bind="project.name"></h3>
-                        <p ng-bind="project.summary"></p>
-                        <a class="project-details__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">Check it out</a>
-                    </div>
+            <section class="section--about clearfix">
+                <div class="content">
+                    @@include('/includes/section-header.html', {"header": "About", "description": "A little about me"})
+                    <div class="summary content__block" ng-bind-html="person.summary"></div>
                 </div>
             </section>
-            <section>
-                <div ng-repeat="contact in person.contacts">
-                    <a href="{{ contact.getAnchor() }}" target="_blank" ng-bind="contact.type.name"></a>
+            <section class="section--work clearfix">                
+                <div class="content">
+                    @@include('/includes/section-header.html', {"header": "Projects", "description": "Some projects I'm proud of"})
+                    <article class="project content__block" gallery="expand" ng-repeat="project in person.projects">
+                        <div class="project__gallery">
+                            <div class="project__image" ng-repeat="media in project.getMedia()" ng-class="media.id == project.highlight ? 'project__image--active' : ''" style="background-image: url('{{ media.url }}');">
+                                <a class="gallery__nav gallery__nav--next" ng-if="media.next != null" href="#">Next</a>
+                                <a class="gallery__nav gallery__nav--previous" ng-if="media.previous != null" href="#">Previous</a>
+                            </div>
+                        </div>
+                        <div class="project__summary">
+                            <h3 class="project__title" ng-bind="project.name"></h3>                            
+                        </div>
+                        <div class="project__details">
+                            <h3 ng-bind="project.name"></h3>
+                            <p ng-bind="project.summary"></p>
+                            <a class="project__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">Check it out</a>
+                        </div>
+                        <a href="#" class="project__close" gallery="close">Close</a>
+                    </article>
+                </div>
+            </section>
+            <section class="section--contact clearfix">                
+                <div class="content">
+                    <div class="contact content__block" ng-repeat="contact in person.contacts">
+                        <a class="contact__link contact__link--{{ contact.type.name | lowercase }} button" href="{{ contact.getLink() }}" target="_blank" ng-bind="contact.type.name"></a>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>-->
-        <script src="js/scripts.js"></script>
+        @@include('/includes/scripts.html')
     </body>
 </html>

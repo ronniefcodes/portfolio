@@ -1,4 +1,4 @@
-angular.module('classes').factory('Technology', function() {
+angular.module('portfolio.classes').factory('Technology', function() {
 	var id;
 	var name;
 

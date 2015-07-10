@@ -1,4 +1,4 @@
-angular.module('classes').factory('Contact', function(ContactType) {
+angular.module('portfolio.classes').factory('Contact', function(ContactType) {
 	var id;
 	var value;
 	var type;
@@ -20,7 +20,7 @@ angular.module('classes').factory('Contact', function(ContactType) {
 	}
 
 	Contact.prototype = {
-		getAnchor: function() {
+		getLink: function() {
 			return this.type.prefix + this.value;
 		}
 	}

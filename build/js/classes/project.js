@@ -1,4 +1,4 @@
-angular.module('classes').factory('Project', function($filter, HelperService, ProjectType, Media, Technology) {
+angular.module('portfolio.classes').factory('Project', function($filter, HelperService, ProjectType, Media, Technology) {
 	var id;
 	var name;
 	var summary;
@@ -33,6 +33,24 @@ angular.module('classes').factory('Project', function($filter, HelperService, Pr
 				}
 			}
 			return gallery;
+		},
+		getNextMedia: function(media) {
+			var next = null;
+			if(media.next != null) {
+				for(var i = 0; i < this.media.length; i++) {
+					if(this.media[i].id === media.next) next = this.media[i];
+				}
+			}
+			return next;
+		},
+		getPreviousMedia: function(media) {
+			var previous = null;
+			if(media.previous != null) {
+				for(var i = 0; i < this.media.length; i++) {
+					if(this.media[i].id === media.previous) previous = this.media[i];
+				}
+			}
+			return previous;
 		},
 		getHighlight: function() {
 			return $filter('findById')(this.media, this.highlight || this.media[0].id);

@@ -1,0 +1,39 @@
+@mixin grid-columns($size, $columns, $gutter: 0) {
+	$fraction: percentage(1/$columns);
+
+	@for $i from 1 through $columns {
+		$width: $i * $fraction;
+
+		.col-#{$i} {
+			float: left;
+			width: calc(#{$width} - #{$gutter});
+			@if($gutter != 0) {
+				margin: $gutter/2;
+			}
+		}
+
+		@if($size != '') {
+			.col-#{$size}-offset-left-#{$i} {
+				margin-left: $width;
+			}
+
+			.col-#{$size}-offset-right-#{$i} {
+				margin-right: $width;
+			}
+		} @else {
+			.col-offset-left-#{$i} {
+				margin-left: $width;
+			}
+
+			.col-offset-right-#{$i} {
+				margin-right: $width;
+			}		
+		}
+	}	
+}
+
+@include grid-columns('sm', 2, 1em);
+
+@media only screen and (min-width: 480px) {
+	@include grid-columns('', 5, 1em);
+}

@@ -1,4 +1,4 @@
-angular.module('classes').factory('Person', function($filter, HelperService, Contact, Project) {
+angular.module('portfolio.classes').factory('Person', function($filter, HelperService, Contact, Project) {
 	var id;
 	var name;
 	var title;

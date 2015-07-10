@@ -1,4 +1,4 @@
-angular.module('classes').factory('ContactType', function() {
+angular.module('portfolio.classes').factory('ContactType', function() {
 	var id;
 	var name;
 	var prefix;

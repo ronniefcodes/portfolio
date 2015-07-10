@@ -1,4 +1,4 @@
-angular.module('classes').factory('Media', function() {
+angular.module('portfolio.classes').factory('Media', function() {
 	var id;
 	var caption;
 	var is_mobile;
