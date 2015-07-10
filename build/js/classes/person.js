@@ -1,4 +1,4 @@
-angular.module('classes').factory('Person', function(Contact, Project) {
+angular.module('classes').factory('Person', function($filter, HelperService, Contact, Project) {
 	var id;
 	var name;
 	var title;
@@ -14,30 +14,33 @@ angular.module('classes').factory('Person', function(Contact, Project) {
 		this.title = params.title || "";
 		this.summary = params.summary || "";
 
-		this.projects = [];
-		if(params.projects != null && params.projects.length > 0) {
-			for(var i = 0; i < params.projects.length; i++) {
-				if(params.projects[i] instanceof Project)
-					this.projects.push(params.projects[i]);
-			}
-		}
-		else if(params.projects instanceof Project)
-			this.projects = [ params.projects ];
+		this.projects = HelperService.loadArrayWithType(params.projects, Project); 
+		this.contacts = HelperService.loadArrayWithType(params.contacts, Contact);
 
-		this.contacts = [];
-		if(params.contacts != null && params.contacts.length > 0) {
-			for(var i = 0; i < params.contacts.length; i++) {
-				if(params.contacts[i] instanceof Contact)
-					this.contacts.push(params.contacts[i]);
-			}
-		}
-		else if(params.contacts instanceof Contact)
-			this.contacts = [ params.contacts ];
+		this.init();
 	}
 
 	Person.prototype = {
+		init: function() {
+			this.getProjectTypes();
+			this.getTechnologies();
+		},
 		getNameAndTitle: function() {
 			return this.name + " | " + this.title;
+		},
+		getProjectTypes: function() {
+			var types = new Array();
+			for(var i = 0; i < this.projects.length; i++) {
+				types = types.concat(this.projects[i].project_type);
+			}
+			this.project_types = $filter('getUniqueById')(types);
+		},
+		getTechnologies: function() {
+			var technologies = new Array();
+			for(var i = 0; i < this.projects.length; i++) {
+				technologies = technologies.concat(this.projects[i].technology);
+			}
+			this.technologies = $filter('getUniqueById')(technologies);
 		}
 	}
 	

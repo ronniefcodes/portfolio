@@ -11,13 +11,9 @@ angular.module('filters').filter('getUniqueById', function($filter) {
 	return function(array) {
 		var unique = [];
 		for(var i = 0; i < array.length; i++) {
-			console.log($filter("findById")(unique, array[i].id));
-			if(array[i].hasOwnProperty('id') && $filter("findById")(unique, array[i].id) == null) {
-				console.log("add id: " + array[i].id);
+			if(array[i].hasOwnProperty('id') && $filter("findById")(unique, array[i].id) == null)
 				unique.push(array[i]);
-			}
 		}
-		console.log(unique);
 		return unique;
 	}
 });

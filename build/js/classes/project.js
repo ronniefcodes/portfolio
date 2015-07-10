@@ -1,4 +1,4 @@
-angular.module('classes').factory('Project', function(ProjectType, Media, Technology) {
+angular.module('classes').factory('Project', function($filter, HelperService, ProjectType, Media, Technology) {
 	var id;
 	var name;
 	var summary;
@@ -15,37 +15,9 @@ angular.module('classes').factory('Project', function(ProjectType, Media, Techno
 		this.highlight = params.highlight || null;
 		this.url = params.url || "";
 
-		this.project_type = [];
-		console.log(params.project_type);
-		console.log(params.project_type.length);
-		if(params.project_type != null && params.project_type.length > 0) {
-			for(var i = 0; i < params.media.length; i++) {
-				if(params.project_type[i] instanceof ProjectType)
-					this.project_type.push(params.project_type[i]);
-			}
-		}
-		else if(params.project_type instanceof Media)
-			this.project_type = [ params.media ];
-
-		this.media = [];
-		if(params.media != null && params.media.length > 0) {
-			for(var i = 0; i < params.media.length; i++) {
-				if(params.media[i] instanceof Media)
-					this.media.push(params.media[i]);
-			}
-		}
-		else if(params.media instanceof Media)
-			this.media = [ params.media ];
-
-		this.technology = [];
-		if(params.technology != null && params.technology.length > 0) {
-			for(var i = 0; i < params.technology.length; i++) {
-				if(params.technology[i] instanceof Technology)
-					this.technology.push(params.technology[i]);
-			}
-		}
-		else if(params.technology instanceof Technology)
-			this.technology = [ params.technology ];
+		this.project_type = HelperService.loadArrayWithType(params.project_type, ProjectType);
+		this.media = HelperService.loadArrayWithType(params.media, Media);
+		this.technology = HelperService.loadArrayWithType(params.technology, Technology);
 	}
 
 	Project.prototype = {
@@ -61,6 +33,9 @@ angular.module('classes').factory('Project', function(ProjectType, Media, Techno
 				}
 			}
 			return gallery;
+		},
+		getHighlight: function() {
+			return $filter('findById')(this.media, this.highlight || this.media[0].id);
 		}
 	}
 

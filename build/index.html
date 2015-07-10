@@ -18,14 +18,13 @@
             <h1>LOADING</h1>
         </div>
         @@include('/includes/header.html', {"header": "person.name"})
-
         <main>
             <section>
-                @@include('/includes/section-header', {"header": "About"});
+                @@include('/includes/section-header.html', {"header": "About"})
                 <p ng-bind="person.summary"></p>
             </section>
             <section>
-                @@include('/includes/section-header', {"header": "Projects"});
+                @@include('/includes/section-header.html', {"header": "Projects"})
                 <div class="project" ng-repeat="project in person.projects">
                     <h3 ng-bind="project.name"></h3>
                     <div class="project-gallery">
