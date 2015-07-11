@@ -1,7 +1,11 @@
 angular.module('portfolio.services').service('DataService', 
 	function($http, $filter, config, Person, Project, ProjectType, Media, Technology, Contact, ContactType) {
 	this.getPerson = function(id) {
-		var promise = $http.get(config.api + "portfolio/" + id).then(function(response) {
+		var promise = $http({ 
+			method: 'get', 
+			url: config.api + "portfolio/" + id, 
+			cache: true
+		}).then(function(response) {
 			var obj = JSON.parse(response.data);
 
 			if(obj == null) return null;

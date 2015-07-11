@@ -524,7 +524,8 @@ section {
   height: 100%;
   width: 100%;
   background: white;
-  text-align: center; }
+  text-align: center;
+  z-index: 100000; }
   .loader > * {
     position: absolute;
     top: 50%;
