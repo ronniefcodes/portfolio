@@ -41,6 +41,7 @@ namespace api.Controllers
             media.Add(new Media(4, "", true, "img/work/mobile/aw-eh-2.jpg", 3));
             media.Add(new Media(5, "", false, "img/work/one-resolutions-1.jpg"));
             media.Add(new Media(6, "", false, "img/work/hkn-cities-index.jpg"));
+            media.Add(new Media(7, "", false, "img/background.jpg"));
 
             List<Project> projects = new List<Project>();
             Project project = new Project(1, "Air Wick Enchanted Holidays",
@@ -68,7 +69,7 @@ namespace api.Controllers
                 "This site utilized heavy CSS3 transitions and animations (built using SASS), " +
                 "supporting a custom grid style system, as well as a custom responsive, paginatable " +
                 "gallery library that was used to render an Instagram feed.",
-                "", 1);
+                "", 6);
             project.Technologies.AddRange(new List<Technology> { tech.FirstOrDefault(t => t.Id == 1), 
                                                                 tech.FirstOrDefault(t => t.Id == 2), 
                                                                 tech.FirstOrDefault(t => t.Id == 3), 
@@ -81,7 +82,7 @@ namespace api.Controllers
                 "This was a site made for One Advertising's New Years promotional campaign. " +
                 "This site, which I built in its entirety, would allow users to view a collection of mugs " +
                 "and 'order' them. The form would update upon external confirmation and reflect the claimant.",
-                "", 1);
+                "", 5);
             project.Technologies.AddRange(new List<Technology> { tech.FirstOrDefault(t => t.Id == 1), 
                                                                 tech.FirstOrDefault(t => t.Id == 2), 
                                                                 tech.FirstOrDefault(t => t.Id == 3), 
@@ -107,7 +108,8 @@ namespace api.Controllers
 
             List<Person> people = new List<Person>();
             Person person = new Person(1, "Ronnie Cheung", "Full Stack Developer",
-                "<p>Sometimes, I make cool things for the internet.</p><p>Most of the times I just make things.</p>");
+                "<p>Sometimes, I make cool things for the internet.</p><p>Most of the times I just make things.</p>",
+                media.FirstOrDefault(m => m.Id == 7));
             person.Contacts = contacts;
             person.Projects = projects;
             people.Add(person);

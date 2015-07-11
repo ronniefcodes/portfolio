@@ -6,7 +6,7 @@
     </head>
     <body>
         @@include('/includes/loading.html')
-        @@include('/includes/header.html', {"header": "person.name"})
+        @@include('/includes/header.html', {"header": "person.name", "background": "person.background"})
 
         <main>
             <section class="section--about clearfix">
@@ -22,10 +22,10 @@
                         <div ng-if="project.getMedia().length > 0" class="project__image image" ng-style="{ 'background-image': 'url(' + project.active_media.url + ')' }">
                             <div class="image__caption" ng-show="project.active_media.caption != null" />
                             </div>
-                            <a href="javascript:;" class="gallery__nav gallery__nav--right" ng-click="changeImage(project, 'right')" ng-show="project.media.length > 1">Right</a>
-                            <a href="javascript:;" class="gallery__nav gallery__nav--left" ng-click="changeImage(project, 'left')" ng-show="project.media.length > 1">Left</a>
-                            <a href="javascript:;" class="gallery__nav gallery__nav--up" ng-click="changeImage(project, 'up')" ng-show="project.active_media.previous != null">Up</a>
-                            <a href="javascript:;" class="gallery__nav gallery__nav--down" ng-click="changeImage(project, 'down')" ng-show="project.active_media.next != null">Down</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--right" ng-click="project.load('right')" ng-show="project.media.length > 1">Right</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--left" ng-click="project.load('left')" ng-show="project.media.length > 1">Left</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--up" ng-click="project.load('up')" ng-show="project.active_media.previous != null">Up</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--down" ng-click="project.load('down')" ng-show="project.active_media.next != null">Down</a>
                         </div>
                         <div class="project__details">
                             <h3 class="project__title" ng-bind="project.name"></h3>    

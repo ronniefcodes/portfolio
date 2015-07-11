@@ -11,15 +11,17 @@ namespace api.Models
         public string Name { get; set; }
         public string Title { get; set; }
         public string Summary { get; set; }
+        public Media Background { get; set; }
         public List<Project> Projects { get; set; }
         public List<Contact> Contacts { get; set; }
 
-        public Person(int id, string name, string title, string summary)
+        public Person(int id, string name, string title, string summary, Media background = null)
         {
             this.Id = id;
             this.Name = name;
             this.Title = title;
             this.Summary = summary;
+            this.Background = background;
             this.Projects = new List<Project>();
             this.Contacts = new List<Contact>();
         }

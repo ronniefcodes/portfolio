@@ -80,11 +80,20 @@ angular.module('portfolio.services').service('DataService',
 				}
 			}
 
+			var background = null;
+			if(obj.Background != null) {
+				background = new Media({ 
+					id: obj.Background.Id, 
+					url: obj.Background.Url 
+				});
+			}
+
 			return new Person({
 				id: obj.Id, 
 				name: obj.Name, 
 				title: obj.Title, 
 				summary: obj.Summary, 
+				background: background,
 				projects: projects, 
 				contacts: contacts
 			});

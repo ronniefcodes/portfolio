@@ -7,7 +7,6 @@ angular.module('portfolio.directives').directive('uiAction', function() {
 					elem.remove();
 				});
 				scope.$on('content.load.error', function(e) {
-					console.log("Error will robinson");
 					elem.find('h1').html('An error has occurred...');
 				})
 				break;

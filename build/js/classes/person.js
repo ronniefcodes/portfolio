@@ -1,8 +1,10 @@
-angular.module('portfolio.classes').factory('Person', function($filter, TypeService, Contact, Project) {
+angular.module('portfolio.classes').factory('Person', 
+function($filter, TypeService, Contact, Project, Media) {
 	var id;
 	var name;
 	var title;
 	var summary;
+	var background;
 	var projects;
 	var contacts;
 	var project_types;
@@ -13,6 +15,9 @@ angular.module('portfolio.classes').factory('Person', function($filter, TypeServ
 		this.name = params.name || "";
 		this.title = params.title || "";
 		this.summary = params.summary || "";
+
+		if(params.background instanceof Media)
+			this.background = params.background;
 
 		this.projects = TypeService.loadArrayWithType(params.projects, Project); 
 		this.contacts = TypeService.loadArrayWithType(params.contacts, Contact);

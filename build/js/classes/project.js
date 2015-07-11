@@ -76,11 +76,11 @@ angular.module('portfolio.classes').factory('Project', function($filter, TypeSer
 		},
 		getHighlight: function() {
 			var highlight = this.highlight;
-			if(this.highlight == null) {
+			if(highlight == null) {
 				if(this.media.length > 0) highlight = this.getMedia()[0].id;
 				else return null;
 			}
-			return $filter('findById')(this.media, this.highlight || this.media[0].id);
+			return $filter('findById')(this.media, highlight || this.media[0].id);
 		},
 		load: function(dir) {
 			switch(dir) {
