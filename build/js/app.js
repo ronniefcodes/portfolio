@@ -14,6 +14,7 @@ var app = angular.module('portfolio',
 
 app.constant('config', {
 	'application_name': 'portfolio',
+	'api': 'http://localhost:59379/',
 	'person_id': 1,
 	'cache': 'portfolio_cache'
 });

@@ -3,12 +3,11 @@ angular.module('portfolio.controllers').controller('PortfolioController',
 		DataService, CacheService, Project, config) {
 
 		var person = CacheService.get('person');
-		if(person == null) person = DataService.getPerson(config.person_id);
-		$scope.person = person;
-		
-		$timeout(function() {
-			$rootScope.$broadcast('content.loaded');
-			console.log($scope.person);
+		if(person == null) DataService.getPerson(config.person_id).then(function(data) {
+			$scope.person = data;
+			$timeout(function() {
+				$rootScope.$broadcast('content.loaded');
+			});
 		});
 
 		$scope.changeImage = function(project, direction) {

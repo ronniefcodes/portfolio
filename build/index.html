@@ -19,7 +19,7 @@
                 <div class="content">
                     @@include('/includes/section-header.html', {"header": "Projects", "description": "Some projects I'm proud of"})
                     <article class="project content__block col-4" gallery="expand" ng-repeat="project in person.projects">
-                        <div ng-if="project.getMedia().length > 0" class="project__image image" style="background-image: url('{{ project.active_media.url }}');">
+                        <div ng-if="project.getMedia().length > 0" class="project__image image" ng-style="{ 'background-image': 'url(' + project.active_media.url + ')' }">
                             <div class="image__caption" ng-show="project.active_media.caption != null" />
                             </div>
                             <a href="javascript:;" class="gallery__nav gallery__nav--right" ng-click="changeImage(project, 'right')" ng-show="project.media.length > 1">Right</a>
