@@ -1,6 +1,6 @@
 angular.module('portfolio.controllers').controller('PortfolioController', 
 	function($scope, $rootScope, $timeout, 
-		$filter, DataService, CacheService, config) {
+		DataService, CacheService, Project, config) {
 
 		var person = CacheService.get('person');
 		if(person == null) person = DataService.getPerson(config.person_id);
@@ -11,4 +11,10 @@ angular.module('portfolio.controllers').controller('PortfolioController',
 			console.log($scope.person);
 		});
 
+		$scope.changeImage = function(project, direction) {
+			$timeout(function() {
+				project.load(direction);
+				$scope.$apply();
+			})
+		}
 	});

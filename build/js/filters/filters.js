@@ -24,3 +24,12 @@ angular.module('portfolio.filters').filter('getUniqueById', function($filter) {
 		return unique;
 	}
 });
+
+angular.module('portfolio.filters').filter('getIndex', function($filter) {
+	return function(array, elem) {
+		for(var i = 0; i < array.length; i++) {
+			if(array[i].id === elem.id) return i;
+		}
+		return -1;
+	}
+});

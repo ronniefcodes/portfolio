@@ -24,11 +24,14 @@ angular.module('portfolio.services').service('DataService',
 		var projects = [ 
 			new Project({ 
 				id: 1, 
-				name: 'Redesigned Portfolio', 
-				summary: 'This project.',
+				name: 'Air Wick Enchanted Holidays', 
+				summary: 'I built both the front and back end components for this project. 
+				This was a responsive microsite that heavily utilized parallax and scrolling 
+				effects, requiring JS and CSS3. It included an social media feed that pulled 
+				hashtagged image content from Facebook, Instagram and Twitter.',
 				highlight: 1,
-				project_type: [ projecttypes[0] ],
-				media: [ media[0], media[1], media[2] ],
+				project_type: [ projecttypes[0], projecttypes[1] ],
+				media: [ media[0], media[1], media[2], media[4] ],
 				technology: technologies
 			}),
 			new Project({
@@ -109,7 +112,7 @@ angular.module('portfolio.services').service('DataService',
 
 		var people = [
 			new Person({ id: 1, 
-				name: "Title", 
+				name: "Ronnie Cheung", 
 				title: 'Full Stack Developer', 
 				summary: "<p>Vestibulum egestas, mi eget malesuada fringilla, justo velit tristique elit, 
 				bibendum sodales est magna in enim. Praesent sit amet dictum ante. Curabitur tortor metus, 

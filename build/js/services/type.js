@@ -1,4 +1,4 @@
-angular.module('portfolio.services').service("HelperService", function() {
+angular.module('portfolio.services').service("TypeService", function() {
 	this.loadArrayWithType = function(array, type) {		
 		var type_specific = [];
 

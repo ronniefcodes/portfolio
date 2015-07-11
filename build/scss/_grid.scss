@@ -1,39 +1,50 @@
-@mixin grid-columns($size, $columns, $gutter: 0) {
+@mixin grid-columns($prefix, $columns: 12, $gutter: 1em) {
 	$fraction: percentage(1/$columns);
 
 	@for $i from 1 through $columns {
 		$width: $i * $fraction;
-
-		.col-#{$i} {
-			float: left;
-			width: calc(#{$width} - #{$gutter});
-			@if($gutter != 0) {
-				margin: $gutter/2;
-			}
-		}
-
-		@if($size != '') {
-			.col-#{$size}-offset-left-#{$i} {
-				margin-left: $width;
+		@if($prefix != '') {
+			.col-#{$prefix}-#{$i} {
+				float: left;
+				width: calc(#{$width} - #{$gutter});
+				@if($gutter != 0) {
+					margin: 0 $gutter/2;
+				}
 			}
 
-			.col-#{$size}-offset-right-#{$i} {
-				margin-right: $width;
+			.col-#{$prefix}-offset-left-#{$i} {
+				margin-left: calc(#{$width} + #{$gutter/2});
+			}
+
+			.col-#{$prefix}-offset-right-#{$i} {
+				margin-right: calc(#{$width} + #{$gutter/2});
 			}
 		} @else {
+			.col-#{$i} {
+				float: left;
+				width: calc(#{$width} - #{$gutter});
+				@if($gutter != 0) {
+					margin: $gutter/2;
+				}
+			}
+
 			.col-offset-left-#{$i} {
-				margin-left: $width;
+				margin-left: calc(#{$width} + #{$gutter/2});
 			}
 
 			.col-offset-right-#{$i} {
-				margin-right: $width;
+				margin-right: calc(#{$width} + #{$gutter/2});
 			}		
 		}
 	}	
 }
 
-@include grid-columns('sm', 2, 1em);
+@include grid-columns('sm');
 
 @media only screen and (min-width: 480px) {
-	@include grid-columns('', 5, 1em);
+	@include grid-columns('');
+}
+
+@media only screen and (min-width: 1024px) {
+	@include grid-columns('lg');
 }

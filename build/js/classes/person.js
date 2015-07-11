@@ -1,4 +1,4 @@
-angular.module('portfolio.classes').factory('Person', function($filter, HelperService, Contact, Project) {
+angular.module('portfolio.classes').factory('Person', function($filter, TypeService, Contact, Project) {
 	var id;
 	var name;
 	var title;
@@ -14,8 +14,8 @@ angular.module('portfolio.classes').factory('Person', function($filter, HelperSe
 		this.title = params.title || "";
 		this.summary = params.summary || "";
 
-		this.projects = HelperService.loadArrayWithType(params.projects, Project); 
-		this.contacts = HelperService.loadArrayWithType(params.contacts, Contact);
+		this.projects = TypeService.loadArrayWithType(params.projects, Project); 
+		this.contacts = TypeService.loadArrayWithType(params.contacts, Contact);
 
 		this.init();
 	}

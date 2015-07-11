@@ -18,28 +18,27 @@
             <section class="section--work clearfix">                
                 <div class="content">
                     @@include('/includes/section-header.html', {"header": "Projects", "description": "Some projects I'm proud of"})
-                    <article class="project content__block" gallery="expand" ng-repeat="project in person.projects">
-                        <div class="project__gallery">
-                            <div class="project__image" ng-repeat="media in project.getMedia()" ng-class="media.id == project.highlight ? 'project__image--active' : ''" style="background-image: url('{{ media.url }}');">
-                                <a class="gallery__nav gallery__nav--next" ng-if="media.next != null" href="#">Next</a>
-                                <a class="gallery__nav gallery__nav--previous" ng-if="media.previous != null" href="#">Previous</a>
+                    <article class="project content__block col-4" gallery="expand" ng-repeat="project in person.projects">
+                        <div ng-if="project.getMedia().length > 0" class="project__image image" style="background-image: url('{{ project.active_media.url }}');">
+                            <div class="image__caption" ng-show="project.active_media.caption != null" />
                             </div>
-                        </div>
-                        <div class="project__summary">
-                            <h3 class="project__title" ng-bind="project.name"></h3>                            
+                            <a href="javascript:;" class="gallery__nav gallery__nav--right" ng-click="changeImage(project, 'right')" ng-show="project.media.length > 1">Right</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--left" ng-click="changeImage(project, 'left')" ng-show="project.media.length > 1">Left</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--up" ng-click="changeImage(project, 'up')" ng-show="project.active_media.previous != null">Up</a>
+                            <a href="javascript:;" class="gallery__nav gallery__nav--down" ng-click="changeImage(project, 'down')" ng-show="project.active_media.next != null">Down</a>
                         </div>
                         <div class="project__details">
-                            <h3 ng-bind="project.name"></h3>
+                            <h3 class="project__title" ng-bind="project.name"></h3>    
                             <p ng-bind="project.summary"></p>
-                            <a class="project__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">Check it out</a>
+                            <a class="project__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">See the work</a>
                         </div>
-                        <a href="#" class="project__close" gallery="close">Close</a>
+                        <a href="javascript:;" class="project__close" gallery="close">Close</a>
                     </article>
                 </div>
             </section>
             <section class="section--contact clearfix">                
                 <div class="content">
-                    <div class="contact content__block" ng-repeat="contact in person.contacts">
+                    <div class="contact content__block col-3" ng-repeat="contact in person.contacts">
                         <a class="contact__link contact__link--{{ contact.type.name | lowercase }} button" href="{{ contact.getLink() }}" target="_blank" ng-bind="contact.type.name"></a>
                     </div>
                 </div>
