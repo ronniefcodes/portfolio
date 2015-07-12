@@ -20,6 +20,9 @@ namespace api.Controllers
         // GET api/portfolio/5
         public string Get(int id)
         {
+            /* TO DO: hook up to a database 
+             Also, find a better host with a useable database
+             */
             List<Technology> tech = new List<Technology>();
             tech.Add(new Technology(1, "HTML5"));
             tech.Add(new Technology(2, "CSS3"));
@@ -36,7 +39,7 @@ namespace api.Controllers
 
             List<Media> media = new List<Media>();
             media.Add(new Media(1, "", false, "img/work/aw_eh-0.jpg", null, 2));
-            media.Add(new Media(2, "", false, "img/work/aw_eh-0.jpg", 1));
+            media.Add(new Media(2, "", false, "img/work/aw_eh-1.jpg", 1));
             media.Add(new Media(3, "", true, "img/work/mobile/aw-eh-1.jpg", null, 4));
             media.Add(new Media(4, "", true, "img/work/mobile/aw-eh-2.jpg", 3));
             media.Add(new Media(5, "", false, "img/work/one-resolutions-1.jpg"));

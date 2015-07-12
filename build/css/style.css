@@ -511,7 +511,9 @@ section {
   .content__block {
     box-sizing: border-box;
     padding: 2em;
-    border: 1px solid #2d2d2d; }
+    border: 1px solid #2d2d2d;
+    height: 50vh;
+    min-height: 200px; }
 
 .summary {
   display: inline;
