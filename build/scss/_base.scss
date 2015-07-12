@@ -1,5 +1,9 @@
 $boxpadding: 10px;
-$expandicon: 20px;
+$iconsize: 20px;
+$transitiontiming: 0.5s;
+$transitionfunction: ease-in;
+
+$generictransition: all $transitiontiming $transitionfunction;
 
 html, body  {
 	position: relative;
@@ -118,26 +122,51 @@ section {
 .project {
   position: relative;
   background: $white;
-  border: 1px solid $darkgray;
-  height: 25vh;
+  border: 1px solid $gray;
+  max-height: 25vh;
+  height: auto;
   min-height: 200px;
-  transition: height 0.5s linear;
+  transition: max-height $transitiontiming $transitionfunction, 
+              min-height $transitiontiming $transitionfunction;
 
   &--expanded {
-    min-height: 400px;
-    height: 50vh;
+    min-height: 450px;
+    height: auto;
+    max-height: 75vh;
 
     .project {
-      &__collapse {
-        position: absolute;
-        top: $outermargin;
-        right: $outermargin;
-        z-index: 10;
+      &__image {
+        height: auto;
+        bottom: 50%;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &__button {
+        &--collapse {
+          z-index: 10;
+          opacity: 1;
+        }
+
+        &--expand {
+          z-index: 1;
+          opacity: 0;
+        }
+      }
+
+      &__details {
+        padding-right: $boxpadding;
+
+        p, a {
+          display: block;
+        }
       }
     }
+
     .gallery {
       &__nav {
-        display: block;
+        opacity: 1;
+        z-index: 10;
       }
     }
   }
@@ -147,9 +176,9 @@ section {
     top: 0;
     left: 0;
     background-color: $black;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     width: 100%;
     height: 100%;
   }
@@ -158,34 +187,91 @@ section {
     position: absolute;
     bottom: 0;
     right: 0;
+    max-height: 50%;
     width: 100%;
     background: $white;
     box-sizing: border-box;
     padding: $boxpadding;
-    padding-right: $expandicon + $boxpadding;
+    padding-right: $iconsize + $boxpadding;
+    transition: $generictransition;
 
     p, a {
       display: none;
     }
   }
 
-  &__expand {
-    position: absolute;
-    z-index: 10;
-    bottom: $boxpadding;
-    right: $boxpadding;
+  &__button {
     font-size: 0;
+    transition: opacity $transitiontiming $transitionfunction;
 
-    &:before {
-      font-size: $expandicon;
-      line-height: $expandicon*0.8;
+    &--collapse {
+      position: absolute;
+      top: $boxpadding;
+      right: $boxpadding;
+      opacity: 0;
+
+      .fa {
+        color: $red;
+      }
+    }
+
+    &--expand {
+      position: absolute;
+      z-index: 10;
+      bottom: $boxpadding;
+      right: $boxpadding;
+      opacity: 1;
+    }
+
+    .fa {
+      font-size: $iconsize;
+      line-height: $iconsize*0.8;
     }
   }
 }
 
 .gallery {
   &__nav {
-    display: none;
+    opacity: 0;
+    transition: opacity $transitiontiming $transitionfunction;
+    font-size: 0;
+    position: absolute;
+
+    &--right, &--left {
+      top: 50%;    
+      transform: translateY(-50%);
+    }
+
+    &--right {
+      right: $boxpadding;
+    }
+
+    &--left {
+      left: $boxpadding;
+    }
+
+    &--up, &--down {
+      left: 50%;
+      transform: translateX(-50%);    
+    }
+
+    &--up {
+      top: $boxpadding;
+    }
+
+    &--down {
+      bottom: $boxpadding;
+    }
+
+    .fa {
+      font-size: $iconsize;
+      line-height: $iconsize*0.8;
+      color: $white;
+
+      &:hover, &:active, &:visited {
+        color: $white;
+      }
+    }
   }
 }
 

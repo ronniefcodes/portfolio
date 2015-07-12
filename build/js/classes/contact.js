@@ -1,4 +1,5 @@
-angular.module('portfolio.classes').factory('Contact', function(ContactType) {
+angular.module('portfolio.classes').factory('Contact', 
+	['ContactType', function(ContactType) {
 	var id;
 	var value;
 	var type;
@@ -33,4 +34,4 @@ angular.module('portfolio.classes').factory('Contact', function(ContactType) {
 	}
 
 	return Contact;
-})
+}]);

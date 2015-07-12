@@ -1,4 +1,5 @@
-angular.module('portfolio.services').service('CacheService', function($cacheFactory, config) {
+angular.module('portfolio.services').service('CacheService', 
+	['$cacheFactory', 'config', function($cacheFactory, config) {
 	var cache = $cacheFactory(config.cache);
 	this.get = function(key) {		
 		return cache.get(key);		
@@ -7,4 +8,4 @@ angular.module('portfolio.services').service('CacheService', function($cacheFact
 		cache.put(key, value);
 		return cache.get(key) == value;
 	}
-});
+}]);

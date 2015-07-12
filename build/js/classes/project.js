@@ -1,4 +1,6 @@
-angular.module('portfolio.classes').factory('Project', function($filter, TypeService, ProjectType, Media, Technology) {
+angular.module('portfolio.classes').factory('Project', 
+['$filter', 'TypeService', 'ProjectType', 'Media', 'Technology',
+function($filter, TypeService, ProjectType, Media, Technology) {
 	var id;
 	var name;
 	var summary;
@@ -97,4 +99,4 @@ angular.module('portfolio.classes').factory('Project', function($filter, TypeSer
 	}
 
 	return Project;
-});
+}]);

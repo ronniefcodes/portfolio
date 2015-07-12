@@ -1,4 +1,5 @@
 angular.module('portfolio.classes').factory('Person', 
+['$filter', 'TypeService', 'Contact', 'Project', 'Media',
 function($filter, TypeService, Contact, Project, Media) {
 	var id;
 	var name;
@@ -50,4 +51,4 @@ function($filter, TypeService, Contact, Project, Media) {
 	}
 	
 	return Person;
-});
+}]);

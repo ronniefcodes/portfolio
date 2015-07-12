@@ -1,4 +1,5 @@
 angular.module('portfolio.services').service('DataService', 
+	['$http', '$filter', 'config', 'Person', 'Project', 'ProjectType', 'Media', 'Technology', 'Contact', 'ContactType',
 	function($http, $filter, config, Person, Project, ProjectType, Media, Technology, Contact, ContactType) {
 	this.getPerson = function(id) {
 		var promise = $http({ 
@@ -102,4 +103,4 @@ angular.module('portfolio.services').service('DataService',
 		});
 		return promise;
 	}
-});
+}]);

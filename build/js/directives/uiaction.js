@@ -1,4 +1,4 @@
-angular.module('portfolio.directives').directive('uiAction', function() {
+angular.module('portfolio.directives').directive('uiAction', [ function() {
     return function(scope, element, attrs) {
 		var elem = angular.element(element);
 		switch(attrs.uiAction) {
@@ -23,4 +23,4 @@ angular.module('portfolio.directives').directive('uiAction', function() {
 		}
 		scope.$evalAsync();
 	}
-});
+}]);

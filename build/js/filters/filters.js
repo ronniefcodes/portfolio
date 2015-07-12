@@ -8,13 +8,15 @@ angular.module('portfolio.filters').filter('findByField', function() {
 	}
 });
 
-angular.module('portfolio.filters').filter('findById', function($filter) {
+angular.module('portfolio.filters').filter('findById', 
+	['$filter', function($filter) {
 	return function(array, id) {
 		return $filter('findByField')(array, id);
 	}
-});
+}]);
 
-angular.module('portfolio.filters').filter('getUniqueById', function($filter) {
+angular.module('portfolio.filters').filter('getUniqueById', 
+	['$filter', function($filter) {
 	return function(array) {
 		var unique = [];
 		for(var i = 0; i < array.length; i++) {
@@ -23,13 +25,14 @@ angular.module('portfolio.filters').filter('getUniqueById', function($filter) {
 		}
 		return unique;
 	}
-});
+}]);
 
-angular.module('portfolio.filters').filter('getIndex', function($filter) {
+angular.module('portfolio.filters').filter('getIndex', 
+	['$filter', function($filter) {
 	return function(array, elem) {
 		for(var i = 0; i < array.length; i++) {
 			if(array[i].id === elem.id) return i;
 		}
 		return -1;
 	}
-});
+}]);
