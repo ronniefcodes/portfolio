@@ -11,13 +11,15 @@ namespace api.Models
         public string Name { get; set; }
         public string Prefix { get; set; }
         public string Image { get; set; }
+        public string Icon { get; set; }
 
-        public Contact_Type(int id, string name, string prefix, string image)
+        public Contact_Type(int id, string name, string prefix, string image = "", string icon = "")
         {
             this.Id = id;
             this.Name = name;
             this.Prefix = prefix;
             this.Image = image;
+            this.Icon = icon;
         }
     }
 }

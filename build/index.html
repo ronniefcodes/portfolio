@@ -9,16 +9,16 @@
         @@include('/includes/header.html', {"header": "person.name", "background": "person.background"})
 
         <main>
-            <section class="section--about clearfix">
+            <section id="about" class="section--about clearfix">
                 <div class="content">
-                    @@include('/includes/section-header.html', {"header": "About", "description": "A little about me"})
+                    @@include('/includes/section-header.html', {"header": "About", "description": ""})
                     <div class="summary content__block" ng-bind-html="person.summary"></div>
                 </div>
             </section>
-            <section class="section--work clearfix">                
+            <section id="work" class="section--work clearfix">                
                 <div class="content">
-                    @@include('/includes/section-header.html', {"header": "Projects", "description": "Some projects I'm proud of"})
-                    <article class="project content__block col-4 col-lg-3" gallery="expand" ng-repeat="project in person.projects">
+                    @@include('/includes/section-header.html', {"header": "Work", "description": "Some projects I'm proud of"})
+                    <article class="project content__block col-sm-12 col-4" gallery="expand" ng-repeat="project in person.projects">
                         <div ng-if="project.getMedia().length > 0" class="project__image image" ng-style="{ 'background-image': 'url(' + project.active_media.url + ')' }">
                             <div class="image__caption" ng-show="project.active_media.caption != null" />
                             </div>
@@ -32,14 +32,18 @@
                             <p ng-bind="project.summary"></p>
                             <a class="project__link button" ng-if="project.url != ''" href="{{ project.url }}" target="_blank">See the work</a>
                         </div>
-                        <a href="javascript:;" class="project__close" gallery="close">Close</a>
+                        <a href="javascript:;" class="project__expand fa fa-rotate-90 fa-expand" gallery="expand">Expand</a>
+                        <a href="javascript:;" class="project__collapse" gallery="collapse">Collapse</a>
                     </article>
                 </div>
             </section>
-            <section class="section--contact clearfix">                
+            <section id="contact" class="section--contact clearfix">                
                 <div class="content">
-                    <div class="contact content__block col-3" ng-repeat="contact in person.contacts">
-                        <a class="contact__link contact__link--{{ contact.type.name | lowercase }} button" href="{{ contact.getLink() }}" target="_blank" ng-bind="contact.type.name"></a>
+                    @@include('/includes/section-header.html', {"header": "Contact", "description": "If you've gotten this far, you should probably consider messaging me."})
+                    <div class="contact content__block col-sm-3 col-2" ng-repeat="contact in person.contacts">
+                        <a class="contact__link contact__link--{{ contact.type.name | lowercase }} button" href="{{ contact.getLink() }}" target="_blank">
+                            <span ng-class="contact.icon != '' && contact.image == '' ? 'fa fa-3x ' + contact.icon : ''" ng-bind="contact.type.value"></span>
+                        </a>
                     </div>
                 </div>
             </section>

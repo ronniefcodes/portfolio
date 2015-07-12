@@ -98,16 +98,16 @@ namespace api.Controllers
 
             List<Contact_Type> contact_types = new List<Contact_Type>();
             contact_types.Add(new Contact_Type(1, "website", "", ""));
-            contact_types.Add(new Contact_Type(2, "email", "mailto:", ""));
-            contact_types.Add(new Contact_Type(3, "phone", "tel:", ""));
+            contact_types.Add(new Contact_Type(2, "email", "mailto:", "", "fa-envelope-square"));
+            contact_types.Add(new Contact_Type(3, "phone", "tel:", "", "fa-phone-square"));
             contact_types.Add(new Contact_Type(4, "document", "", ""));
 
             List<Contact> contacts = new List<Contact>();
-            contacts.Add(new Contact(1, "http://www.ronniecheung.ca", null, contact_types.FirstOrDefault(c => c.Id == 1)));
-            contacts.Add(new Contact(2, "https://github.com/ronniefcodes", null, contact_types.FirstOrDefault(c => c.Id == 1)));
-            contacts.Add(new Contact(3, "6478283666", null, contact_types.FirstOrDefault(c => c.Id == 3)));
-            contacts.Add(new Contact(4, "ronniech@outlook.com", null, contact_types.FirstOrDefault(c => c.Id == 2)));
-            contacts.Add(new Contact(5, "https://ca.linkedin.com/in/ronniech", null, contact_types.FirstOrDefault(c => c.Id == 1)));
+            //contacts.Add(new Contact(1, "http://www.ronniecheung.ca", null, null, contact_types.FirstOrDefault(c => c.Id == 1)));
+            contacts.Add(new Contact(2, "https://github.com/ronniefcodes", null, "fa-git-square", contact_types.FirstOrDefault(c => c.Id == 1)));
+            contacts.Add(new Contact(3, "6478283666", null, null, contact_types.FirstOrDefault(c => c.Id == 3)));
+            contacts.Add(new Contact(4, "ronniech@outlook.com", null, null, contact_types.FirstOrDefault(c => c.Id == 2)));
+            contacts.Add(new Contact(5, "https://ca.linkedin.com/in/ronniech", null, "fa-linkedin-square", contact_types.FirstOrDefault(c => c.Id == 1)));
 
             List<Person> people = new List<Person>();
             Person person = new Person(1, "Ronnie Cheung", "Full Stack Developer",

@@ -1,11 +1,16 @@
 /* colors */
-$white: rgb(255,255,255);
 $black: rgb(45,45,45);
-$gray: rgb(240,240,240);
+$darkgray: rgb(65,65,65);
+$gray: rgb(220,220,220);
+$white: rgb(255,255,255);
+
+/* sizes */
+$outermargin: 0.25em;
 
 /* import frameworks */
 //@import "foundation";
 //@import "bootstrap";
+@import "fontawesome";
 
 /* import components */
 @import "grid";

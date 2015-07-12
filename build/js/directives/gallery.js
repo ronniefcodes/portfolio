@@ -7,7 +7,7 @@ angular.module('portfolio.directives').directive('gallery', function($filter, $r
 					if(!elem.is(".project--expanded")) elem.toggleClass('project--expanded');
 				});
 				break;
-			case "close":
+			case "collapse":
 				elem.on('click', function(e) {
 					e.stopPropagation();
 					elem.parent().removeClass('project--expanded');

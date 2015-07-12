@@ -18,13 +18,15 @@ angular.module('portfolio.services').service('DataService',
 
 					contacts.push(new Contact({
 						id: contact.Id,
-						name: contact.Name,
+						value: contact.Value,
 						image: contact.Image,
+						icon: contact.Icon,
 						type: new ContactType({
 							id: contact.Type.Id,
 							name: contact.Type.Name,
 							prefix: contact.Type.Prefix,
-							image: contact.Type.Image
+							image: contact.Type.Image,
+							icon: contact.Type.Icon
 						})
 					}));
 				}

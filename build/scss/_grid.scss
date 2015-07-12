@@ -1,4 +1,4 @@
-@mixin grid-columns($prefix, $columns: 12, $gutter: 1em) {
+@mixin grid-columns($prefix, $columns: 12, $gutter: $outermargin*2) {
 	$fraction: percentage(1/$columns);
 
 	@for $i from 1 through $columns {
@@ -8,7 +8,7 @@
 				float: left;
 				width: calc(#{$width} - #{$gutter});
 				@if($gutter != 0) {
-					margin: 0 $gutter/2;
+					margin: $gutter/2;
 				}
 			}
 

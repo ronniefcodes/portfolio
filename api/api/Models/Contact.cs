@@ -10,13 +10,15 @@ namespace api.Models
         public int Id { get; set; }
         public string Value { get; set; }
         public string Image { get; set; }
+        public string Icon { get; set; }
         public Contact_Type Type { get; set; }
 
-        public Contact(int id, string value, string image, Contact_Type type)
+        public Contact(int id, string value, string image = "", string icon = "", Contact_Type type = null)
         {
             this.Id = id;
             this.Value = value;
             this.Image = image;
+            this.Icon = icon;
             this.Type = type;
         }
     }
