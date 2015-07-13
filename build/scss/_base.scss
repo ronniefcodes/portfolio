@@ -50,8 +50,10 @@ nav {
 header {
   position: relative;
   padding: 25vh 0 $boxpadding;
-  background: $blue;
-  color: $navy;
+  background: $gray;
+  background-size: cover;
+  background-position: center bottom;
+  color: $white;
 
   h1, nav {
     display: inline-block;

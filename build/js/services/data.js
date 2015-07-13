@@ -3,7 +3,8 @@ angular.module('portfolio.services').service('DataService',
 	function($http, $q, $filter, config, Person, Project, ProjectType, Media, Technology, Contact, ContactType) {
 	this.getPerson = function(id) {
 		var defer = $q.defer();
-		var promise = $http({ 
+
+		$http({ 
 			method: 'get', 
 			url: config.api + "portfolio/" + id, 
 			cache: true
@@ -102,6 +103,7 @@ angular.module('portfolio.services').service('DataService',
 				contacts: contacts
 			}));
 		});
+
 		return defer.promise;
 	}
 }]);

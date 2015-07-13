@@ -1957,8 +1957,10 @@ nav {
 header {
   position: relative;
   padding: 25vh 0 10px;
-  background: #0074d9;
-  color: #001f3f; }
+  background: #aaaaaa;
+  background-size: cover;
+  background-position: center bottom;
+  color: white; }
   header h1, header nav {
     display: inline-block;
     margin: 0; }
