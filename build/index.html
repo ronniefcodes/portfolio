@@ -58,7 +58,7 @@
             <section id="contact" class="section--contact clearfix">                
                 <div class="content">
                     @@include('/includes/section-header.html', {"header": "Contact", "description": "If you've gotten this far, you should probably consider messaging me."})
-                    <div class="contact content__block col-sm-3 col-2" ng-repeat="contact in person.contacts">
+                    <div class="contact content__block col-sm-3 col-1" ng-repeat="contact in person.contacts">
                         <a class="contact__link contact__link--{{ contact.type.name | lowercase }} button" href="{{ contact.getLink() }}" target="_blank">
                             <span ng-class="contact.icon != '' && contact.image == '' ? 'fa fa-3x ' + contact.icon : ''" ng-bind="contact.type.value"></span>
                         </a>

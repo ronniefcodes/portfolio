@@ -2,8 +2,8 @@ angular.module('portfolio.controllers').controller('PortfolioController',
 	['$scope', '$timeout', 'DataService', 'CacheService', 'Project', 'config',
 	 function($scope, $timeout, DataService, CacheService, Project, config) {
 
-		var person = CacheService.get('person');
-		if(person == null) 
+		$scope.person = CacheService.get('person');
+		if($scope.person == null) 
 			DataService.getPerson(config.person_id)
 			.catch(function() {}).then(function(data) {
 				$scope.person = data;

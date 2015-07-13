@@ -1,7 +1,8 @@
 angular.module('portfolio.services').service('DataService', 
-	['$http', '$filter', 'config', 'Person', 'Project', 'ProjectType', 'Media', 'Technology', 'Contact', 'ContactType',
-	function($http, $filter, config, Person, Project, ProjectType, Media, Technology, Contact, ContactType) {
+	['$http', '$q', '$filter', 'config', 'Person', 'Project', 'ProjectType', 'Media', 'Technology', 'Contact', 'ContactType',
+	function($http, $q, $filter, config, Person, Project, ProjectType, Media, Technology, Contact, ContactType) {
 	this.getPerson = function(id) {
+		var defer = $q.defer();
 		var promise = $http({ 
 			method: 'get', 
 			url: config.api + "portfolio/" + id, 
@@ -91,7 +92,7 @@ angular.module('portfolio.services').service('DataService',
 				});
 			}
 
-			return new Person({
+			defer.resolve(new Person({
 				id: obj.Id, 
 				name: obj.Name, 
 				title: obj.Title, 
@@ -99,8 +100,8 @@ angular.module('portfolio.services').service('DataService',
 				background: background,
 				projects: projects, 
 				contacts: contacts
-			});
+			}));
 		});
-		return promise;
+		return defer.promise;
 	}
 }]);

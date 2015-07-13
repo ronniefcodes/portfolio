@@ -13,6 +13,7 @@ html, body  {
 	font-size: 16px;
 	line-height: 18px;
 	letter-spacing: 0.04em;
+  color: $black;
 }
 
 body {  
@@ -26,6 +27,10 @@ body {
 
 h1, h2, h3, strong {
 	font-family: 'League Spartan';
+}
+
+h3 {
+  font-size: 1.1em;
 }
 
 nav {
@@ -45,7 +50,8 @@ nav {
 header {
   position: relative;
   padding: 25vh 0 $boxpadding;
-  background: $gray;
+  background: $blue;
+  color: $navy;
 
   h1, nav {
     display: inline-block;
@@ -54,7 +60,7 @@ header {
 
   .content {
     box-sizing: border-box;
-    padding: 0 $outermargin;
+    padding: 0 $boxpadding;
   }
 }
 
@@ -71,13 +77,13 @@ section {
 .content {
   margin: 0 auto;
   width: 98%;
-  max-width: 1080px;
+  max-width: 800px;
   clear: both;
 
   &__block {
     display: inline-block;
     box-sizing: border-box;
-    padding: $boxpadding;
+    padding: 0 $boxpadding;
   }
 }
 
@@ -179,6 +185,8 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    transition: background-position $transitiontiming $transitionfunction,
+                background-size $transitiontiming $transitionfunction;
     width: 100%;
     height: 100%;
   }
@@ -194,6 +202,7 @@ section {
     padding: $boxpadding;
     padding-right: $iconsize + $boxpadding;
     transition: $generictransition;
+    overflow: hidden;
 
     p, a {
       display: none;
