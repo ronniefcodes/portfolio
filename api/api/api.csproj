@@ -180,13 +180,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\data.json" />
     <None Include="Properties\PublishProfiles\portfolioapi - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\portfolioapi - Web Deploy.pubxml" />
   </ItemGroup>
