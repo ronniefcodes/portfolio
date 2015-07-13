@@ -13,10 +13,9 @@ angular.module('portfolio.services').service('DataService',
 
 			if(obj == null) return null;
 			
-			var contacts;
-			if(obj.Contacts != null) {
-				contacts = [];
-				for(var i = 0; i < obj.Contacts.length; i++) {
+			var contacts = [];
+			if(obj.Contacts != null && obj.Contacts.prop && obj.Contacts.prop.constructor === Array) {
+				for(var i = 0, len = obj.Contacts.length; i < len; i++) {
 					var contact = obj.Contacts[i], contacttype;
 
 					contacts.push(new Contact({
@@ -35,52 +34,53 @@ angular.module('portfolio.services').service('DataService',
 				}
 			}
 
-			var projects;
-			if(obj.Projects != null) {
-				projects = [];
-				for(var i = 0; i < obj.Projects.length; i++) {
-					var projecttypes, technologies, media;
+			var projects = [];
+			if(obj.Projects != null && obj.Projects.prop && obj.Projects.prop.constructor === Array) {
+				for(var i = 0, len = obj.Projects.length; i < len; i++) {
+
 					var project = obj.Projects[i];
-
-					if(project.Types != null) {
-						projecttypes = [];
-						for(var j = 0; j < project.Types.length; j++) {
-							projecttypes.push(
-								new ProjectType({ id: project.Types[j].id,
-												name: project.Types[j].name }));
-						}
-					}
-
-					if(project.Technologies != null) {
-						technologies = [];
-						for(var j = 0; j < project.Technologies.length; j++) {
-							technologies.push(
-								new Technology({ id: project.Technologies[j].id,
-												name: project.Technologies[j].name }));
-						}
-					}
-
-					if(project.Media != null) {
-						media = [];
-						for(var j = 0; j < project.Media.length; j++) {
-							media.push(
-								new Media({ id: project.Media[j].Id, 
-											url: project.Media[j].Url, 
-											caption: project.Media[j].Caption, 
-											is_mobile: project.Media[j].IsMobile, 
-											next: project.Media[j].Next,
-											previous: project.Media[j].Previous }));
-						}
-					}
-
 					projects.push(new Project({
 						id: project.Id,
 						name: project.Name, 
 						summary: project.Summary,
 						highlight: project.Highlight,
-						project_type: projecttypes,
-						media: media,
-						technology: technologies
+						project_type: function() {
+							var project_types = [];
+							if(project.Types != null && project.Types.prop && project.Types.prop.constructor === Array) {
+								for(var j = 0, len = project.Types.length; j < len; j++) {
+									projecttypes.push(new ProjectType({ id: project.Types[j].Id,
+														name: project.Types[j].Name }));
+								}
+							}
+							return project_types;
+						},
+						media: function() {
+							var media = [];
+							if(project.Media != null && project.Media.prop && project.Media.prop.constructor === Array) {
+								for(var j = 0, len = project.Media.length; j < len; j++) {
+									media.push(new Media({ id: project.Media[j].Id, 
+													url: project.Media[j].Url, 
+													caption: project.Media[j].Caption, 
+													is_mobile: project.Media[j].IsMobile, 
+													next: project.Media[j].Next,
+													previous: project.Media[j].Previous }));
+								}
+							}
+							return media;
+						},
+						technology: function() {
+							var tech = [];
+							if(project.Technologies != null && 
+								project.Technologies.prop && 
+								project.Technologies.prop.constructor === Array) {
+
+								for(var j = 0, len = project.Technologies.length; j < len; j++) {
+									tech.push(new Technology({ id: project.Technologies[j].id,
+														name: project.Technologies[j].name }));
+								}
+							}
+							return tech;
+						}
 					}));
 				}
 			}
