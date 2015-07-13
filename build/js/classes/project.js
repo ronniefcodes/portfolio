@@ -38,21 +38,21 @@ function($filter, TypeService, ProjectType, Media, Technology) {
 					}
 				}
 			}
-			return gallery;
+			return gallery; //return array of media objects that aren't 'children' (next to others)
 		},
 		getNextMedia: function(media) {
 			var valid_media = this.getMedia();
 			while(media.previous != null)
-				media = $filter('findById')(valid_media, media.previous);
-			var index = $filter('getIndex')(valid_media, media);
-			if(index == valid_media.length - 1) index = 0;
+				media = $filter('findById')(this.media, media.previous); //find 'root' image
+			var index = $filter('getIndex')(valid_media, media); //get position in 'valid' image array
+			if(index == valid_media.length - 1) index = 0; //get adjusted array position
 			else index++;
 			return valid_media[index];
 		},
 		getPreviousMedia: function(media) {
 			var valid_media = this.getMedia();
 			while(media.previous != null)
-				media = $filter('findById')(valid_media, media.previous);
+				media = $filter('findById')(this.media, media.previous);
 			var index = $filter('getIndex')(valid_media, media);
 			if(index == 0) index = valid_media.length - 1;
 			else index--;
