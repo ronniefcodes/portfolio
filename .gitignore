@@ -1,6 +1,6 @@
-dist
-ignore
-node_modules
+dist/
+ignore/
+node_modules/
 .htaccess
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -22,7 +22,6 @@ node_modules
 [Rr]eleases/
 x64/
 x86/
-build/
 bld/
 [Bb]in/
 [Oo]bj/
