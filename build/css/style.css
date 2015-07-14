@@ -1946,13 +1946,15 @@ h3 {
   font-size: 1.1em; }
 
 nav {
-  display: none !important; }
-  nav ul {
-    list-style: none;
-    margin: 0; }
-    nav ul li {
-      display: inline-block;
-      margin: 0 1em; }
+  display: none; }
+  nav .nav__item {
+    display: inline-block;
+    color: white;
+    margin: 0 1em;
+    font-weight: bold;
+    text-decoration: none; }
+    nav .nav__item:hover, nav .nav__item:active, nav .nav__item:focus, nav .nav__item:visited {
+      color: white; }
 
 header {
   position: relative;
@@ -1961,7 +1963,7 @@ header {
   background-size: cover;
   background-position: center bottom;
   color: white; }
-  header h1, header nav {
+  header h1 {
     display: inline-block;
     margin: 0; }
   header .content {
@@ -2158,6 +2160,22 @@ section {
 
 /* desktop styling */
 @media all and (min-width: 768px) {
+  nav {
+    display: inline-block; }
   .section__header {
     display: inline-block;
-    float: left; } }
+    float: left; }
+  .project--expanded {
+    width: 100%;
+    min-height: 600px; }
+    .project--expanded .project__image {
+      height: 100%;
+      width: 70%; }
+      .project--expanded .project__image--mobile {
+        background-size: initial; }
+    .project--expanded .project__details {
+      top: 0;
+      max-height: none;
+      width: auto;
+      height: 100%;
+      width: 30%; } }

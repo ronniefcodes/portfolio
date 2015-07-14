@@ -13,95 +13,33 @@ angular.module('portfolio.services').service('DataService',
 
 			if(obj == null) return null;
 			
-			var contacts = [];
-			if(obj.Contacts != null && obj.Contacts.prop && obj.Contacts.prop.constructor === Array) {
-				for(var i = 0, len = obj.Contacts.length; i < len; i++) {
-					var contact = obj.Contacts[i], contacttype;
-
-					contacts.push(new Contact({
-						id: contact.Id,
-						value: contact.Value,
-						image: contact.Image,
-						icon: contact.Icon,
-						type: new ContactType({
-							id: contact.Type.Id,
-							name: contact.Type.Name,
-							prefix: contact.Type.Prefix,
-							image: contact.Type.Image,
-							icon: contact.Type.Icon
-						})
-					}));
+			//initialize classes for loaded elements
+			if (obj.projects != null) {
+				for(var i = 0, len = obj.projects.length; i < len; i++) {
+					if(obj.projects[i].media != null) {
+						for(var j = 0, len2 = obj.projects[i].media.length; j < len2; j++)
+							obj.projects[i].media[j] = new Media(obj.projects[i].media[j]);
+					}
+					if(obj.projects[i].project_type != null) {							
+						for(var j = 0, len2 = obj.projects[i].project_type.length; j < len2; j++)
+							obj.projects[i].project_type[j] = new ProjectType(obj.projects[i].project_type[j]);
+					}
+					if(obj.projects[i].technology != null) {
+						for(var j = 0, len2 = obj.projects[i].technology.length; j < len2; j++)
+							obj.projects[i].technology[j] = new Technology(obj.projects[i].technology[j]);
+					}	
+					obj.projects[i] = new Project(obj.projects[i]);
 				}
 			}
-
-			var projects = [];
-			if(obj.Projects != null && obj.Projects.prop && obj.Projects.prop.constructor === Array) {
-				for(var i = 0, len = obj.Projects.length; i < len; i++) {
-
-					var project = obj.Projects[i];
-					projects.push(new Project({
-						id: project.Id,
-						name: project.Name, 
-						summary: project.Summary,
-						highlight: project.Highlight,
-						project_type: function() {
-							var project_types = [];
-							if(project.Types != null && project.Types.prop && project.Types.prop.constructor === Array) {
-								for(var j = 0, len = project.Types.length; j < len; j++) {
-									projecttypes.push(new ProjectType({ id: project.Types[j].Id,
-														name: project.Types[j].Name }));
-								}
-							}
-							return project_types;
-						},
-						media: function() {
-							var media = [];
-							if(project.Media != null && project.Media.prop && project.Media.prop.constructor === Array) {
-								for(var j = 0, len = project.Media.length; j < len; j++) {
-									media.push(new Media({ id: project.Media[j].Id, 
-													url: project.Media[j].Url, 
-													caption: project.Media[j].Caption, 
-													is_mobile: project.Media[j].IsMobile, 
-													next: project.Media[j].Next,
-													previous: project.Media[j].Previous }));
-								}
-							}
-							return media;
-						},
-						technology: function() {
-							var tech = [];
-							if(project.Technologies != null && 
-								project.Technologies.prop && 
-								project.Technologies.prop.constructor === Array) {
-
-								for(var j = 0, len = project.Technologies.length; j < len; j++) {
-									tech.push(new Technology({ id: project.Technologies[j].id,
-														name: project.Technologies[j].name }));
-								}
-							}
-							return tech;
-						}
-					}));
+			if(obj.contacts != null) {
+				for(var i = 0, len = obj.contacts.length; i < len; i++) {
+					if(obj.contacts[i].type != null) obj.contacts[i].type = new ContactType(obj.contacts[i].type);
+					obj.contacts[i] = new Contact(obj.contacts[i]);
 				}
 			}
+			if(obj.background != null) obj.background = new Media(obj.background);
 
-			var background = null;
-			if(obj.Background != null) {
-				background = new Media({ 
-					id: obj.Background.Id, 
-					url: obj.Background.Url 
-				});
-			}
-
-			defer.resolve(new Person({
-				id: obj.Id, 
-				name: obj.Name, 
-				title: obj.Title, 
-				summary: obj.Summary, 
-				background: background,
-				projects: projects, 
-				contacts: contacts
-			}));
+			defer.resolve(new Person(obj));
 		});
 
 		return defer.promise;

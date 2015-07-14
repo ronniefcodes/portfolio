@@ -1,0 +1,20 @@
+[{
+    "Id": 1,
+    "Name": "website"
+},
+{
+    "Id": 2,
+    "Name": "email",
+    "Prefix": "mailto:",
+    "Icon": "fa-envelope-square"
+},
+{
+    "Id": 3,
+    "Name": "phone",
+    "Prefix": "tel:",
+    "Icon": "fa-phone-square"
+},
+{
+	"Id": 4,
+	"Name": "document"
+}]

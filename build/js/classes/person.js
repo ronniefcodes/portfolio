@@ -11,6 +11,8 @@ function($filter, TypeService, Contact, Project, Media) {
 	var project_types;
 	var technologies;
 
+	function Person() { }
+
 	function Person(params) {
 		this.id = params.id;
 		this.name = params.name || "";
@@ -19,7 +21,7 @@ function($filter, TypeService, Contact, Project, Media) {
 
 		if(params.background instanceof Media)
 			this.background = params.background;
-
+			
 		this.projects = TypeService.loadArrayWithType(params.projects, Project); 
 		this.contacts = TypeService.loadArrayWithType(params.contacts, Contact);
 

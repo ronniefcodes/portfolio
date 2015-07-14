@@ -1,0 +1,26 @@
+[ {
+    "Id": 2,
+    "Value": "https:\/\/github.com\/ronniefcodes",
+    "Icon": "fa-git-square",
+    "TypeId": 1,
+	"PersonId": 1
+},
+{
+    "Id": 3,
+    "Value": "6478283666",
+    "TypeId": 3,
+	"PersonId": 1
+},
+{
+    "Id": 4,
+    "Value": "ronniech@outlook.com",
+    "TypeId": 2,
+	"PersonId": 1
+},
+{
+    "Id": 5,
+    "Value": "https:\/\/ca.linkedin.com\/in\/ronniech",
+    "Icon": "fa-linkedin-square",	
+	"TypeId": 1,
+	"PersonId": 1
+}]

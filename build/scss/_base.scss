@@ -34,15 +34,17 @@ h3 {
 }
 
 nav {
-  display: none !important;
+  display: none;
 
-  ul {
-    list-style: none;
-    margin: 0;
+  .nav__item {
+    display: inline-block;
+    color: $white;
+    margin: 0 1em;
+    font-weight: bold;
+    text-decoration: none;
 
-    li {
-      display: inline-block;
-      margin: 0 1em;
+    &:hover, &:active, &:focus, &:visited {
+      color: $white;
     }
   }
 }
@@ -55,7 +57,7 @@ header {
   background-position: center bottom;
   color: $white;
 
-  h1, nav {
+  h1 {
     display: inline-block;
     margin: 0;
   }

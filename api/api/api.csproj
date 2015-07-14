@@ -166,7 +166,9 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -187,6 +189,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\data.json" />
+    <Content Include="App_Data\people.json" />
+    <Content Include="App_Data\contacts.json" />
+    <Content Include="App_Data\contact_types.json" />
+    <Content Include="App_Data\media.json" />
+    <Content Include="App_Data\projects.json" />
+    <Content Include="App_Data\project_types.json" />
+    <Content Include="App_Data\technologies.json" />
+    <Content Include="App_Data\project_project_types.json" />
+    <Content Include="App_Data\project_technologies.json" />
     <None Include="Properties\PublishProfiles\portfolioapi - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\portfolioapi - Web Deploy.pubxml" />
   </ItemGroup>
