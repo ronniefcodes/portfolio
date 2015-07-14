@@ -4,7 +4,6 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/aw_eh-0.jpg",
-    "Previous": null,
     "Next": 2
 },
 {
@@ -13,8 +12,7 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/aw_eh-1.jpg",
-    "Previous": 1,
-    "Next": null
+    "Previous": 1
 },
 {
     "Id": 3,
@@ -22,7 +20,6 @@
     "Caption": "",
     "IsMobile": true,
     "Url": "img\/work\/mobile\/aw-eh-1.jpg",
-    "Previous": null,
     "Next": 4
 },
 {
@@ -31,8 +28,7 @@
     "Caption": "",
     "IsMobile": true,
     "Url": "img\/work\/mobile\/aw-eh-2.jpg",
-    "Previous": 3,
-    "Next": null
+    "Previous": 3
 },
 {
     "Id": 5,
@@ -40,16 +36,13 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/one-resolutions-1.jpg",
-    "Previous": null,
     "Next": 21
 },
 {
 	"Id": 6,
 	"Caption": "",
 	"IsMobile": false,
-	"Url": "img\/background.jpg",
-	"Previous": null,
-	"Next": null
+	"Url": "img\/background.jpg"
 },
 {
     "Id": 7,
@@ -57,7 +50,6 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/hkn-cities-index.jpg",
-    "Previous": null,
     "Next": 8
 },
 {
@@ -75,17 +67,14 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/hkn-cities-gallery.jpg",
-    "Previous": 8,
-    "Next": null
+    "Previous": 8
 },
 {
     "Id": 10,
 	"ProjectId": 1,
     "Caption": "",
     "IsMobile": false,
-    "Url": "img\/work\/hkn-cities-register.jpg",
-    "Previous": null,
-    "Next": null
+    "Url": "img\/work\/hkn-cities-register.jpg"
 },
 {
     "Id": 11,
@@ -93,7 +82,6 @@
     "Caption": "",
     "IsMobile": true,
     "Url": "img\/work\/mobile\/hkn-cities.jpg",
-    "Previous": null,
     "Next": 12
 },
 {
@@ -103,7 +91,6 @@
     "IsMobile": true,
     "Url": "img\/work\/mobile\/hkn-cities-gallery.jpg",
     "Previous": 11,
-    "Next": null
 },
 {
     "Id": 13,
@@ -111,7 +98,6 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/nk_iam-1a.jpg",
-    "Previous": null,
     "Next": 14
 },
 {
@@ -121,7 +107,6 @@
     "IsMobile": false,
     "Url": "img\/work\/nk_iam-1b.jpg",
     "Previous": 13,
-    "Next": null
 },
 {
     "Id": 15,
@@ -129,7 +114,6 @@
     "Caption": "",
     "IsMobile": true,
     "Url": "img\/work\/mobile\/nk-iam.jpg",
-    "Previous": null,
     "Next": 16
 },
 {
@@ -139,43 +123,34 @@
     "IsMobile": true,
     "Url": "img\/work\/mobile\/nk_iam-details.jpg",
     "Previous": 15,
-    "Next": null
 },
 {
     "Id": 17,
 	"ProjectId": 5,
     "Caption": "",
     "IsMobile": false,
-    "Url": "img\/work\/rmwc-1.jpg",
-    "Previous": null,
-    "Next": 18
+    "Url": "img\/work\/rmwc-1.jpg"
 },
 {
     "Id": 18,
 	"ProjectId": 5,
     "Caption": "",
     "IsMobile": false,
-    "Url": "img\/work\/rmwc-2.jpg",
-    "Previous": 17,
-    "Next": null
+    "Url": "img\/work\/rmwc-2.jpg"
 },
 {
     "Id": 19,
 	"ProjectId": 5,
     "Caption": "",
     "IsMobile": true,
-    "Url": "img\/work\/mobile\/rmwc-home.jpg",
-    "Previous": null,
-    "Next": 20
+    "Url": "img\/work\/mobile\/rmwc-home.jpg"
 },
 {
     "Id": 20,
 	"ProjectId": 5,
     "Caption": "",
     "IsMobile": true,
-    "Url": "img\/work\/mobile\/rmwc-form.jpg",
-    "Previous": 19,
-    "Next": null
+    "Url": "img\/work\/mobile\/rmwc-form.jpg"
 },
 {
     "Id": 21,
@@ -183,17 +158,14 @@
     "Caption": "",
     "IsMobile": false,
     "Url": "img\/work\/one-resolutions-2.jpg",
-    "Previous": 5,
-    "Next": null
+    "Previous": 5
 },
 {
     "Id": 22,
 	"ProjectId": 4,
     "Caption": "",
     "IsMobile": false,
-    "Url": "img\/work\/one-resolutions-details.jpg",
-    "Previous": null,
-    "Next": null
+    "Url": "img\/work\/one-resolutions-details.jpg"
 },
 {
     "Id": 23,
@@ -201,7 +173,6 @@
     "Caption": "",
     "IsMobile": true,
     "Url": "img\/work\/mobile\/one-resolutions-1.jpg",
-    "Previous": null,
     "Next": 24
 },
 {
@@ -211,14 +182,11 @@
     "IsMobile": true,
     "Url": "img\/work\/mobile\/one-resolutions-2.jpg",
     "Previous": 23,
-    "Next": null
 },
 {
     "Id": 25,
 	"ProjectId": 4,
     "Caption": "",
     "IsMobile": true,
-    "Url": "img\/work\/mobile\/one-resolutions-details.jpg",
-    "Previous": null,
-    "Next": null
+    "Url": "img\/work\/mobile\/one-resolutions-details.jpg"
 },]
