@@ -4,8 +4,8 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		config: {
 			port: 9000,
-			dist: 'dist',
-			build: 'build'
+			dist: 'build',
+			build: 'src'
 		},
 		connect: {
 			options: {

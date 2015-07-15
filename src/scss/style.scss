@@ -23,7 +23,7 @@ $outermargin: 0.25em;
 @import "animations";
 
 /* fonts */
-@include declare-font-face('League Spartan', 'leaguespartan-bold-webfont');
+@include declare-font-face('League Spartan', 'leaguespartan-bold');
 @include declare-font-face('Paneuropa Neue', 'paneuropaneueregular');
 
 /* base styling */

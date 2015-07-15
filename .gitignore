@@ -1,4 +1,3 @@
-dist/
 ignore/
 node_modules/
 .htaccess
@@ -16,6 +15,7 @@ node_modules/
 *.userprefs
 
 # Build results
+[Bb]uild/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
