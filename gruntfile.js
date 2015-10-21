@@ -3,21 +3,35 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 		config: {
-			port: 9000,
-			dist: 'build',
-			build: 'src'
+			port: 9098,
+			dist: 'dist',
+			build: 'app',
+			tmp: '.tmp'
 		},
 		connect: {
 			options: {
 				port: '<%= config.port %>',
 				open: true,
-				hostname: 'localhost'
+				hostname: 'localhost',
+				base: '<%= config.dist %>',
+				middleware: function(connect, options, middlewares) {
+		            var modRewrite = require('connect-modrewrite');
+
+		            // enable Angular's HTML5 mode
+		            middlewares.unshift(modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.jpg|\\.png$ /index.html [L]']));
+
+		            return middlewares;
+				}
 			},
 			server: {
 				options: {
-					livereload: true
+					livereload: true,
+					base: '<%= config.dist %>'
 				}
 			}
+		},
+		clean: {
+			all: ['<%= config.dist %>', '<%= config.tmp %>']
 		},
 		autoprefixer: {
 			options: {
@@ -31,8 +45,8 @@ module.exports = function(grunt){
 				]
 			},
 			dist: {
-				src: '<%= config.build %>/css/style.css',
-				dest: '<%= config.build %>/css/style.css'
+				src: '<%= config.tmp %>/css/style.css',
+				dest: '<%= config.tmp %>/css/style.css'
 			}
 		},
 		copy: {
@@ -46,8 +60,10 @@ module.exports = function(grunt){
 						src: [
 							'img/**', 
 							'fonts/**', 
-							'data/**', 
+							'content/**', 
 							'js/vendor/**', 
+							'pages/**', 
+							'templates/**', 
 							'*.*', '!*.html'
 					  	]
 					}
@@ -61,9 +77,9 @@ module.exports = function(grunt){
 			sass: {
 				files: [{
 					expand: true,
-					cwd: '<%= config.build %>/scss',
+					cwd: '<%= config.build %>/scss/',
 					src: ['style.scss'],
-					dest: '<%= config.build %>/css/',
+					dest: '<%= config.tmp %>/css/',
 					ext: '.css'
 				}]
 			},
@@ -75,18 +91,18 @@ module.exports = function(grunt){
 			js: {
 				files: {
 					'<%= config.dist %>/js/scripts.js': ['<%= config.build %>/js/app.js', 
-													'<%= config.build %>/js/filters/**.js',
-													'<%= config.build %>/js/classes/**.js', 
-													'<%= config.build %>/js/services/**.js', 
-													'<%= config.build %>/js/controllers/**.js',
-													'<%= config.build %>/js/directives/**.js' ]
+													'<%= config.build %>/js/filters/**/**.js',
+													'<%= config.build %>/js/classes/**/**.js', 
+													'<%= config.build %>/js/services/**/**.js', 
+													'<%= config.build %>/js/controllers/**/**.js',
+													'<%= config.build %>/js/directives/**/**.js' ]
 				}
 			}
 		},
 		cssmin: {
 			target: {
 				files: {
-					'<%= config.dist %>/css/style.css': ['<%= config.build %>/css/style.css']
+					'<%= config.dist %>/css/style.css': ['<%= config.tmp %>/css/style.css']
 				}
 			}
 		},
@@ -104,6 +120,14 @@ module.exports = function(grunt){
 		  options: {
 	        livereload: true
 	      },
+	      data: {
+	      	files: ['<%= config.build %>/content/**'],
+	      	tasks: ['copy']
+	      },
+		  img: {
+		  	files: ['<%= config.build %>/img/**'],
+		  	tasks: ['copy']
+		  },
 		  sass: {
 		    files: ['<%= config.build %>/**/*.scss'],
 		    tasks: ['sass', 'autoprefixer', 'cssmin']
@@ -114,11 +138,7 @@ module.exports = function(grunt){
 		  },
 		  html: {
 		  	files: ['<%= config.build %>/**/*.html'],
-		  	tasks: ['includereplace']
-		  },
-		  img: {
-		  	files: ['<%= config.build %>/img/**'],
-		  	tasks: ['copy']
+		  	tasks: ['includereplace', 'copy']
 		  }
 		}
 	});
@@ -129,6 +149,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.registerTask('default', ['includereplace', 'sass', 'copy', 'autoprefixer', 'cssmin', 'uglify', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'includereplace', 'sass', 'copy', 'autoprefixer', 'cssmin', 'uglify', 'connect', 'watch']);
 };
 
