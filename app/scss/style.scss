@@ -1,0 +1,35 @@
+/* colors */
+$black: rgb(17,17,17);
+$darkgray: rgb(50,50,50);
+$gray: rgb(170,170,170);
+$white: rgb(255,255,255);
+
+$blue: rgb(0,116,217);
+$navy: rgb(0,31,63);
+$red: rgb(225,43,0);
+
+/* sizes */
+$outermargin: 0.25em;
+
+/* import frameworks */
+//@import "foundation";
+//@import "bootstrap";
+@import "fontawesome";
+
+/* import components */
+@import "grid";
+@import "mixins";
+@import "functions";
+@import "animations";
+
+/* fonts */
+@include declare-font-face('League Spartan', 'leaguespartan-bold');
+@include declare-font-face('Paneuropa Neue', 'paneuropaneueregular');
+
+/* base styling */
+@import "base";
+
+/* desktop styling */
+@media all and (min-width: 768px) {
+	@import "768up";
+}

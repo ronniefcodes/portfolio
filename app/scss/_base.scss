@@ -1,0 +1,334 @@
+$boxpadding: 10px;
+$iconsize: 20px;
+$transitiontiming: 0.5s;
+$transitionfunction: ease-in;
+
+$generictransition: all $transitiontiming $transitionfunction;
+
+html, body  {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-family: 'Paneuropa Neue', sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0.04em;
+  color: $black;
+}
+
+body {  
+  height: 100%;
+}
+
+*:empty {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, strong {
+	font-family: 'League Spartan';
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+nav {
+  display: none;
+
+  .nav__item {
+    display: inline-block;
+    color: $white;
+    margin: 0 1em;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover, &:active, &:focus, &:visited {
+      color: $white;
+    }
+  }
+}
+
+header {
+  position: relative;
+  padding: 25vh 0 $boxpadding;
+  background: $gray;
+  background-size: cover;
+  background-position: center bottom;
+  color: $white;
+
+  h1 {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .content {
+    box-sizing: border-box;
+    padding: 0 $boxpadding;
+  }
+}
+
+main {
+  margin-bottom: 5vh;
+}
+
+section {
+  position: relative;
+  box-sizing: border-box;
+  padding: 2*$outermargin 0;
+}
+
+.content {
+  margin: 0 auto;
+  width: 98%;
+  max-width: 800px;
+  clear: both;
+
+  &__block {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 $boxpadding;
+  }
+}
+
+.section {
+  &--contact {
+    .content {
+      text-align: center;
+    }
+  }
+
+  &__header {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    h2 {
+      display: inline-block;
+      margin: 0;
+      border-bottom: 1px solid $darkgray;
+      padding-bottom: $outermargin/2;
+    }
+
+    p {
+      margin-top: $outermargin;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.summary {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: $outermargin;
+
+  p {
+    margin-top: $outermargin;
+    margin-bottom: 0;
+  }
+}
+
+.project {
+  position: relative;
+  background: $white;
+  border: 1px solid $gray;
+  max-height: 25vh;
+  height: auto;
+  min-height: 200px;
+  transition: max-height $transitiontiming $transitionfunction, 
+              min-height $transitiontiming $transitionfunction;
+
+  &--expanded {
+    min-height: 450px;
+    height: auto;
+    max-height: 75vh;
+
+    .project {
+      &__image {
+        height: auto;
+        bottom: 50%;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &__button {
+        &--collapse {
+          z-index: 10;
+          opacity: 1;
+        }
+
+        &--expand {
+          z-index: 1;
+          opacity: 0;
+        }
+      }
+
+      &__details {
+        padding-right: $boxpadding;
+
+        p, a {
+          display: block;
+        }
+      }
+    }
+
+    .gallery {
+      &__nav {
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    transition: background-position $transitiontiming $transitionfunction,
+                background-size $transitiontiming $transitionfunction;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__details {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: 50%;
+    width: 100%;
+    background: $white;
+    box-sizing: border-box;
+    padding: $boxpadding;
+    padding-right: $iconsize + $boxpadding;
+    transition: $generictransition;
+    overflow: hidden;
+
+    p, a {
+      display: none;
+    }
+  }
+
+  &__button {
+    font-size: 0;
+    transition: opacity $transitiontiming $transitionfunction;
+
+    &--collapse {
+      position: absolute;
+      top: $boxpadding;
+      right: $boxpadding;
+      opacity: 0;
+
+      .fa {
+        color: $red;
+      }
+    }
+
+    &--expand {
+      position: absolute;
+      z-index: 10;
+      bottom: $boxpadding;
+      right: $boxpadding;
+      opacity: 1;
+    }
+
+    .fa {
+      font-size: $iconsize;
+      line-height: $iconsize*0.8;
+    }
+  }
+}
+
+.gallery {
+  &__nav {
+    opacity: 0;
+    transition: opacity $transitiontiming $transitionfunction;
+    font-size: 0;
+    position: absolute;
+
+    &--right, &--left {
+      top: 50%;    
+      transform: translateY(-50%);
+    }
+
+    &--right {
+      right: $boxpadding;
+    }
+
+    &--left {
+      left: $boxpadding;
+    }
+
+    &--up, &--down {
+      left: 50%;
+      transform: translateX(-50%);    
+    }
+
+    &--up {
+      top: $boxpadding;
+    }
+
+    &--down {
+      bottom: $boxpadding;
+    }
+
+    .fa {
+      font-size: $iconsize;
+      line-height: $iconsize*0.8;
+      color: $white;
+
+      &:hover, &:active, &:visited {
+        color: $white;
+      }
+    }
+  }
+}
+
+.contact {
+  float: none;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $white;
+  text-align: center;
+  z-index: 100000;
+
+  > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+.fa {
+  color: $black;
+  text-decoration: none;
+
+  &:active, &:visited, &:hover {
+    color: $black;
+  }
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
