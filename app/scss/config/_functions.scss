@@ -1,0 +1,11 @@
+
+// MAP FUNCTIONS
+// ---------------------------------|
+@function recursively-get($map, $keys...) {
+	@each $key in $keys {
+		@if(map-has-key($map, $key)) {
+			$map: map-get($map, $key);
+		}
+	}
+	@return $map;
+}

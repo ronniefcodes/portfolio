@@ -1,6 +1,5 @@
 angular.module('portfolio.classes').factory('Work', 
-['$filter', 'TypeService', 'Project', 'Skill',
-function($filter, TypeService, Project, Skill) {
+['Project', 'Skill', function(Project, Skill) {
 	var id,
 		title, //string - title at company
 		company, //string - company name
@@ -8,6 +7,7 @@ function($filter, TypeService, Project, Skill) {
 		url, //string - company website
 		start_date, //(start_date & end_date) datetime - date started and finished at position
 		end_date,
+		projects, //array<Project> - projects completed as part of position
 		skills, //array<Skill> - skills applied in position
 		type; //array<string> - type of project (ie. front end, back end)
 
@@ -21,6 +21,15 @@ function($filter, TypeService, Project, Skill) {
 
 		if(params.start_date !== null && params.start_date instanceof Date) this.start_date = params.start_date;
 		if(params.end_date !== null && params.end_date instanceof Date) this.end_date = params.end_date;
+
+		this.projects = [];
+		if(params.projects !== null) {
+			if(TypeService.isArray(params.projects)) {
+				for(var i = 0, len = params.projects.length; i < len; i++) {
+					this.projects.push(new Project(params.projects[i]));
+				}
+			} else this.projects.push(new Project(params.projects));
+		}
 
 		this.skills = [];
 		if(params.skills !== null) {

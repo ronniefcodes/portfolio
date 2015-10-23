@@ -1,18 +1,16 @@
 angular.module('portfolio.controllers').controller('PortfolioController', 
-	['$scope', '$timeout', 'DataService', 'CacheService', 'Project', 'config',
-	 function($scope, $timeout, DataService, CacheService, Project, config) {
+	['$scope', 'DataService', 'Person',
+	 function($scope, DataService, Person) {
+	 	
+	 	var skills = [];
+	 	skills.push(new Skill({ id: skills.length+1, name: '', category: '', type: '' }));
 
-		$scope.person = CacheService.get('person');
-		if($scope.person == null) 
-			DataService.getPerson(config.person_id)
-			.catch(function() {}).then(function(data) {
-				$scope.person = data;
-				console.log(data);
-				$timeout(function() {
-					if($scope.person == null) $scope.$emit('content.load.error');
-					else $scope.$emit('content.load.ok');
-				});
-			});
-		else $scope.$emit('content.load.ok');
-
+	 	DataService.load().then(function(data) {
+	 		if(data instanceof Person) {
+	 			$scope.person = data;
+	 			$scope.$emit('content.load.complete');
+	 		} else $scope.$emit('content.load.empty');
+	 	}).error(function() {
+	 		$scope.$emit('content.load.error');
+	 	});
 	}]);
