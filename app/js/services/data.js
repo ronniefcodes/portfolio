@@ -1,5 +1,5 @@
 angular.module('portfolio.services').service('DataService', 
-	['$http', '$q', '$filter', 'config', 'CacheService', 'Person'
+	['$http', '$q', '$filter', 'config', 'CacheService', 'Person',
 	function($http, $q, $filter, config, CacheService, Person) {
 
 	this.load = function() {

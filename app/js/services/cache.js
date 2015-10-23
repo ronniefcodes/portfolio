@@ -1,4 +1,4 @@
-angular.module('sandbox.services').service('CacheService', 
+angular.module('portfolio.services').service('CacheService', 
 	['$cacheFactory', 'config', function($cacheFactory, config) {
 	var cache = $cacheFactory(config.cache);
 	this.get = function(key) {		

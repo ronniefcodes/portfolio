@@ -5,10 +5,11 @@ function($filter, TypeService, Media, Skill) {
 		title, //strign - project title
 		description, //string - description of project
 		url, //string - url for project
+		date, //datetime - date of project
 		highlight, //int - used to identify media element to use in highlights and summaries
 		media, //array<Media> - list of media elements tied to project
 		skills, //array<Skill> - list of skills involved in project
-		type; //array<string> - type of project (ie. front end, back end)
+		role; //array<string> - role in project (ie. front end, back end)
 
 	var active; //Media - active media (for display)
 
@@ -19,36 +20,31 @@ function($filter, TypeService, Media, Skill) {
 		this.url = params.url || "";
 		this.highlight = params.highlight;
 
-		this.media = [];
-		if(params.media !== null) {
-			if(TypeService.isArray(params.media)) {
-				for(var i = 0, len = params.media.length; i < len; i++) {
-					this.media.push(new Media(params.media[i]));
-				}
-			} else this.media.push(new Media(params.media));
+		if(params.date !== null && params.date instanceof Date) this.date = params.date;
+
+		this.media = TypeService.loadArrayWithType(params.media, Media);
+		this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+
+		this.role = [];
+		if(params.role !== null && params.role !== undefined) {
+			if(TypeService.isArray(params.role)) this.role = params.role;
+			else this.role.push(params.role);
 		}
 
-		this.skills = [];
-		if(params.skills !== null) {
-			if(TypeService.isArray(params.skills)) {
-				for(var i = 0, len = params.skills.length; i < len; i++) {
-					this.skills.push(new Skill(params.skills[i]));
-				}
-			} else this.skills.push(new Skill(params.skills));
-		}
-
-		this.type = [];
-		if(params.type !== null) {
-			if(TypeService.isArray(params.type)) this.type = params.type;
-			else this.type.push(params.type);
-		}
-
-		//this.init();
+		this.init();
 	}
 
 	Project.prototype = {
 		init: function() {
-			this.active_media = this.getHighlight();
+			this.getRole();
+			//this.active_media = this.getHighlight();
+		},
+		getRole: function() {
+			this.role = this.role || [];
+			for(var i = 0, len = this.skills.length; i < len; i++) {
+				if(this.role.indexOf(this.skills[i].type) === -1) 
+					this.role.push(this.skills[i].type);
+			}
 		},
 		getHighlight: function() {
 			if(this.highlight !== null) return $filter('filter')(this.media, this.highlight);
