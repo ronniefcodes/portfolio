@@ -11,7 +11,7 @@ angular.module('portfolio.classes').factory('Work',
 		skills, //array<Skill> - skills applied in position
 		role; //array<string> - role in position (ie. front end, back end)
 
-	function Work(params) {
+	function Work(params, skip_init) {
 		this.id = params.id;
 		this.title = params.title || "";
 		this.company = params.company || "";
@@ -31,7 +31,7 @@ angular.module('portfolio.classes').factory('Work',
 			else this.role.push(params.role);
 		}
 
-		this.init();
+		if(skip_init !== true) this.init();
 	}
 
 	Work.prototype = {

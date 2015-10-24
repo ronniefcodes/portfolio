@@ -1,0 +1,17 @@
+@include bp-max(mobile) {
+	.hide-on-mobile {
+		display: none;
+	}
+}
+
+@include bp-range(mobile,desktop) {
+	.hide-on-tablet {
+		display: none;
+	}
+}
+
+@include bp-min(desktop) {
+	.hide-on-desktop {
+		display: none;
+	}
+}

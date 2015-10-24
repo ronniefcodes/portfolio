@@ -11,7 +11,6 @@ angular.module('portfolio.services').service("TypeService", function() {
 				}
 			} else {
 				if(array instanceof type) type_specific = [ array ];
-				else type_specific = new type(array);
 			}
 		}
 		return type_specific;

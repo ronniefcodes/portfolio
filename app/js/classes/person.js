@@ -12,7 +12,7 @@ angular.module('portfolio.classes').factory('Person',
 	var roles, //array<string> - type of work done
 		skills; //array<Skill> - list of skills
 
-	function Person(params) { 
+	function Person(params, skip_init) { 
 		this.id = params.id;
 		this.first_name = params.first_name || "";
 		this.last_name = params.last_name || "";
@@ -33,7 +33,7 @@ angular.module('portfolio.classes').factory('Person',
 			else this.roles.push(params.roles);
 		}
 
-		this.init();
+		if(skip_init !== true) this.init();
 	}
 
 	Person.prototype = {
@@ -62,6 +62,13 @@ angular.module('portfolio.classes').factory('Person',
 						this.skills.push(this.work_history[i].skills[j]);
 				}
 			}
+		},
+		getProjects: function() {
+			var projects = [];
+			for(var i = 0, len = this.work_history.length; i < len; i++) {
+				projects = projects.concat(this.work_history[i].projects);
+			}
+			return projects;
 		},
 		getFullName: function() {
 			var name = this.first_name + " " + this.last_name;

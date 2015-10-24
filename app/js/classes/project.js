@@ -13,7 +13,7 @@ function($filter, TypeService, Media, Skill) {
 
 	var active; //Media - active media (for display)
 
-	function Project(params) {
+	function Project(params, skip_init) {
 		this.id = params.id;
 		this.title = params.title || "";
 		this.description = params.description || "";
@@ -31,7 +31,7 @@ function($filter, TypeService, Media, Skill) {
 			else this.role.push(params.role);
 		}
 
-		this.init();
+		if(skip_init !== true) this.init();
 	}
 
 	Project.prototype = {
