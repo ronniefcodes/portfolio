@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": ".NET Developer",
+        "company": "Sandbox Advertising Inc.",
+        "description": "Functionally full stack developer for Sandbox Advertising.",
+        "url": "http://www.sandboxww.ca",
+        "start_date": "2013-10-23T04:00:00.000Z",
+        "projects": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+        "skills": [ 7 ],
+        "role": []
+    },
+    {
+        "id": 2,
+        "title": "Project Coordinator Co-op",
+        "company": "Research In Motion Ltd.",
+        "description": "Project Manager and Web Developer for project management team.",
+        "url": "",
+        "start_date": "2012-02-01T05:00:00.000Z",
+        "end_date": "2012-05-27T04:00:00.000Z",
+        "projects": [ 9 ],
+        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ]
+    },
+    {
+        "id": 3,
+        "title": "Business Analyst (Internship)",
+        "company": "CIBC",
+        "description": "",
+        "url": "",
+        "start_date": "2011-10-01T04:00:00.000Z",
+        "end_date": "2012-01-01T05:00:00.000Z"
+    },
+    {
+        "id": 4,
+        "title": "Assistant Performance Analyst (Internship)",
+        "company": "Hydro One",
+        "description": "",
+        "url": "",
+        "start_date": "2011-02-01T05:00:00.000Z",
+        "end_date": "2011-05-01T04:00:00.000Z",
+        "skills": [ 8 ]
+    },
+    {
+        "id": 5,
+        "title": "Junior Technical Consultant (Internship)",
+        "company": "Innovapost",
+        "description": "",
+        "url": "",
+        "start_date": "2010-10-01T04:00:00.000Z",
+        "end_date": "2011-01-01T05:00:00.000Z"
+    },
+    {
+        "id": 6,
+        "title": "Web Developer",
+        "company": "Freelance Work",
+        "description": ""
+    }
+]

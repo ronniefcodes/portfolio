@@ -81,6 +81,7 @@
 	$percentage: $size * 1%;
 	@if(not($gutter == 0)) { $percentage: calc(#{$percentage} - #{$gutter}); }
 
+	display: inline-block;
 	width: $percentage;
 	padding-bottom: $percentage;
 	margin: #{$gutter/2};

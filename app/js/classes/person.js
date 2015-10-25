@@ -12,7 +12,7 @@ angular.module('portfolio.classes').factory('Person',
 	var roles, //array<string> - type of work done
 		skills; //array<Skill> - list of skills
 
-	function Person(params, skip_init) { 
+	function Person(params, init) { 
 		this.id = params.id;
 		this.first_name = params.first_name || "";
 		this.last_name = params.last_name || "";
@@ -22,10 +22,20 @@ angular.module('portfolio.classes').factory('Person',
 		if(params.image !== null && params.image instanceof Media)
 			this.image = params.image;
 
-		this.work_history = TypeService.loadArrayWithType(params.work_history, Work);
-		this.contacts = TypeService.loadArrayWithType(params.contacts, Contact);
+		if(TypeService.isArray(params.work_history)) {
+			if(isNaN(params.work_history[0])) this.work_history = TypeService.loadArrayWithType(params.work_history, Work);
+			else this.work_history = params.work_history;
+		} else this.work_history = [];
 
-		this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+		if(TypeService.isArray(params.contacts)) {
+			if(isNaN(params.contacts[0])) this.contacts = TypeService.loadArrayWithType(params.contacts, Contact);
+			else this.contacts = params.contacts;
+		} else this.contacts = [];
+
+		if(TypeService.isArray(params.skills)) {
+			if(isNaN(params.skills[0])) this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+			else this.skills = params.skills;
+		} else this.skills = [];
 
 		this.roles = [];
 		if(params.roles !== null && params.roles !== undefined) {
@@ -33,13 +43,51 @@ angular.module('portfolio.classes').factory('Person',
 			else this.roles.push(params.roles);
 		}
 
-		if(skip_init !== true) this.init();
+		if(init === true) this.init();
 	}
 
 	Person.prototype = {
-		init: function() {
+		init: function(params) {
+			if(this.work_history.length > 0 && params.work !== null && params.work !== undefined) 
+				this.loadWork(params.work);
+
+			if(this.contacts.length > 0 && params.contact !== null && params.contact !== undefined) 
+				this.loadContact(params.contact);
+
+			if(params.skills !== null && params.skills !== undefined) 
+				this.loadSkills(params.skills);
+
 			this.getSkills();
 			this.getRoles();
+		},
+		loadWork: function(work_history) {
+			var loaded_work_history = [];
+			for(var i = 0, len = this.work_history.length; i < len; i++) {
+				for(var j = 0, len2 = work_history.length; j < len2; j++) {
+					if(work_history[j].id === this.work_history[i]) 
+						loaded_work_history.push(work_history[j]);
+				}
+			}
+			this.work_history = loaded_work_history;
+		},
+		loadContact: function(contacts) {
+			var loaded_contacts = [];
+			for(var i = 0, len = this.contacts.length; i < len; i++) {
+				for(var j = 0, len2 = contacts.length; j < len2; j++) {
+					if(contacts[j].id === this.contacts[i]) 
+						loaded_contacts.push(contacts[j]);
+				}
+			}
+			this.contacts = loaded_contacts;
+		},
+		loadSkills: function(skills) {
+			var loaded_skills = [];
+			for(var i = 0, len = this.skills.length; i < len; i++) {
+				for(var j = 0, len2 = skills.length; j < len2; j++) {
+					if(skills[j].id === this.skills[i]) loaded_skills.push(skills[j]);
+				}
+			}
+			this.skills = loaded_skills;
 		},
 		getRoles: function() {
 			this.roles = this.roles || [];
@@ -63,7 +111,7 @@ angular.module('portfolio.classes').factory('Person',
 				}
 			}
 		},
-		getProjects: function() {
+		getAllProjects: function() {
 			var projects = [];
 			for(var i = 0, len = this.work_history.length; i < len; i++) {
 				projects = projects.concat(this.work_history[i].projects);

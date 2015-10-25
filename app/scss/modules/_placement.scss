@@ -1,0 +1,32 @@
+.place {
+	&--left {
+		float: left;
+	}
+	&--right {
+		float: right;
+	}
+	&--on {
+		&-bottom {
+			z-index: $z-bottom;
+		}
+		&-middle {
+			z-index: $z-middle;
+
+			&-1 {
+				z-index: $z-middle - 1;
+			}
+			&\+1 {
+				z-index: $z-middle + 1;
+			}
+		}
+		&-top {
+			z-index: $z-top;
+			&-1 {
+				z-index: $z-top - 1;
+			}
+			&\+1 {
+				z-index: $z-top + 1;
+			}
+		}
+	}
+}

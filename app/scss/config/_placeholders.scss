@@ -11,3 +11,14 @@
   -webkit-font-smoothing: subpixel-antialiased;
   font-smoothing: subpixel-antialiased;
 }
+
+// PLACEMENT HELPERS
+// --------------------------------|
+
+%cover-absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}

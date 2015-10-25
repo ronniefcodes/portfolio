@@ -15,6 +15,16 @@ angular.module('portfolio.services').service("TypeService", function() {
 		}
 		return type_specific;
 	}
+
+	this.replaceIdWithObject = function(ids, objs) {
+		var output = [];
+		for(var i = 0, len = ids.length; i < len; i++) {
+			for(var j = 0, len2 = objs.length; j < len2; j++) {
+				if(objs[j].id == ids[i]) output.push(objs[j]);
+			}
+		}
+		return output;
+	}
 	
 	this.isArray = function(obj) {
 		return ('isArray' in Array) ? Array.isArray(obj) : Object.prototype.toString.call(obj) === '[object Array]';

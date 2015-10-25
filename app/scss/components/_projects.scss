@@ -1,0 +1,23 @@
+.project {
+	position: relative;
+	@include perfect-square(100);
+	background-size: auto 80%;
+	background-position: center center;
+	background-repeat: no-repeat no-repeat;
+
+	&__content {
+		@extend %cover-absolute;
+	}
+}
+
+@include bp-min(tablet) {
+	.project {
+		@include perfect-square(33);
+	}
+}
+
+@include bp-min(desktop) {
+	.project {
+		@include perfect-square(20, 10px);
+	}
+}

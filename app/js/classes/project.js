@@ -11,9 +11,9 @@ function($filter, TypeService, Media, Skill) {
 		skills, //array<Skill> - list of skills involved in project
 		role; //array<string> - role in project (ie. front end, back end)
 
-	var active; //Media - active media (for display)
+	var active_media; //Media - active media (for display)
 
-	function Project(params, skip_init) {
+	function Project(params, init) {
 		this.id = params.id;
 		this.title = params.title || "";
 		this.description = params.description || "";
@@ -22,22 +22,40 @@ function($filter, TypeService, Media, Skill) {
 
 		if(params.date !== null && params.date instanceof Date) this.date = params.date;
 
-		this.media = TypeService.loadArrayWithType(params.media, Media);
-		this.skills = TypeService.loadArrayWithType(params.skills, Skill);
-
 		this.role = [];
 		if(params.role !== null && params.role !== undefined) {
 			if(TypeService.isArray(params.role)) this.role = params.role;
 			else this.role.push(params.role);
 		}
 
-		if(skip_init !== true) this.init();
+		if(TypeService.isArray(params.media)) {
+			if(isNaN(params.media[0])) this.media = TypeService.loadArrayWithType(params.media, Media);
+			else this.media = params.media;
+		} else this.media = [];
+
+		if(TypeService.isArray(params.skills)) {
+			if(isNaN(params.skills[0])) this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+			else this.skills = params.skills;
+		} else this.skills = [];
+
+		if(init === true) this.init();
 	}
 
 	Project.prototype = {
-		init: function() {
+		init: function(params) {
+			if(params.skills !== null && params.skills !== undefined) 
+				this.loadSkills(params.skills);
 			this.getRole();
-			//this.active_media = this.getHighlight();
+			this.getHighlight();
+		},
+		loadSkills: function(skills) {
+			var loaded_skills = [];
+			for(var i = 0, len = this.skills.length; i < len; i++) {
+				for(var j = 0, len2 = skills.length; j < len2; j++) {
+					if(skills[j].id === this.skills[i]) loaded_skills.push(skills[j]);
+				}
+			}
+			this.skills = loaded_skills;
 		},
 		getRole: function() {
 			this.role = this.role || [];
@@ -47,13 +65,17 @@ function($filter, TypeService, Media, Skill) {
 			}
 		},
 		getHighlight: function() {
-			if(this.highlight !== null) return $filter('filter')(this.media, this.highlight);
-			else if($filter('filter')(this.media))
-			if(this.highlight === null) {
-				if(this.media.length > 0) highlight = this.media[0];
-				else return null;
+			//attempt to find 'active' media based on hightlight attribute,
+			//	otherwise, fallback to first media in list
+			if(this.highlight !== null) {
+				for(var i = 0, len = this.media.length; i < len; i++) {
+					if(this.media[i].id === this.highlight) {
+						this.active_media = this.media[i];
+						return;
+					}
+				}
 			}
-			return $filter('filter')(this.media, this.highlight);
+			if(this.media.length > 0) this.active_media = this.media[0];
 		}
 	}
 

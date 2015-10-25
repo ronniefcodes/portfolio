@@ -17,40 +17,48 @@ var app = angular.module('portfolio',
 //site configurations
 app.constant('config', {
 	'application_name': 'portfolio',
-	'cache': 'portfolio_cache'
+	'cache': 'portfolio_cache',
+	'debug_mode': true
 });
 
 //handle routing using HTML5mode
 app.config(['$routeProvider', '$locationProvider', '$compileProvider', 
 	function($routeProvider, $locationProvider, $compileProvider) {
 		var home = {
-			title: '',
-			templateUrl: 'pages/home.html',
-			menu: 'Home'
+			title: 'Home',
+			templateUrl: 'pages/home.html'
 		},
 		experience = {
-			title: '',
+			title: 'Work Experience',
 			templateUrl: 'pages/experience.html',
-			menu: 'Work'
+			menu: {
+				title: 'Work'
+			}
 		},
 		projects = {
-			title: '',
+			title: 'Projects',
 			templateUrl: 'pages/projects.html',
-			menu: 'Projects'
+			menu: {
+				title: 'Projects'
+			}
 		},
 		project = {
 			title: '',
 			templateUrl: 'pages/project.html'	
 		},
 		skills = {
-			title: '',
+			title: 'Skills',
 			templateUrl: 'pages/skills.html',
-			menu: 'Skills'
+			menu: {
+				title: 'Skills'
+			}
 		},
 		contact = {
-			title: '',
+			title: 'Contact',
 			templateUrl: 'pages/contact.html',
-			menu: 'Contact'
+			menu: {
+				title: 'Contact'
+			}
 		};
 
 	    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|fax|tel|mailto|chrome-extension):/);
@@ -64,6 +72,32 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 			.otherwise({ redirectTo: '/' });
 }]);
 
-app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 
-	function($rootScope, $window, $timeout, $route, $location) {
+app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
+	function($rootScope, $window, $timeout, $route, $location, config) {
+		var loaded = false;
+
+		$rootScope.$on('data.load.ok', function() {
+			$rootScope.$broadcast('data.load.complete');
+		});
+
+		$rootScope.$on('content.load.ok', function() {
+			if(!loaded) {
+				loaded = true;
+
+				$timeout(function() {
+					$rootSCope.$broadcast('content.load.complete');
+				});
+			}
+		})
+
+		//to be fired upon 'page'/view change
+		$rootScope.$on('$routeChangeSuccess', function(e, route) {
+			if(!config.debug_mode) {
+		    	//analytics page tracking
+				$window.ga('send', 'pageview', { page: $location.path() });
+			}
+
+			//set document title
+			if($route.current.title !== '') $rootScope.documentTitle = $route.current.title;
+		});
 }]);

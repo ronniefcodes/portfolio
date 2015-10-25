@@ -11,7 +11,7 @@ angular.module('portfolio.classes').factory('Work',
 		skills, //array<Skill> - skills applied in position
 		role; //array<string> - role in position (ie. front end, back end)
 
-	function Work(params, skip_init) {
+	function Work(params, init) {
 		this.id = params.id;
 		this.title = params.title || "";
 		this.company = params.company || "";
@@ -22,8 +22,15 @@ angular.module('portfolio.classes').factory('Work',
 		if(params.start_date !== null && params.start_date instanceof Date) this.start_date = params.start_date;
 		if(params.end_date !== null && params.end_date instanceof Date) this.end_date = params.end_date;
 
-		this.projects = TypeService.loadArrayWithType(params.projects, Project);
-		this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+		if(TypeService.isArray(params.projects)) {
+			if(isNaN(params.projects[0])) this.projects = TypeService.loadArrayWithType(params.projects, Project);
+			else this.projects = params.projects;
+		} else this.projects = [];
+
+		if(TypeService.isArray(params.skills)) {
+			if(isNaN(params.skills[0])) this.skills = TypeService.loadArrayWithType(params.skills, Skill);
+			else this.skills = params.skills;
+		} else this.skills = [];
 
 		this.role = [];
 		if(params.role !== null && params.role !== undefined) {
@@ -31,13 +38,36 @@ angular.module('portfolio.classes').factory('Work',
 			else this.role.push(params.role);
 		}
 
-		if(skip_init !== true) this.init();
+		if(init === true) this.init();
 	}
 
 	Work.prototype = {
-		init: function() {
+		init: function(params) {
+			if(params.skills !== null && params.skills !== undefined) 
+				this.loadSkills(params.skills);
+			if(params.projects !== null && params.projects !== undefined) 
+				this.loadProjects(params.projects);
+
 			this.getSkills();
 			this.getRole();
+		},
+		loadProjects : function(projects) {
+			var loaded_projects = [];
+			for(var i = 0, len = this.projects.length; i < len; i++) {
+				for(var j = 0, len2 = projects.length; j < len2; j++) {
+					if(projects[j].id === this.projects[i]) loaded_projects.push(projects[j]);
+				}
+			}
+			this.projects = loaded_projects;
+		},
+		loadSkills: function(skills) {
+			var loaded_skills = [];
+			for(var i = 0, len = this.skills.length; i < len; i++) {
+				for(var j = 0, len2 = skills.length; j < len2; j++) {
+					if(skills[j].id === this.skills[i]) loaded_skills.push(skills[j]);
+				}
+			}
+			this.skills = loaded_skills;
 		},
 		getSkills: function() {
 			this.skills = this.skills || [];

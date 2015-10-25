@@ -1,0 +1,7 @@
+<nav class="navigation-menu place--right">
+	<ul>
+		<li ng-repeat="menu_item in menu | orderBy:'-priority'">
+			<a ng-href="{{menu_item.url}}" class="navigationp-menu__link" ng-bind="menu_item.title"></a>
+		</li>
+	</ul>
+</nav>

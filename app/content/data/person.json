@@ -1,0 +1,9 @@
+{
+	"id":1,
+	"first_name":"Ronnie",
+	"last_name":"Cheung",
+	"title":"Full Stack Developer",
+	"summary":"",
+	"work_history":[1,2,3,4,5,6],
+	"contacts":[1,2,3,4]
+}
