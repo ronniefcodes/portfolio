@@ -44,7 +44,8 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 		},
 		project = {
 			title: '',
-			templateUrl: 'pages/project.html'	
+			templateUrl: 'pages/project.html',
+			controller: 'ProjectController'
 		},
 		skills = {
 			title: 'Skills',
@@ -89,6 +90,10 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 				});
 			}
 		})
+
+		$rootScope.$on('document.title.change', function(e, title) {
+			$rootScope.documentTitle = title;
+		});
 
 		//to be fired upon 'page'/view change
 		$rootScope.$on('$routeChangeSuccess', function(e, route) {

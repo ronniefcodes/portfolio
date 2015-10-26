@@ -2,7 +2,8 @@ angular.module('portfolio.classes').factory('Project',
 ['$filter', 'TypeService', 'Media', 'Skill',
 function($filter, TypeService, Media, Skill) {
 	var id,
-		title, //strign - project title
+		title, //string - project title
+		link, //string - to be used to link to project
 		description, //string - description of project
 		url, //string - url for project
 		date, //datetime - date of project
@@ -16,6 +17,10 @@ function($filter, TypeService, Media, Skill) {
 	function Project(params, init) {
 		this.id = params.id;
 		this.title = params.title || "";
+		this.link = params.link || "";
+		if(this.link === "" && this.title !== "") 
+			this.link = this.title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+		
 		this.description = params.description || "";
 		this.url = params.url || "";
 		this.highlight = params.highlight;

@@ -1,7 +1,15 @@
-<nav class="navigation-menu place--right">
-	<ul>
-		<li ng-repeat="menu_item in menu | orderBy:'-priority'">
-			<a ng-href="{{menu_item.url}}" class="navigationp-menu__link" ng-bind="menu_item.title"></a>
-		</li>
-	</ul>
+<nav class="navigation place--right">
+	<a class="navigation__toggle hamburger ignore-theme place--on-top">
+		<div class="hamburger__icon theme-applicable--background theme-applicable--pseudo">
+			<div class="cross-top theme-applicable--background"></div>
+			<div class="cross-bottom theme-applicable--background"></div>
+		</div>
+	</a>
+	<div class="navigation__menu">
+		<ul>
+			<li ng-repeat="menu_item in menu | orderBy:'-priority'">
+				<a ng-href="{{menu_item.url}}" class="navigationp-menu__link" ng-bind="menu_item.title"></a>
+			</li>
+		</ul>
+	</div>
 </nav>

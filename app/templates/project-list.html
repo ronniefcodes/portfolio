@@ -1,4 +1,8 @@
-<section class="project-list">
+<section class="project-list" style="transform:translateX({{active_index*-100}}%)">
+	<div class="project-list__navigation">
+		<a ng-click="projectNav(1)" ng-hide="active_index === projects.length">Next</a>
+		<a ng-click="projectNav(-1)" ng-hide="active_index === 0">Previous</a>
+	</div>
 	<div class="project" ng-repeat="project in person.getAllProjects()" ng-style="{'background-image': 'url({{project.active_media.url}})'}" ng-class="project.active_media.is_mobile !== true ? 'project--wide' : ''">
 		<div class="project__content">
 			<h3 ng-bind="project.title"></h3>

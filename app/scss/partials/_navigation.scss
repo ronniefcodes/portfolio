@@ -1,5 +1,9 @@
-.navigation-menu {
-	li {
-		display: inline;
+.navigation {
+	&__menu {
+		display: none;
+
+		li {
+			display: inline;
+		}
 	}
 }
