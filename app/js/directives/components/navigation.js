@@ -19,7 +19,7 @@ angular.module('portfolio.directives')
 
             angular.element(elem).find('.navigation__toggle').bind('click', function() {
                 angular.element(this).toggleClass('navigation__toggle--opened');
-            })
+            });
         }
     };
 }]);

@@ -1,12 +1,29 @@
 .header {
-	@extend %full-relative;
-	background: $color-menu;
-
-	&__content {
-		@extend %cover-absolute;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
 
 	&__title {
-		@extend %middle-absolute;
+		display: none;
+	}
+
+	&__content {
+		height: 100%;
+		transition: 0.5s all;
+
+		nav {
+			position: fixed;
+			top: 0;
+			right: 0;
+			margin: 20px;
+		}
+	}
+
+	&.header--sticky {
+		.header__content {
+			background-color: $color-background-dark;
+		}
 	}
 }

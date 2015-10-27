@@ -67,7 +67,7 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 		$routeProvider
 			.when('/', home)
 			.when('/experience', experience)
-			.when('/projects', projects).when('/project/:project', project)
+			.when('/projects', projects).when('/projects/:project', project)
 			.when('/skills', skills)
 			.when('/contact', contact)
 			.otherwise({ redirectTo: '/' });
@@ -93,6 +93,7 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 
 		$rootScope.$on('document.title.change', function(e, title) {
 			$rootScope.documentTitle = title;
+			$rootScope.pageClass = "page--project page--" + title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 		});
 
 		//to be fired upon 'page'/view change
@@ -104,5 +105,6 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 
 			//set document title
 			if($route.current.title !== '') $rootScope.documentTitle = $route.current.title;
+			$rootScope.pageClass = "page--" + $route.current.title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 		});
 }]);

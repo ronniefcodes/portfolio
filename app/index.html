@@ -3,9 +3,9 @@
     <head>
         @@include('/includes/_head.html')
     </head>
-    <body>
-    	<portfolio-header></portfolio-header>
-    	<div class="page place--on-middle" ng-view>
+    <body ng-class="pageClass">
+    	<portfolio-header class="place--on-top"></portfolio-header>
+    	<div class="page-wrapper place--on-middle" ng-view autoscroll="true">
     	</div>
         @@include('/includes/_scripts.html')
     </body>
