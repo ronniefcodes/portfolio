@@ -1,7 +1,8 @@
 $hamburger-width: 20px;
 $hamburger-border: 2px;
 $hamburger-gutters: 6px;
-$hamburger-color: $color-white;
+$hamburger-color: $color-darkgray;
+$hamburger-color-alternate: $color-white;
 $hamburger-animationspeed: 0.5s;
 $hamburger-delay: 0.2s;
 
@@ -20,7 +21,7 @@ $hamburger-delay: 0.2s;
   vertical-align: middle;
   width: $hamburger-width;
   cursor: pointer;
-
+  
   &__icon {
     position: absolute;
     top: 50%;

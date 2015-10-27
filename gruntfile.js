@@ -58,7 +58,7 @@ module.exports = function(grunt){
 						cwd: '<%= config.build %>',
 						dest: '<%= config.dist %>',
 						src: [
-							'img/**', 
+							'images/**', 
 							'fonts/**', 
 							'content/**', 
 							'js/vendor/**', 
@@ -124,8 +124,8 @@ module.exports = function(grunt){
 	      	files: ['<%= config.build %>/content/**'],
 	      	tasks: ['copy']
 	      },
-		  img: {
-		  	files: ['<%= config.build %>/img/**'],
+		  images: {
+		  	files: ['<%= config.build %>/images/**'],
 		  	tasks: ['copy']
 		  },
 		  sass: {

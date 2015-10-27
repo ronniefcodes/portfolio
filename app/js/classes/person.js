@@ -118,6 +118,12 @@ angular.module('portfolio.classes').factory('Person',
 			}
 			return projects;
 		},
+		getWork: function(project) {
+			for(var i = 0, len = this.work_history.length; i < len; i++) {
+				if(this.work_history[i].projects.indexOf(project) !== -1) return this.work_history[i];
+			}
+			return null;
+		},
 		getFullName: function() {
 			var name = this.first_name + " " + this.last_name;
 			return name.trim();

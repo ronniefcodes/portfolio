@@ -21,9 +21,20 @@
 		}
 	}
 
-	&.header--sticky {
+	&.header--sticky, body:not(.page--home) & {
 		.header__content {
 			background-color: $color-background-dark;
 		}
+
+		.hamburger {
+			&__icon {
+			background-color: $hamburger-color-alternate;
+
+				.cross-top, .cross-bottom, &:before, &:after {
+					background-color: $hamburger-color-alternate;
+				}
+			}
+		}
+
 	}
 }
