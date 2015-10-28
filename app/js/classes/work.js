@@ -19,8 +19,9 @@ angular.module('portfolio.classes').factory('Work',
 		this.url = params.url || "";
 		this.highlight = params.highlight;
 
-		if(params.start_date !== null && params.start_date instanceof Date) this.start_date = params.start_date;
-		if(params.end_date !== null && params.end_date instanceof Date) this.end_date = params.end_date;
+		//TODO: smarter handling of dates
+		if(params.start_date !== null) this.start_date = new Date(Date.parse(params.start_date));
+		if(params.end_date !== null) this.end_date = new Date(Date.parse(params.end_date));
 
 		if(TypeService.isArray(params.projects)) {
 			if(isNaN(params.projects[0])) this.projects = TypeService.loadArrayWithType(params.projects, Project);

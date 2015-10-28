@@ -2,7 +2,7 @@ angular.module('portfolio.directives')
     .directive('portfolioProjectList', function() {
     return {
         replace: true,
-        restrict: 'E',  
+        restrict: 'E', 
         templateUrl: "/templates/project-list.html"
     };
 });

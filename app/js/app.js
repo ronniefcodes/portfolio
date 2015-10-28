@@ -28,18 +28,11 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 			title: 'Home',
 			templateUrl: 'pages/home.html'
 		},
-		experience = {
-			title: 'Work Experience',
-			templateUrl: 'pages/experience.html',
-			menu: {
-				title: 'Work'
-			}
-		},
 		projects = {
-			title: 'Projects',
+			title: 'My work',
 			templateUrl: 'pages/projects.html',
 			menu: {
-				title: 'Projects'
+				title: 'My work'
 			}
 		},
 		project = {
@@ -47,18 +40,11 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 			templateUrl: 'pages/project.html',
 			controller: 'ProjectController'
 		},
-		skills = {
-			title: 'Skills',
-			templateUrl: 'pages/skills.html',
+		about = {
+			title: 'About me',
+			templateUrl: 'pages/about.html',
 			menu: {
-				title: 'Skills'
-			}
-		},
-		contact = {
-			title: 'Contact',
-			templateUrl: 'pages/contact.html',
-			menu: {
-				title: 'Contact'
+				title: 'About me'
 			}
 		};
 
@@ -66,10 +52,8 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 	    $locationProvider.html5Mode(true);
 		$routeProvider
 			.when('/', home)
-			.when('/experience', experience)
+			.when('/about', about)
 			.when('/projects', projects).when('/projects/:project', project)
-			.when('/skills', skills)
-			.when('/contact', contact)
 			.otherwise({ redirectTo: '/' });
 }]);
 

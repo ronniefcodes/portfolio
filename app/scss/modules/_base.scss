@@ -2,16 +2,4 @@ html, body {
 	@extend %full-relative;
 	padding: 0;
 	margin: 0;
-	background: $color-background-dark;
-}
-
-.page-wrapper {
-	position: relative;
-	height: 100%;
-	margin-top: 60px;
-
-	.page--home & {
-		margin-top: 0;
-		padding-top: calc(100% + 60px);
-	}
 }

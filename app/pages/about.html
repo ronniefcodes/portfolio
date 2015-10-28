@@ -1,0 +1,36 @@
+<div class="panel">
+	<section class="section">
+		<div class="section__content">
+			<h2>About me</h2>
+			<div class="summary" ng-bind-html="person.summary"></div>
+		</div>
+	</section>
+	<section class="section section--skills">	
+		<div class="section__content">
+			<h3>Skills</h3>
+			<div class="skills-category">
+				<h4 ng-repeat="category in person.getSkillCategories()" ng-bind="category"></h4>
+				<ul>
+					<li ng-repeat="skill in person.skills" ng-bind="skill.name"></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="section section--experience">
+		<div class="section__content">
+			<h3>Work Experience</h3>
+			<div ng-repeat="work in person.work_history">
+				<h4 ng-bind="work.company"></h4>
+				<dl>
+					<dt>Position</dt>
+					<dd ng-bind="work.title"></dd>
+					<dt>Start Date</dt>
+					<dd ng-bind="work.start_date"></dd>
+					<dt>End Date</dt>
+					<dd ng-bind="work.end_date"></dd>
+				</dl>
+				<p ng-bind="work.description"></p>
+			</div>
+		</div>
+	</section>
+</div>

@@ -1,28 +1,13 @@
 .section {
 	position: relative;
-	background-color: $color-background-dark;
-	color: $color-gray;
 	padding: 0 2em;
 
 	&--full {
 		min-height: 100%;
 	}
 
-	&--fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transition: 0.5s opacity;
-
-		.header--sticky + .page-wrapper & {
-			opacity: 0;
-		}
-	}
-
 	&--index {
-		background-image: url('/images/work.jpg');
+		background-image: url('/images/work-mobile.jpg');
 		background-repeat: no-repeat no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -69,15 +54,14 @@
 			}
 		}
 	}
-
-	&--projects, &--project {
-		padding: 0;
-		background-color: $color-background-light;
-	}
 }
 
 @include bp-min(tablet) {
 	.section {
+		&--index {
+			background-image: url('/images/work.jpg');
+		}
+
 		&__content {
 			h2 {
 				padding: 1em;

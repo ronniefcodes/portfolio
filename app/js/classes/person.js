@@ -111,6 +111,14 @@ angular.module('portfolio.classes').factory('Person',
 				}
 			}
 		},
+		getSkillCategories: function() {
+			var categories = [];
+			for(var i = 0, len = this.skills.length; i < len; i++) {
+				if(categories.indexOf(this.skills[i].category) === -1) 
+					categories.push(this.skills[i].category);
+			}
+			return categories;
+		},
 		getAllProjects: function() {
 			var projects = [];
 			for(var i = 0, len = this.work_history.length; i < len; i++) {

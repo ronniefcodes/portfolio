@@ -1,25 +1,28 @@
-<section class="section section--index section--fixed">
-	<div class="section__background--mobile hide-on-desktop"></div>
-	<div class="section__content place--right">
-		<h1 ng-bind="person.getFullName()"></h1>
-		<h3 ng-bind="person.title"></h3>
-		<p>Press any key to continue...</p>
-	</div>
-</section>
-<section class="section section--about">
-	<div class="section__content">
-		<h2>About me</h2>
-		<div class="summary" ng-bind-html="person.summary"></div>
-	</div>
-</section>
-<section class="section section--projects">
-	<portfolio-project-list></portfolio-project-list>
-</section>
-<section class="section section--contact">
-	<div class="section__content">
-		<h2>Get in touch</h2>
-		<div class="contact">
-			<p>Hey! If you'd like to get in touch, just to talk or whatever, feel free!</p>
+<div class="panel panel--fixed">
+	<section class="section section--index section--full">
+		<div class="section__content place--right">
+			<h1 ng-bind="person.getFullName()"></h1>
+			<h3 ng-bind="person.title"></h3>
+			<p>Press any key to continue...</p>
 		</div>
-	</div>
-</section>
+	</section>
+</div>
+<div class="panel">
+	<section class="section section--about">
+		<div class="section__content">
+			<h2>About me</h2>
+			<div class="summary" ng-bind-html="person.summary"></div>
+		</div>
+	</section>
+	<section class="section section--projects">
+		<portfolio-project-list></portfolio-project-list>
+	</section>
+	<section class="section section--contact">
+		<div class="section__content">
+			<h2>Get in touch</h2>
+			<div class="contact">
+				<p>Hey! If you'd like to get in touch, just to talk or whatever, feel free!</p>
+			</div>
+		</div>
+	</section>
+</div>
