@@ -16,6 +16,7 @@
 // -----------------------------------------------------------------|
 @import 'modules/base';
 @import 'modules/placement';
+@import 'modules/columns';
 @import 'modules/visibility';
 @import 'modules/typography';
 @import 'modules/animations';
@@ -26,6 +27,8 @@
 @import 'components/loader';
 @import 'components/buttons';
 @import 'components/projects';
+@import 'components/lists';
+@import 'components/keyboard';
 
 // -----------------------------------------------------------------|
 // PARTIALS

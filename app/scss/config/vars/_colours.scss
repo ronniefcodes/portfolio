@@ -1,9 +1,12 @@
 $color-white: rgb(255, 255, 255);
 $color-gray: rgb(220, 220, 220);
-$color-darkgray: #333333;
+$color-33: #333333;
 $color-black: rgb(0, 0, 0);
 
-$color-page: $color-gray;
-$color-menu: $color-white;
-$color-background-light: $color-gray;
-$color-background-dark: $color-darkgray;
+$color-type-heading: $color-33;
+$color-type-body: $color-33;
+$color-type-menu: $color-white;
+$color-type-alternate: $color-white;
+
+$color-background: $color-white;
+$color-background-dark: $color-33;

@@ -1,5 +1,19 @@
 // FONT MIXIN
 // --------------------------------|
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../fonts/#{$font-filename}.eot');
+    src: url('../fonts/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$font-filename}.woff') format('woff'),
+    url('../fonts/#{$font-filename}.ttf') format('truetype'),
+    url('../fonts/#{$font-filename}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+
 @mixin font($font-name: $font-family, $size: $text-size, $color: $text-color, $uppercase: normal) {
 	font-family: $font-name;
 	font-size: $size;
@@ -85,4 +99,35 @@
 	width: $percentage;
 	padding-bottom: $percentage;
 	margin: #{$gutter/2};
+}
+
+@mixin columns($fractions, $breakpoint: '', $gutter: 0, $prefix: '') {
+	@if($breakpoint == '') {
+		@for $f from 1 through $fractions {
+			$percentage: 100/$fractions * $f;
+
+			.col-#{$percentage} {
+				display: inline-block;
+				box-sizing: border-box;
+				@if($gutter != 0) { width: calc(#{$percentage*1%} - #{$gutter}); }
+				@else { width: $percentage*1%; }
+			}
+		}
+	} @else {
+		@if($prefix == '') { $prefix: $breakpoint; }
+
+		@include bp-min($breakpoint) {
+			@for $f from 1 through $fractions {
+
+				$percentage: 100/$fractions * $f;
+
+				.col-#{$prefix}-#{$percentage} {
+					display: inline-block;
+					box-sizing: border-box;
+					@if($gutter != 0) { width: calc(#{$percentage*1%} - #{$gutter}); }
+					@else { width: $percentage*1%; }
+				}
+			}
+		}
+	}
 }

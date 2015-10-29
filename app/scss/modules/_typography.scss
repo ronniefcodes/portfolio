@@ -1,9 +1,51 @@
+@include declare-font-face('League Spartan', 'leaguespartan-bold', bold);
+@include declare-font-face('Big John', 'big_john', bold);
+@include declare-font-face('Pan Europa Neue', 'paneuropaneueregular');
+
+html {
+	@include font($font-body, $type-size-mobile, $color-type-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'League Spartan';
+}
 
 h1 {
-}	
+	font-size: 2.8rem;
+}
 
 h2 {
-	text-transform: uppercase;
-	display: inline-block;
-	margin: 2em 0;
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: 1.7rem;
+}
+
+p {
+	font-size: 1.4rem;
+}
+
+@include bp-min(tablet) {
+	html {
+		font-size: $type-size-tablet;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}
+
+@include bp-min(desktop) {
+	html {
+		font-size: $type-size-desktop;
+	}
 }

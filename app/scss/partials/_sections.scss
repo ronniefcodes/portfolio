@@ -1,56 +1,80 @@
 .section {
 	position: relative;
-	padding: 0 2em;
+	background: $color-background;
 
 	&--full {
 		min-height: 100%;
 	}
 
+	&--alternate {
+		background-color: $color-background-dark;
+		color: $color-type-alternate;
+	}
 	&--index {
-		background-image: url('/images/work-mobile.jpg');
+		background-image: url('/images/index--mobile.jpg');
 		background-repeat: no-repeat no-repeat;
 		background-size: cover;
 		background-position: center center;
-		color: $color-darkgray;
 
-		.section {
-			&__background--mobile {
-				position: fixed;
-				top: 0;
-				height: 100%;
-				left: 0;
-				right: 0;
-				background-image: url('/images/index--mobile.jpg');
-				background-repeat: no-repeat;
-			    background-size: cover;
-			    background-position: center bottom;
+		h1 {			
+			border-bottom: 2px solid $color-type-alternate;
+			margin-bottom: 0.5em;
+			padding-bottom: 0.5em;
+			white-space: nowrap;
+		}
+
+		h3 {
+			color: $color-type-alternate;
+			border-color: $color-type-alternate;	
+		}
+
+		.section__content {
+			position: absolute;
+			top: 60%;
+			right: 0;
+			transform: translate3d(0, -50%, 0);
+
+			p {
+				display: none;
+
+				&:after {
+					content: '_';						
+					animation-duration: 0.35s;
+					animation-name: blink;
+					animation-iteration-count: infinite;
+						animation-direction: alternate;
+				}
 			}
-			&__content {
-				position: absolute;
-				top: 50%;
-				right: 10%;
-				transform: translate3d(0, -50%, 0);
+		}
+	}
 
-				h1 {
-					font-size: 3em;
-				}
+	&__content {
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 2em 0;
+	}
+}
 
-				h3 {
-					font-size: 1.5em;
-					margin-bottom: 1em;
-				}
+@include bp-max(tablet) {
+	.section {
+		&--index {
+			.section__content {
+				padding: 0;
+			}
+		}
 
-				p {
-					display: none;
+		&__content {
+			padding: 2em;
 
-					&:after {
-						content: '_';						
-						animation-duration: 0.35s;
-						animation-name: blink;
-						animation-iteration-count: infinite;
-  						animation-direction: alternate;
-					}
-				}
+			h1 {
+				color: $color-type-alternate;
+			}
+
+			h2 {
+				border-bottom: 2px solid $color-type-alternate;
+				margin-bottom: 0.5em;
+				padding-bottom: 0.5em;
 			}
 		}
 	}
@@ -58,19 +82,24 @@
 
 @include bp-min(tablet) {
 	.section {
+		padding: 0 2em;
+
 		&--index {
 			background-image: url('/images/work.jpg');
+
+			.section__content {
+				top: 50%;
+
+				h1, h3 {
+					color: $color-type-heading;
+					border-color: $color-type-heading;	
+				}
+			}
 		}
 
 		&__content {
 			h2 {
-				padding: 1em;
-				margin-right: 1em;
-				border-right: 1px solid $color-white;
-			}
-
-			.summary, .contact {
-				display: inline-block;
+				border-right: .1ch solid $color-type-heading;
 			}
 		}
 	}

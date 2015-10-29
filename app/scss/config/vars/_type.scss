@@ -1,36 +1,6 @@
-// -----------------------------------------------------------------|
-//	TYPE VARIABLES
-// -----------------------------------------------------------------|
-// Contains all typographic variables available throughout our project.
+$font-heading: 'League Spartan';
+$font-body: 'Verdana';
 
-// -----------------------------------------------------------------|
-// TYPE FONTS
-// -----------------------------------------------------------------|
-$type-heading: 'proxima-nova', sans-serif;
-$type-text: 'ff-dagny-web-pro', sans-serif;
-$type-serif: 'calluna', sans-serif;
-
-// -----------------------------------------------------------------|
-// TYPE SCALE
-// -----------------------------------------------------------------|
-$type-size-smallest: 8px;
-$type-size-small: 12px;
-$type-size-medium-2: 14px;
-$type-size-medium: 16px;
-$type-size-medium\+2: 18px;
-$type-size-large: 20px;
-$type-size-larger: 25px;
-$type-size-largest: 40px;
-$type-size-largerest: 80px;
-$type-size-unreasonably-large: 100px;
-
-// -----------------------------------------------------------------|
-// TYPE LETTER SPACING
-// -----------------------------------------------------------------|
-$type-space-tightest: -.3em;
-$type-space-righter: -.15em;
-$type-space-tight: -.05em;
-$type-space-normal: 0;
-$type-space-loose: .05em;
-$type-space-looser: .15em;
-$type-space-loosest: .3em;
+$type-size-mobile: 12px;
+$type-size-tablet: 15px;
+$type-size-desktop: 15px;
