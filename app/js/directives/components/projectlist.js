@@ -3,6 +3,9 @@ angular.module('portfolio.directives')
     return {
         replace: true,
         restrict: 'E', 
+        scope: {
+        	projects: '&'
+        },
         templateUrl: "/templates/project-list.html"
     };
 });

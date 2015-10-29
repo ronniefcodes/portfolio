@@ -7,8 +7,10 @@
 		height: 40px;
 	    width: 40px;
 	    border: 1px solid $color-white;
+	    background-color: $color-33;
 	    color: $color-white;
 	    margin: 0 0.25em;
+	    cursor: pointer;
 
 	    &:before {
 	    	position: absolute;
@@ -18,10 +20,24 @@
 	    	font-size: 1.25rem;
 	    }
 
+	    &:after {
+	    	content: '';
+	    	position: absolute;
+	    	top: 100%;
+	    	left: -3px;
+	    	right: -3px;
+	    	border-top: 1px solid transparent;
+	    	border-bottom: 5px solid rgba(0,0,0,0.2);
+	    }
+
 	    &--left {
 	    	box-shadow: -2px 3px 0 2px $color-white;
 	    	&:before {
 		    	content: '\2190';
+		    }
+		    &:after {
+		    	right: -1px;
+		    	border-left: 3px solid transparent;
 		    }
 	    }
 
@@ -30,12 +46,20 @@
 	    	&:before {
 	    		content: '\2193';
 		    }
+		    &:after {
+		    	border-left: 3px solid transparent;
+		    	border-right: 3px solid transparent;
+		    }
 	    }
 
 	    &--right {
 	    	box-shadow: 2px 3px 0 2px $color-white;
 	    	&:before {
 		    	content: '\2192';
+		    }
+		    &:after {
+		    	left: -1px;
+		    	border-right: 3px solid transparent;
 		    }
 	    }
 	}
@@ -45,7 +69,12 @@
 	.keyboard-options {
 		.key {
 			border-color: $color-33;
+	    	background-color: $color-white;
 			color: $color-33;
+
+			&:after {
+	    		border-bottom-color: rgba(255,255,255,0.2);
+			}
 
 		    &--left {
 		    	box-shadow: -2px 3px 0 2px $color-33;

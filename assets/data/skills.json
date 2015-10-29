@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "HTML",
+        "category": "Programming Language",
+        "type": "Front End"
+    },
+    {
+        "id": 2,
+        "name": "CSS",
+        "category": "Programming Language",
+        "type": "Front End"
+    },
+    {
+        "id": 3,
+        "name": "Javascript",
+        "category": "Programming Language",
+        "type": "Front End"
+    },
+    {
+        "id": 4,
+        "name": "JQuery",
+        "category": "Library",
+        "type": "Front End"
+    },
+    {
+        "id": 5,
+        "name": "AngularJS",
+        "category": "Framework",
+        "type": "Front End"
+    },
+    {
+        "id": 6,
+        "name": "Sublime Text",
+        "category": "Tool",
+        "type": "Front End"
+    },
+    {
+        "id": 7,
+        "name": "Photoshop",
+        "category": "Tool",
+        "type": "Front End"
+    },
+    {
+        "id": 8,
+        "name": "Java",
+        "category": "Programming Language",
+        "type": "Back End"
+    },
+    {
+        "id": 9,
+        "name": "C#",
+        "category": "Programming Language",
+        "type": "Back End"
+    },
+    {
+        "id": 10,
+        "name": "Visual Studio",
+        "category": "Tool",
+        "type": "Back End"
+    },
+    {
+        "id": 11,
+        "name": "ASP.NET",
+        "category": "Framework",
+        "type": "Back End"
+    },
+    {
+        "id": 12,
+        "name": "PHP",
+        "category": "Programming Language",
+        "type": "Back End"
+    },
+    {
+        "id": 13,
+        "name": "Wordpress",
+        "category": "CMS",
+        "type": "Back End"
+    },
+    {
+        "id": 14,
+        "name": "Sitecore",
+        "category": "CMS",
+        "type": "Back End"
+    },
+    {
+        "id": 15,
+        "name": "Sharepoint",
+        "category": "CMS",
+        "type": "Back End"
+    },
+    {
+        "id": 16,
+        "name": "SQL",
+        "category": "Programming Language",
+        "type": "Back End"
+    },
+    {
+        "id": 17,
+        "name": "Microsoft SQL Server",
+        "category": "Database",
+        "type": "Back End"
+    },
+    {
+        "id": 18,
+        "name": "Oracle Database",
+        "category": "Database",
+        "type": "Back End"
+    }
+]

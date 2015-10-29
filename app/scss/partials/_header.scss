@@ -3,15 +3,24 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 60px;
+	height: $header-size;
+	color: $color-type-menu;
 
 	&__title {
-		display: none;
+		opacity: 0;
+		transition: .5s opacity;
+		transition-delay: .5s;
+		margin-left: 2em;
+
+		h1, h3 {
+			line-height: $header-size;
+		}
 	}
 
 	&__content {
 		height: 100%;
 		transition: 0.5s all;
+		transition-delay: 0.25s;
 
 		nav {
 			position: fixed;
@@ -21,9 +30,19 @@
 		}
 	}
 
-	&.header--sticky, body:not(.page--home) & {
-		.header__content {
-			background-color: $color-background-dark;
+	&.header--sticky, body.hide-intro & {
+		.header {
+			&__title {
+				opacity: 1;
+
+				h1, h3 {
+					display: inline;
+				}
+			}
+
+			&__content {
+				background-color: $color-background-menu;
+			}
 		}
 
 		.hamburger {

@@ -1,12 +1,31 @@
+// -----------------------------------------------------------------|
+// BASE COLOURS
+// -----------------------------------------------------------------|
+
 $color-white: rgb(255, 255, 255);
 $color-gray: rgb(220, 220, 220);
 $color-33: #333333;
 $color-black: rgb(0, 0, 0);
 
+// -----------------------------------------------------------------|
+// THEME COLOURS
+// -----------------------------------------------------------------|
+
+$color-bluegray: #46454b;
+$color-blue: #00aabb;
+$color-red: #f43530;
+$color-light: #e0e5da;
+
+// -----------------------------------------------------------------|
+// STRUCTURAL COLOURS
+// -----------------------------------------------------------------|
+
 $color-type-heading: $color-33;
 $color-type-body: $color-33;
-$color-type-menu: $color-white;
-$color-type-alternate: $color-white;
+$color-type-menu: $color-light;
+$color-type-alternate: $color-light;
 
-$color-background: $color-white;
-$color-background-dark: $color-33;
+$color-background-menu: $color-blue;
+$color-background: $color-light;
+$color-background-dark: $color-bluegray;
+

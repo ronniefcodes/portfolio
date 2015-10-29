@@ -1,6 +1,5 @@
 @include declare-font-face('League Spartan', 'leaguespartan-bold', bold);
 @include declare-font-face('Big John', 'big_john', bold);
-@include declare-font-face('Pan Europa Neue', 'paneuropaneueregular');
 
 html {
 	@include font($font-body, $type-size-mobile, $color-type-body);
@@ -12,6 +11,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 2.8rem;
+
+	.header & {
+		font-size: 2.2rem;
+	}
 }
 
 h2 {

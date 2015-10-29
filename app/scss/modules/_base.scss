@@ -3,3 +3,9 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
+
+.page--home {
+	&:not(.hide-intro) {
+		overflow: hidden;
+	}
+}

@@ -1,8 +1,10 @@
 <div class="panel">
 	<section class="section section--project">
+		<div class="section__title">
+			<h2 ng-bind="project.title" class="place--left col-tablet-40"></h2>
+			<h3 ng-bind="current_work.company" class="col-tablet-60"></h3>			
+		</div>
 		<div class="section__content">
-			<h2 ng-bind="project.title"></h2>
-			<h3 ng-bind="current_work.company"></h3>
 			<p ng-bind="project.description"></p>
 			<div class="skills-list">
 				<ul>
@@ -11,9 +13,12 @@
 			</div>
 		</div>
 	</section>
-	<section class="section section--media">
-		<div class="media" ng-repeat="media in project.media">
-			<img ng-src="{{media.url}}" />
-		</div>
+	<section class="section section--media align--center">
+		<section class="section__content">
+			<figure class="media" ng-repeat="media in project.media" ng-class="media.is_mobile === true ? 'col-tablet-50 media--mobile' : ''">
+				<img ng-src="{{media.url}}" alt="{{media.alt}}" />
+				<figcaption ng-bind="media.caption"></figcaption>
+			</figure>
+		</section>
 	</section>
 </div>

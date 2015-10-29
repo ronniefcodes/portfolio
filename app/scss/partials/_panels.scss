@@ -2,6 +2,8 @@
 	position: relative;	
 	min-height: 100%;
 	background: $color-background-dark;
+	transition: 0.75s margin-top;
+	@extend %animation-fix;
 
 	&--fixed {
 		position: fixed !important;
@@ -15,12 +17,19 @@
 			opacity: 0;
 		}
 
-		+.panel {
-			margin-top: 100vh;
+		+ .panel {
+			margin-top: 100%;
+		}
+
+		.hide-intro & {
+			+ .panel {
+				margin-top: 0;
+			}
 		}
 	}
 
 	&-wrapper {
 		@extend %full-relative;
+		margin-top: $header-size;
 	}
 }

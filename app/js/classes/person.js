@@ -4,6 +4,7 @@ angular.module('portfolio.classes').factory('Person',
 		first_name, //string - first name
 		last_name, //string - last name
 		title, //string - title
+		short_description, //string - short description
 		summary, //string - summary
 		image, //Media - background
 		work_history, //array<Work> - array of work experiences
@@ -17,6 +18,7 @@ angular.module('portfolio.classes').factory('Person',
 		this.first_name = params.first_name || "";
 		this.last_name = params.last_name || "";
 		this.title = params.title || "";
+		this.short_description = params.short_description || "";
 		this.summary = params.summary || "";
 
 		if(params.image !== null && params.image instanceof Media)
@@ -119,12 +121,12 @@ angular.module('portfolio.classes').factory('Person',
 			}
 			return categories;
 		},
-		getAllProjects: function() {
+		getProjects: function(count) {
 			var projects = [];
 			for(var i = 0, len = this.work_history.length; i < len; i++) {
 				projects = projects.concat(this.work_history[i].projects);
 			}
-			return projects;
+			return (count !== undefined ? projects.slice(0, count) : projects);
 		},
 		getWork: function(project) {
 			for(var i = 0, len = this.work_history.length; i < len; i++) {

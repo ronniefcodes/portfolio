@@ -1,0 +1,24 @@
+.media {
+	box-sizing: border-box;
+	padding: 4px;
+	background: $color-gray;
+	margin: 2em 0;
+
+	img {
+		max-width: 100%;
+	}
+
+	figcaption:not(:empty) {
+		padding: 4px 0;
+	}
+}
+
+@include bp-min(tablet) {
+	.media {
+		padding: 10px;
+
+	figcaption:not(:empty) {
+			margin: 10px 0;
+		}
+	}
+}

@@ -75,6 +75,10 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 			}
 		})
 
+		$rootScope.$on('background.update.call', function(e, val) {
+			$rootScope.$broadcast('background.update', val);
+		});
+
 		$rootScope.$on('document.title.change', function(e, title) {
 			$rootScope.documentTitle = title;
 			$rootScope.pageClass = "page--project page--" + title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');

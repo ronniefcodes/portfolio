@@ -1,50 +1,32 @@
 [
     {
         "id": 1,
-        "title": "Sandbox",
+        "title": "Lorem Ipsum",
         "description": "Website for Sandbox Advertising Inc.",
         "highlight": 2,
         "skills": [ 1, 2, 3, 4, 5, 6 ],
         "media": [{
             "id": 1,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/sandbox/sndbx-home.jpg"
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
             "id": 2,
-            "caption": "",
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/sandbox/sndbx-footer.jpg"
-        }, {
-            "id": 3,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/sandbox/sndbx-case-1.jpg",
-            "next": 4
-        }, {
-            "id": 4,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/sandbox/sndbx-case-2.jpg",
-            "previous": 3
+            "url": "http://placehold.it/1280x768"
         }, {
             "id": 5,
-            "caption": "",
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/sandbox/mobile/sndbx-1.jpg"
-        }, {
-            "id": 6,
-            "caption": "",
-            "alt": "",
-            "is_mobile": true,
-            "url": "/content/media/sandbox/mobile/sndbx-footer.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
             "id": 7,
-            "caption": "",
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/sandbox/mobile/sndbx-the-work.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -53,37 +35,27 @@
         "description": "Microsite for Heineken Cities of the World campaign.",
         "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
         "media": [{
-            "id": 8,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/hkn-cities/index.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 9,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/hkn-cities/grid.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 10,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/hkn-cities/register.jpg"
-        }, {
-            "id": 11,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/hkn-cities/gallery.jpg"
-        }, {
-            "id": 12,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/hkn-cities/mobile/index.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
-            "id": 13,
-            "caption": "",
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/hkn-cities/mobile/gallery.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -92,27 +64,27 @@
         "description": "Microsite for Nikon's I Am Uncompromising sale.",
         "skills": [ 1, 2, 3, 4, 5, 6 ],
         "media": [{
-            "id": 14,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/nikon-iam/nk_iam-1a.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 15,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/nikon-iam/nk_iam-1b.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 16,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/nikon-iam/mobile/nk-iam.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
-            "id": 17,
-            "caption": "",
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/nikon-iam/mobile/nk_iam-details.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -121,21 +93,27 @@
         "description": "Page and map module for Heineken's Extra Cold draught promotion.",
         "skills": [ 1, 2, 3, 4, 5, 9, 10, 11 ],
         "media": [{
-            "id": 18,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/hkn-extra-cold/hkn-maps.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 19,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/hkn-extra-cold/hkn-maps-2.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 20,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/sandbox/mobile/hkn-maps.jpg"
+            "url": "http://placehold.it/420x640"
+        }, {
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
+            "alt": "",
+            "is_mobile": true,
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -144,20 +122,27 @@
         "description": "Site-wide updates to styling and functionality of a Sitecore website.",
         "skills": [ 1, 2, 3, 4, 5, 9, 10, 11, 14 ],
         "media": [{
-            "id": 21,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/molson-us/home.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 22,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/molson-us/brands.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 23,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
-            "url": "/content/media/molson-us/brands-specific.jpg"
+            "is_mobile": true,
+            "url": "http://placehold.it/420x640"
+        }, {
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
+            "alt": "",
+            "is_mobile": true,
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -166,27 +151,27 @@
         "description": "",
         "skills": [ 1, 2, 3, 4, 5 ],
         "media": [{
-            "id": 24,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/aw-enchanted-holidays/aw_eh-1.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 25,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/aw-enchanted-holidays/aw_eh-1b.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 26,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/aw-enchanted-holidays/mobile/aw-eh-1.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
-            "id": 27,
-            "caption": "",
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/aw-enchanted-holidays/mobile/aw-eh-2.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -195,27 +180,27 @@
         "description": "",
         "skills": [ 1, 2, 3, 4, 5, 9, 10, 11 ],
         "media": [{
-            "id": 28,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/rmwc/rmwc-1.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 29,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/rmwc/rmwc-2.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 30,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/rmwc/mobile/rmwc-home.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
-            "id": 31,
-            "caption": "",
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/rmwc/mobile/rmwc-form.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
@@ -224,44 +209,56 @@
         "description": "",
         "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
         "media": [{
-            "id": 32,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/one-resolutions/home.jpg"
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 33,
-            "caption": "",
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
             "alt": "",
-            "url": "/content/media/one-resolutions/mugs.jpg"
+            "url": "http://placehold.it/1280x768"
         }, {
-            "id": 34,
-            "caption": "",
-            "alt": "",
-            "url": "/content/media/one-resolutions/details.jpg"
-        }, {
-            "id": 35,
-            "caption": "",
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/one-resolutions/mobile/home.jpg"
+            "url": "http://placehold.it/420x640"
         }, {
-            "id": 36,
-            "caption": "",
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
             "alt": "",
             "is_mobile": true,
-            "url": "/content/media/one-resolutions/mobile/mugs.jpg"
-        }, {
-            "id": 37,
-            "caption": "",
-            "alt": "",
-            "is_mobile": true,
-            "url": "/content/media/one-resolutions/mobile/details.jpg"
+            "url": "http://placehold.it/420x640"
         }]
     },
     {
         "id": 9,
         "title": "Pulse",
         "description": "",
-        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ]
+        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
+        "media": [{
+            "id": 1,
+            "caption": "Aliquam ante elit, vestibulum ut pharetra id, blandit eu odio. Nunc varius felis et nibh auctor mattis.",
+            "alt": "image of an image",
+            "url": "http://placehold.it/1280x768"
+        }, {
+            "id": 2,
+            "caption": "Aliquam quis leo rhoncus, viverra risus quis, rhoncus est. Sed vel mollis lacus.",
+            "alt": "",
+            "url": "http://placehold.it/1280x768"
+        }, {
+            "id": 5,
+            "caption": "In hac habitasse platea dictumst. Phasellus vel congue nunc. Donec cursus suscipit posuere.",
+            "alt": "",
+            "is_mobile": true,
+            "url": "http://placehold.it/420x640"
+        }, {
+            "id": 7,
+            "caption": "Sed pellentesque, erat eget consectetur auctor, risus quam cursus magna, quis vestibulum orci ligula nec tortor.",
+            "alt": "",
+            "is_mobile": true,
+            "url": "http://placehold.it/420x640"
+        }]
     }
 ]

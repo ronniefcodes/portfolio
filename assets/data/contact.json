@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "value": "ronniech@outlook.com",
+        "type": "email",
+        "category": "",
+        "prefix": "mailto:"
+    },
+    {
+        "id": 2,
+        "value": "6478283666",
+        "type": "mobile",
+        "category": "phone",
+        "prefix": "tel:"
+    },
+    {
+        "id": 3,
+        "value": "http://www.github.com/ronniefcodes",
+        "type": "github",
+        "category": "social",
+        "prefix": ""
+    },
+    {
+        "id": 4,
+        "value": "http://ca.linkedin.com/in/ronniech/",
+        "type": "linkedin",
+        "category": "social",
+        "prefix": ""
+    }
+]

@@ -10,8 +10,9 @@
 		background-color: $color-background-dark;
 		color: $color-type-alternate;
 	}
+
 	&--index {
-		background-image: url('/images/index--mobile.jpg');
+		background-image: url('/images/splash--mobile.jpg');
 		background-repeat: no-repeat no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -28,7 +29,7 @@
 			border-color: $color-type-alternate;	
 		}
 
-		.section__content {
+		.section__title {
 			position: absolute;
 			top: 60%;
 			right: 0;
@@ -48,11 +49,15 @@
 		}
 	}
 
-	&__content {
-		max-width: 1024px;
+	&__content, &__title {
+		max-width: $content-max-width;
 		margin-left: auto;
 		margin-right: auto;
 		padding: 2em 0;
+
+		h2, h3 {
+			vertical-align: bottom;
+		}
 	}
 }
 
@@ -64,7 +69,7 @@
 			}
 		}
 
-		&__content {
+		&__title {
 			padding: 2em;
 
 			h1 {
@@ -85,9 +90,29 @@
 		padding: 0 2em;
 
 		&--index {
-			background-image: url('/images/work.jpg');
+			transition: .25s background-image;
 
-			.section__content {
+			&[background='1'] {
+				background-image: url('/images/splash--1.jpg');
+			}
+
+			&[background='2'] {
+				background-image: url('/images/splash--2.jpg');
+			}
+
+			&[background='3'] {
+				background-image: url('/images/splash--3.jpg');
+			}
+
+			&[background='4'] {
+				background-image: url('/images/splash--4.jpg');
+			}
+
+			&[background='5'] {
+				background-image: url('/images/splash--5.jpg');
+			}
+
+			.section__title {
 				top: 50%;
 
 				h1, h3 {

@@ -1,5 +1,5 @@
 <div class="project-list">
-	<a class="project" ng-class="project.active_media.is_mobile !== true ? 'project--wide' : ''" ng-href="/projects/{{project.link}}" ng-repeat="project in person.getAllProjects()">
+	<a class="project" ng-href="/projects/{{project.link}}" ng-repeat="project in projects()">
 		<div class="project__content" ng-switch on="project.active_media">
 			<div class="project__summary" ng-switch-when="undefined">
 				<h3 ng-bind="project.title"></h3>

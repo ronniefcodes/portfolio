@@ -20,16 +20,19 @@
 		<div class="section__content">
 			<h3>Work Experience</h3>
 			<div ng-repeat="work in person.work_history">
-				<h4 ng-bind="work.company"></h4>
-				<dl>
-					<dt>Position</dt>
-					<dd ng-bind="work.title"></dd>
-					<dt>Start Date</dt>
-					<dd ng-bind="work.start_date"></dd>
-					<dt>End Date</dt>
-					<dd ng-bind="work.end_date"></dd>
-				</dl>
-				<p ng-bind="work.description"></p>
+				<h4 class="work__title" ng-bind="work.title"></h4>
+				<h5 class="work__company" ng-bind="work.company"></h5>
+				<div class="work__details">
+					<dl>
+						<dt>Position</dt>
+						<dd ng-bind="work.title"></dd>
+						<dt>Start Date</dt>
+						<dd ng-bind="work.start_date"></dd>
+						<dt>End Date</dt>
+						<dd ng-bind="work.end_date"></dd>
+					</dl>
+				</div>
+				<div class="work__description" ng-bind-html="work.description"></div>
 			</div>
 		</div>
 	</section>
