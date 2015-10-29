@@ -1,9 +1,20 @@
 .navigation {
 	&__menu {
-		display: none;
-
+		position: fixed;
+		top: 0;
+		right: 0;
+		opacity: 0;
+		transition: 0.5s opacity;
+		background: $color-background-menu;
+		
 		li {
 			display: inline;
+		}
+
+		.navigation__toggle--opened & {
+			left: 0;
+			bottom: 0;
+			opacity: 1;
 		}
 	}
 }
