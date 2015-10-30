@@ -11,10 +11,10 @@ $color-black: rgb(0, 0, 0);
 // THEME COLOURS
 // -----------------------------------------------------------------|
 
-$color-bluegray: #46454b;
+$color-slate: #46454b;
 $color-blue: #00aabb;
 $color-red: #f43530;
-$color-light: #e0e5da;
+$color-beige: #e0e5da;
 
 // -----------------------------------------------------------------|
 // STRUCTURAL COLOURS
@@ -22,10 +22,14 @@ $color-light: #e0e5da;
 
 $color-type-heading: $color-33;
 $color-type-body: $color-33;
-$color-type-menu: $color-light;
-$color-type-alternate: $color-light;
+$color-type-menu: $color-33;
+$color-type-alternate: $color-white;
 
-$color-background-menu: $color-blue;
-$color-background: $color-light;
-$color-background-dark: $color-bluegray;
+$color-background-menu: $color-white;
+$color-background-menu-opened: $color-blue;
+$color-background: $color-beige;
+$color-background-light: $color-white;
+$color-background-dark: $color-slate;
+
+$color-border-menu: $color-33;
 

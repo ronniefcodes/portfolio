@@ -1,11 +1,13 @@
+$keysize: 40px;
+
 .keyboard-options {
 	padding: 4em 0;
 
 	.key {
 		position: relative;
 		display: inline-block;
-		height: 40px;
-	    width: 40px;
+		height: $keysize;
+	    width: $keysize;
 	    border: 1px solid $color-white;
 	    background-color: $color-33;
 	    color: $color-white;
@@ -62,6 +64,23 @@
 		    	border-right: 3px solid transparent;
 		    }
 	    }
+
+	    &:active, &.key--pressed {
+	    	margin-bottom: -2px;
+	    	outline: none;
+
+		    &.key--left {
+		    	box-shadow: -2px 0 0 2px $color-white;
+		    }
+
+		    &.key--down {
+		    	box-shadow: 0 0 0 2px $color-white;
+		    }
+
+		    &.key--right {
+		    	box-shadow: 2px 0 0 2px $color-white;
+		    }
+	    }
 	}
 }
 
@@ -86,6 +105,20 @@
 
 		    &--right {
 		    	box-shadow: 2px 3px 0 2px $color-33;
+		    }
+
+		    &:active, &.key--pressed {
+			    &.key--left {
+			    	box-shadow: -2px 1px 0 2px $color-33;
+			    }
+
+			    &.key--down {
+			    	box-shadow: 0 1px 0 2px $color-33;
+			    }
+
+			    &.key--right {
+			    	box-shadow: 2px 1px 0 2px $color-33;
+			    }
 		    }
 		}
 	}

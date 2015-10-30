@@ -91,6 +91,7 @@
 
 		&--index {
 			transition: .25s background-image;
+			background-image: none;
 
 			&[background='1'] {
 				background-image: url('/images/splash--1.jpg');

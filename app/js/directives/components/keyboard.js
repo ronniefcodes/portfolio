@@ -1,5 +1,5 @@
 angular.module('portfolio.directives')
-    .directive('portfolioKeyboard', function() {
+    .directive('portfolioKeyboard', ['$timeout', function($timeout) {
     return {
         replace: true,
         restrict: 'E', 
@@ -53,9 +53,14 @@ angular.module('portfolio.directives')
     		$('html').bind('keyup', function(e) {
     			var code = e.keyCode || e.which;
     			for(var i = 0, len = keys.length; i < len; i++) {
-    				if(code == keys[i].trigger) keys[i].event();
+    				if(code == keys[i].trigger) {
+                        var key = angular.element(document.getElementsByClassName(keys[i].class));
+                        key.addClass('key--pressed');
+                        keys[i].event();
+                        $timeout(function() { key.removeClass('key--pressed'); }, 150);
+                    }
     			}
     		})
         }
     };
-});
+}]);
