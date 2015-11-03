@@ -1,7 +1,8 @@
 $keysize: 40px;
 
-.keyboard-options {
+.keyboard {
 	padding: 4em 0;
+	width: (3*1.25)*$keysize;
 
 	.key {
 		position: relative;
@@ -11,7 +12,7 @@ $keysize: 40px;
 	    border: 1px solid $color-white;
 	    background-color: $color-33;
 	    color: $color-white;
-	    margin: 0 0.25em;
+	    margin: 0.25em;
 	    cursor: pointer;
 
 	    &:before {
@@ -30,6 +31,21 @@ $keysize: 40px;
 	    	right: -3px;
 	    	border-top: 1px solid transparent;
 	    	border-bottom: 5px solid rgba(0,0,0,0.2);
+	    }
+
+	    &--up {
+	    	display: block;
+	    	box-shadow: 0px 3px 0 2px $color-white;
+	    	margin: 0.25em auto;
+
+	    	&:before {
+	    		content: '\2191';
+		    }
+		    &:after {
+		    	border-left: 3px solid transparent;
+		    	border-right: 3px solid transparent;
+		    }
+
 	    }
 
 	    &--left {
@@ -69,23 +85,27 @@ $keysize: 40px;
 	    	margin-bottom: -2px;
 	    	outline: none;
 
-		    &.key--left {
-		    	box-shadow: -2px 0 0 2px $color-white;
-		    }
-
-		    &.key--down {
-		    	box-shadow: 0 0 0 2px $color-white;
-		    }
-
-		    &.key--right {
-		    	box-shadow: 2px 0 0 2px $color-white;
+		    &.key {
+		    	&--up {
+		    		box-shadow: 0 0 0 2px $color-white;
+		    		margin-bottom: 0.25em;
+		    	}
+			    &--left {
+			    	box-shadow: -2px 0 0 2px $color-white;
+			    }
+			    &--down {
+			    	box-shadow: 0 0 0 2px $color-white;
+			    }
+			    &--right {
+			    	box-shadow: 2px 0 0 2px $color-white;
+			    }
 		    }
 	    }
 	}
 }
 
 @include bp-min(tablet) {
-	.keyboard-options {
+	.keyboard {
 		.key {
 			border-color: $color-33;
 	    	background-color: $color-white;
@@ -94,6 +114,10 @@ $keysize: 40px;
 			&:after {
 	    		border-bottom-color: rgba(255,255,255,0.2);
 			}
+
+		    &--up {
+		    	box-shadow: 0px 3px 0 2px $color-33;
+		    }
 
 		    &--left {
 		    	box-shadow: -2px 3px 0 2px $color-33;
@@ -108,17 +132,23 @@ $keysize: 40px;
 		    }
 
 		    &:active, &.key--pressed {
-			    &.key--left {
-			    	box-shadow: -2px 1px 0 2px $color-33;
-			    }
+			    &.key {
+				    &--up {
+				    	box-shadow: 0px 1px 0 2px $color-33;
+				    }
 
-			    &.key--down {
-			    	box-shadow: 0 1px 0 2px $color-33;
-			    }
+				    &--left {
+				    	box-shadow: -2px 1px 0 2px $color-33;
+				    }
 
-			    &.key--right {
-			    	box-shadow: 2px 1px 0 2px $color-33;
-			    }
+				    &--down {
+				    	box-shadow: 0 1px 0 2px $color-33;
+				    }
+
+				    &--right {
+				    	box-shadow: 2px 1px 0 2px $color-33;
+				    }
+			    } 
 		    }
 		}
 	}

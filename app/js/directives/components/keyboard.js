@@ -3,26 +3,35 @@ angular.module('portfolio.directives')
     return {
         replace: true,
         restrict: 'E', 
-        templateUrl: "/templates/keyboard.html",
+        template: "<div class=\"keyboard align--center\"></div>",
         link: function(scope, elem, attrs) {
-        	var keys = [{
+        	var element = angular.element(elem),
+            keys = [{
+                class: 'key--up',
+                trigger: 38,
+                event: function() {
+                    if(!element.is('.keys--disabled')) angular.element('.navigation__toggle').click();
+                }
+            }, {
         		class: 'key--left',
-        		trigger: '37',
+        		trigger: 37,
         		event: function() {
-                    changeBackground(-1);
+                    if(!element.is('.keys--disabled')) changeBackground(-1);
         		}
         	}, {
         		class: 'key--down',
-        		trigger: '40',
+        		trigger: 40,
         		event: function() {
-        			var body = angular.element('body');
-        			body.addClass('hide-intro');
+                    if(!element.is('.keys--disabled')) {
+            			var body = angular.element('body');
+            			body.addClass('hide-intro');
+                    }
         		}
         	}, {
         		class: 'key--right',
-        		trigger: '39',
+        		trigger: 39,
         		event: function() {
-                    changeBackground(1);
+                    if(!element.is('.keys--disabled')) changeBackground(1);
         		}	
         	}];
 
@@ -47,7 +56,7 @@ angular.module('portfolio.directives')
         		var key = angular.element(document.createElement('div'));
         		key.addClass('key' + (keys[i].class !== '' ? ' ' + keys[i].class : ''));
         		key.bind('click', keys[i].event);
-        		angular.element(elem).append(key);
+        		element.append(key);
         	}
 
     		$('html').bind('keyup', function(e) {
