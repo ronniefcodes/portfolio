@@ -1,10 +1,10 @@
 {
 	"id":1,
-	"first_name":"Lorem",
-	"last_name":"Ipsum",
-	"title":"Dolor sit amet",
-	"short_description": "<p>Aliquam lacinia sapien elit, et pellentesque urna dignissim vel. In massa sapien, volutpat nec facilisis quis, consequat in sem. Cras elementum libero non lorem ultrices, eu molestie enim tempus. Phasellus dictum lacinia porta. Etiam id convallis augue.</p>",
-	"summary":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a nibh lectus. In luctus nunc nec sapien pellentesque, fermentum pulvinar felis laoreet. Pellentesque elementum tempor tempus. Mauris ut metus non arcu commodo pharetra quis et ante. Praesent euismod, enim eget faucibus laoreet, risus lectus ullamcorper tellus, eu hendrerit lorem ante vitae purus. Maecenas nec finibus orci. Maecenas tristique magna at gravida volutpat. Nulla eget diam nec lectus posuere venenatis. Quisque finibus libero nulla, sit amet dictum elit rhoncus rhoncus. Proin neque ligula, suscipit vel mi eu, lacinia cursus risus. Ut vel arcu in quam condimentum facilisis. Donec porttitor lobortis pretium. Ut venenatis vel risus sit amet convallis. Aliquam et feugiat purus, a blandit sem.</p>",
+	"first_name":"Ronnie",
+	"last_name":"Cheung",
+	"title":"Full Stack Developer",
+	"short_description": "<p>I am a full stack developer. I make websites and stuff. Mostly websites, though.</p>",
+	"summary":"<p>I am a full stack developer. I make websites and stuff. Mostly websites, though.</p>",
 	"work_history":[1,2,3,4,5,6],
 	"contacts":[1,2,3,4]
 }

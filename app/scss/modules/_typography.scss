@@ -1,19 +1,23 @@
 @include declare-font-face('League Spartan', 'leaguespartan-bold', bold);
 @include declare-font-face('Big John', 'big_john', bold);
 
+/* chicago bold
+* from http://www.fonts2u.com/chicago-bold.font */
+@include declare-font-face('Chicago Bold', 'chicago_bold', bold);
+
 html {
 	@include font($font-body, $type-size-mobile, $color-type-body);
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'League Spartan';
+	font-family: $font-heading;
 }
 
 h1 {
 	font-size: 2.8rem;
 
 	.header & {
-		font-size: 2.2rem;
+		font-size: 1.5rem;
 	}
 }
 

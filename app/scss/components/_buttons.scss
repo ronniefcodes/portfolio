@@ -1,3 +1,10 @@
+$square--size: 21px;
+$square--background: $color-background-menu;
+$square-border--width: 1px;
+$square-border--style: solid;
+$square-border--color: $color-type-body;
+$square--border: $square-border--width $square-border--style $square-border--color;
+
 $hamburger-width: 20px;
 $hamburger-border: 2px;
 $hamburger-gutters: 6px;
@@ -79,6 +86,42 @@ $hamburger-delay: 0.2s;
       .cross-bottom {
         transition-delay: 0;
         transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.button--square {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  height: $square--size;
+  width: $square--size;
+  background: $square--background;
+  border: $square--border;
+
+  &.cross-on-hover {
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: $square-border--width;
+      width: $square--size;
+      background: transparent;
+      @extend %animation-fix;
+      transition: 0.1s all;
+    }
+    &:before {
+      transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    }
+    &:after {
+      transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    }
+
+    &:hover, &:active {
+      &:before, &:after {
+        background: $square-border--color;
       }
     }
   }

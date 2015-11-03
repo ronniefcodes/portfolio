@@ -4,6 +4,10 @@ html, body {
 	margin: 0;
 }
 
+body {
+	overflow-y: scroll;
+}
+
 .page--home {
 	&:not(.hide-intro) {
 		overflow: hidden;

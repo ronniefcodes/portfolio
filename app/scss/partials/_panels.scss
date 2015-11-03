@@ -1,7 +1,7 @@
 .panel {
 	position: relative;	
 	min-height: 100%;
-	background: $color-background-dark;
+	background: $color-background;
 	transition: 0.75s margin-top;
 	@extend %animation-fix;
 
@@ -30,6 +30,4 @@
 
 	&-wrapper {
 		@extend %full-relative;
-		margin-top: $header-size;
-	}
-}
+	}}

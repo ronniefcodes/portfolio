@@ -3,7 +3,7 @@
         "id": 1,
         "title": ".NET Developer",
         "company": "Sandbox Advertising Inc.",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>",
+        "description": "Functionally full stack developer for Sandbox Advertising.",
         "url": "http://www.sandboxww.ca",
         "start_date": "2013-10-23T04:00:00.000Z",
         "projects": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
@@ -14,7 +14,7 @@
         "id": 2,
         "title": "Project Coordinator Co-op",
         "company": "Research In Motion Ltd.",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>",
+        "description": "Project Manager and Web Developer for project management team.",
         "url": "",
         "start_date": "2012-02-01T05:00:00.000Z",
         "end_date": "2012-05-27T04:00:00.000Z",
@@ -25,7 +25,7 @@
         "id": 3,
         "title": "Business Analyst (Internship)",
         "company": "CIBC",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>",
+        "description": "",
         "url": "",
         "start_date": "2011-10-01T04:00:00.000Z",
         "end_date": "2012-01-01T05:00:00.000Z"
@@ -34,7 +34,7 @@
         "id": 4,
         "title": "Assistant Performance Analyst (Internship)",
         "company": "Hydro One",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>",
+        "description": "",
         "url": "",
         "start_date": "2011-02-01T05:00:00.000Z",
         "end_date": "2011-05-01T04:00:00.000Z",
@@ -44,7 +44,7 @@
         "id": 5,
         "title": "Junior Technical Consultant (Internship)",
         "company": "Innovapost",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>",
+        "description": "",
         "url": "",
         "start_date": "2010-10-01T04:00:00.000Z",
         "end_date": "2011-01-01T05:00:00.000Z"
@@ -53,6 +53,6 @@
         "id": 6,
         "title": "Web Developer",
         "company": "Freelance Work",
-        "description": "<p>Aenean convallis leo quis laoreet tempus. Quisque consequat cursus nibh, quis ornare mi posuere iaculis. Cras sit amet iaculis urna. Aliquam erat volutpat. Nam lacinia porttitor ex, vel lobortis nisi. Donec a porttitor lacus, semper laoreet erat.</p><p>Nunc quam tortor, iaculis sit amet nisl eget, luctus sollicitudin nunc. Quisque at laoreet turpis. Duis sit amet tempor elit, vel cursus elit. Aliquam placerat ultrices quam, a pulvinar tellus rutrum vel. Vestibulum eu nisl quis velit imperdiet rhoncus quis nec est. Aenean rhoncus interdum quam laoreet auctor. Phasellus nunc mi, laoreet in suscipit vitae, sagittis eu quam. In congue nibh in velit efficitur auctor.</p>"
+        "description": ""
     }
 ]

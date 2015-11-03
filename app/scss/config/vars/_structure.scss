@@ -2,7 +2,13 @@
 // HEADER SIZES
 // -----------------------------------------------------------------|
 
-$header-size: 60px;
+$header--size: 33px;
+$header-padding--top: 6px;
+$header-padding--sides: 6px;
+$header-line--count: 6;
+$header-line--color: $color-type-menu;
+$header-line--width: 1px;
+$header-line--spacing: ($header--size - 2*$header-padding--top - $header-line--count*$header-line--width)/($header-line--count - 1);
 
 // -----------------------------------------------------------------|
 // SECTION SIZES

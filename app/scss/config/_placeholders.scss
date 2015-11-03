@@ -30,6 +30,14 @@
   transform: translate3d(-50%, -50%, 0);
 }
 
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 // SIZING HELPERS
 // --------------------------------|
 

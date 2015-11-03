@@ -1,4 +1,62 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header--size;
+  background: $color-background-menu;
+  box-shadow: 0 0 1px 1px $color-type-body;
+  
+  &__lines {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    margin: $header-padding--top $header-padding--sides;
+    height: calc(100% - #{2*$header-padding--top});
+    border-top: 1px solid $header-line--color;
+    border-bottom: 1px solid $header-line--color;
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $header-line--color;
+      border-bottom: 1px solid $header-line--color;
+      height: $header-line--spacing;
+    }
+
+    &:before {
+      top: $header-line--spacing;
+    }
+    
+    &:after {
+      bottom: $header-line--spacing;
+    }
+  }
+  
+  h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color-background-menu;
+    line-height: $header--size;
+    padding: 0 0.25em;
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .button--square {
+  	position: absolute;
+  	left: $header-padding--sides*4;
+  	top: $header-padding--top;
+    box-shadow: 0 0 0 2px $square--background;
+  }
+}
+
+/*
+.header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -57,4 +115,4 @@
 		}
 
 	}
-}
+}*/

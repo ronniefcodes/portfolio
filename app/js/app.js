@@ -59,19 +59,14 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 
 app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 	function($rootScope, $window, $timeout, $route, $location, config) {
-		var loaded = false;
 
-		$rootScope.$on('data.load.ok', function() {
-			$rootScope.$broadcast('data.load.complete');
-		});
+		$rootScope.$on('data.load.ok', function() { $rootScope.$broadcast('data.load.complete'); });
 
+		var content_loaded = false;
 		$rootScope.$on('content.load.ok', function() {
-			if(!loaded) {
-				loaded = true;
-
-				$timeout(function() {
-					$rootSCope.$broadcast('content.load.complete');
-				});
+			if(!content_loaded) {
+				content_loaded = true;
+				$timeout(function() { $rootSCope.$broadcast('content.load.complete'); });
 			}
 		})
 

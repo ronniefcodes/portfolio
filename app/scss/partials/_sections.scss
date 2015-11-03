@@ -1,6 +1,9 @@
 .section {
 	position: relative;
-	background: $color-background;
+
+	&:first-of-type {
+		padding-top: 2*$header--size;
+	}
 
 	&--full {
 		min-height: 100%;
@@ -19,8 +22,8 @@
 
 		h1 {			
 			border-bottom: 2px solid $color-type-alternate;
-			margin-bottom: 0.5em;
-			padding-bottom: 0.5em;
+			margin-bottom: 0.25em;
+			padding-bottom: 0.25em;
 			white-space: nowrap;
 		}
 
@@ -50,6 +53,7 @@
 	}
 
 	&__content, &__title {
+		@extend %clearfix;
 		max-width: $content-max-width;
 		margin-left: auto;
 		margin-right: auto;
@@ -89,6 +93,10 @@
 	.section {
 		padding: 0 2em;
 
+		&:first-of-type {
+			padding-top: 2*$header--size;
+		}
+
 		&--index {
 			transition: .25s background-image;
 			background-image: none;
@@ -120,12 +128,6 @@
 					color: $color-type-heading;
 					border-color: $color-type-heading;	
 				}
-			}
-		}
-
-		&__content {
-			h2 {
-				border-right: .1ch solid $color-type-heading;
 			}
 		}
 	}

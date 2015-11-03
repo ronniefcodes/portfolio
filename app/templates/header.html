@@ -1,9 +1,8 @@
 <header class="header">
+	<span class="header__lines"></span>
 	<div class="header__content">
-		<div class="header__title place--left">
-			<h1 ng-bind="person.getFullName()"></h1>
-			<h3 ng-bind="person.title"></h3>
-		</div>
+		<a class="button--square cross-on-hover" ng-click="close()"></a>
+		<h1 class="header__title" ng-bind="person.getFullName()"></h1>
 		<portfolio-navigation class="place--right"></portfolio-navigation>
 	</div>
 </header>

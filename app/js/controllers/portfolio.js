@@ -1,7 +1,16 @@
 angular.module('portfolio.controllers').controller('PortfolioController', 
-	['$scope', '$q', 'DataService',
-	 function($scope, $q, DataService) {
+	['$scope', '$window', '$q', 'DataService',
+	 function($scope, $window, $q, DataService) {
 
+	 	$scope.close = function() {	
+	 		var body = angular.element('body');
+	 		if(body.is('.hide-intro')) {
+	 			body.removeClass('hide-intro');
+	 		} else {
+	            if(document.referrer.indexOf(location.host) === 0) $location.path('/');
+	            else $window.history.back();
+	        }
+	 	}
 	 	//load all content
 	 	$q.all([ loadData('skills'), loadData('contacts'), loadData('projects'), loadData('work'), loadData('person') ])
 	 	.then(function() {
