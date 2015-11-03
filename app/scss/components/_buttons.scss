@@ -62,7 +62,7 @@ $hamburger-delay: 0.2s;
       transform-origin: center center;     
     }
 
-    .navigation__toggle--opened & {
+    .navigation--opened & {
       background: transparent !important;
       transition-delay: 0s !important;
 

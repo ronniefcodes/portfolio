@@ -1,7 +1,7 @@
 <div class="panel">
 	<portfolio-header class="place--on-top"></portfolio-header>
 	<section class="section section--project">
-		<div class="section__title">
+		<div class="section__title col-90 col-tablet-100">
 			<div class="place--left col-tablet-40">
 				<h2 ng-bind="project.title"></h2>
 				<h3 ng-bind="current_work.company"></h3>			
@@ -11,20 +11,24 @@
 			</div>
 		</div>
 	</section>
-	<section class="section section--media align--center">
-		<div class="section__content">
+	<section class="section section--media align--center" ng-if="project.media.length > 0">
+		<div class="section__content col-90 col-tablet-100">
 			<figure class="media" ng-repeat="media in project.media" ng-class="media.is_mobile === true ? 'col-tablet-50 media--mobile' : ''">
 				<img ng-src="{{media.url}}" alt="{{media.alt}}" />
 				<figcaption ng-bind="media.caption"></figcaption>
 			</figure>
 		</div>
 	</section>
-	<section class="section align--center">	
-		<div class="section__content">
-			<div class="skills-list">
-				<ul>
-					<li class="skill" ng-repeat="skill in project.skills" ng-bind="skill.name"></li>
-				</ul>
+	<section class="section" ng-if="project.skills.length > 0">
+		<div class="section__content col-90 col-tablet-100">
+			<div class="place--left col-tablet-30 col-desktop-20">
+				<h3>Relevant skills</h3>		
+			</div>
+			<div class="col-tablet-70 col-desktop-80 skills-list">
+					<ul>
+						<li class="skill" ng-repeat="skill in project.skills" ng-bind="skill.name"></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>

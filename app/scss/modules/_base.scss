@@ -8,8 +8,24 @@ body {
 	overflow-y: scroll;
 }
 
+p {
+	margin: 1.25em 0;
+}
+
 .page--home {
 	&:not(.hide-intro) {
 		overflow: hidden;
 	}
+
+	.section__content {
+		.summary, .contact {
+			p:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+div:empty {
+	display: none;
 }

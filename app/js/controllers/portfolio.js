@@ -12,8 +12,13 @@ angular.module('portfolio.controllers').controller('PortfolioController',
 	        }
 	 	}
 	 	//load all content
-	 	$q.all([ loadData('skills'), loadData('contacts'), loadData('projects'), loadData('work'), loadData('person') ])
-	 	.then(function() {
+	 	$q.all([ 
+	 		loadData('skills'), 
+	 		loadData('contacts'), 
+	 		loadData('projects'), 
+	 		loadData('work'), 
+	 		loadData('person') 
+ 		]).then(function() {
 	 		//additional initialization of objects (matching ids with objects)
 	 		for(var i = 0, len = $scope.projects.length; i < len; i++) 
 	 			$scope.projects[i].init({ skills: $scope.skills });

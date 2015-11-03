@@ -6,34 +6,38 @@ angular.module('portfolio.directives')
         template: "<div class=\"keyboard align--center\"></div>",
         link: function(scope, elem, attrs) {
         	var element = angular.element(elem),
-            keys = [{
-                class: 'key--up',
-                trigger: 38,
-                event: function() {
-                    if(!element.is('.keys--disabled')) angular.element('.navigation__toggle').click();
-                }
-            }, {
-        		class: 'key--left',
-        		trigger: 37,
-        		event: function() {
-                    if(!element.is('.keys--disabled')) changeBackground(-1);
-        		}
-        	}, {
-        		class: 'key--down',
-        		trigger: 40,
-        		event: function() {
-                    if(!element.is('.keys--disabled')) {
-            			var body = angular.element('body');
-            			body.addClass('hide-intro');
+                body = angular.element('body'),
+                keys = [{
+                    class: 'key--up',
+                    trigger: 38,
+                    event: function() {
+                        if(!(element.is('.keys--disabled') || body.is('.hide-intro'))) body.addClass('navigation--opened');
                     }
-        		}
-        	}, {
-        		class: 'key--right',
-        		trigger: 39,
-        		event: function() {
-                    if(!element.is('.keys--disabled')) changeBackground(1);
-        		}	
-        	}];
+                }, {
+            		class: 'key--left',
+            		trigger: 37,
+            		event: function() {
+                        if(!element.is('.keys--disabled')) changeBackground(-1);
+            		}
+            	}, {
+            		class: 'key--down',
+            		trigger: 40,
+            		event: function() {
+                        if(!element.is('.keys--disabled')) {
+                            if(body.is('.navigation--opened')) {
+                                body.removeClass('navigation--opened');
+                            } else {
+                    			body.addClass('hide-intro');
+                            }
+                        }
+            		}
+            	}, {
+            		class: 'key--right',
+            		trigger: 39,
+            		event: function() {
+                        if(!element.is('.keys--disabled')) changeBackground(1);
+            		}	
+            	}];
 
             function changeBackground(increment) {                
                 var parent = angular.element(elem.parents('.section')),

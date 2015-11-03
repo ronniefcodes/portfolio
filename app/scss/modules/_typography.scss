@@ -23,6 +23,8 @@ h1 {
 
 h2 {
 	font-size: 2.5rem;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -31,6 +33,23 @@ h3 {
 
 p {
 	font-size: 1.4rem;
+}
+
+a {
+	font-weight: bold;
+	color: $color-type-body;
+
+	&:hover, &:focus, &:active, &:visited {
+		outline: 0;
+		color: $color-type-body;
+	}
+}
+
+li {
+	.navigation__menu & {
+		font-size: 2rem;
+		line-height: 3.5rem;
+	}
 }
 
 @include bp-min(tablet) {
