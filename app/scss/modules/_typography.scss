@@ -1,6 +1,3 @@
-@include declare-font-face('League Spartan', 'leaguespartan-bold', bold);
-@include declare-font-face('Big John', 'big_john', bold);
-
 /* chicago bold
 * from http://www.fonts2u.com/chicago-bold.font */
 @include declare-font-face('Chicago Bold', 'chicago_bold', bold);
@@ -42,6 +39,10 @@ a {
 	&:hover, &:focus, &:active, &:visited {
 		outline: 0;
 		color: $color-type-body;
+	}
+
+	&.navigation-menu__link {
+		font-family: $font-heading;
 	}
 }
 

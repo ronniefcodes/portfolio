@@ -42,7 +42,7 @@
 				<dl class="social-list">
 					<div ng-repeat="contact in person.contacts | filter:{category:'!social'}">
 						<dt ng-bind="contact.type"></dt>
-						<dd ng-bind="contact.value"></dd>
+						<dd><a ng-href="contact.getLink()" ng-class="social--{{contact.type}}" target="_blank" ng-bind="contact.value"></a></dd>
 					</div>
 				</dl>
 			</div>

@@ -1,24 +1,16 @@
 angular.module('portfolio.controllers').controller('PortfolioController', 
-	['$scope', '$window', '$q', 'DataService',
-	 function($scope, $window, $q, DataService) {
-
-	 	$scope.close = function() {	
+	['$scope', '$location', '$q', 'DataService',
+	 function($scope, $location, $q, DataService) {
+	 	//scope function to handle 'close' button
+	 	$scope.close = function() {
 	 		var body = angular.element('body');
-	 		if(body.is('.hide-intro')) {
-	 			body.removeClass('hide-intro');
-	 		} else {
-	            if(document.referrer.indexOf(location.host) === 0) $location.path('/');
-	            else $window.history.back();
-	        }
+	 		if(body.is('.hide-intro')) body.removeClass('hide-intro');
+	 		else $location.path('/');
 	 	}
+
 	 	//load all content
-	 	$q.all([ 
-	 		loadData('skills'), 
-	 		loadData('contacts'), 
-	 		loadData('projects'), 
-	 		loadData('work'), 
-	 		loadData('person') 
- 		]).then(function() {
+	 	$q.all([ loadData('skills'), loadData('contacts'), loadData('projects'), loadData('work'), loadData('person') ])
+	 	.then(function() {
 	 		//additional initialization of objects (matching ids with objects)
 	 		for(var i = 0, len = $scope.projects.length; i < len; i++) 
 	 			$scope.projects[i].init({ skills: $scope.skills });

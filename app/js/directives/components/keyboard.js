@@ -11,19 +11,19 @@ angular.module('portfolio.directives')
                     class: 'key--up',
                     trigger: 38,
                     event: function() {
-                        if(!(element.is('.keys--disabled') || body.is('.hide-intro'))) body.addClass('navigation--opened');
+                        if(!(body.is('.keys--disabled') || body.is('.hide-intro'))) body.addClass('navigation--opened');
                     }
                 }, {
             		class: 'key--left',
             		trigger: 37,
             		event: function() {
-                        if(!element.is('.keys--disabled')) changeBackground(-1);
+                        if(!body.is('.keys--disabled') && !body.is('.hide-intro')) changeBackground(-1);
             		}
             	}, {
             		class: 'key--down',
             		trigger: 40,
             		event: function() {
-                        if(!element.is('.keys--disabled')) {
+                        if(!body.is('.keys--disabled')) {
                             if(body.is('.navigation--opened')) {
                                 body.removeClass('navigation--opened');
                             } else {
@@ -35,7 +35,7 @@ angular.module('portfolio.directives')
             		class: 'key--right',
             		trigger: 39,
             		event: function() {
-                        if(!element.is('.keys--disabled')) changeBackground(1);
+                        if(!body.is('.keys--disabled') && !body.is('.hide-intro')) changeBackground(1);
             		}	
             	}];
 

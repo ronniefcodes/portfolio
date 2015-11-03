@@ -59,8 +59,15 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 
 app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 	function($rootScope, $window, $timeout, $route, $location, config) {
+		//handle loading classes
+		$rootScope.appStatus = 'site--loading';
 
-		$rootScope.$on('data.load.ok', function() { $rootScope.$broadcast('data.load.complete'); });
+		$rootScope.$on('data.load.ok', function() { 
+			$rootScope.$broadcast('data.load.complete'); 
+			$timeout(function() {
+				$rootScope.appStatus = 'site--loaded';
+			});
+		});
 
 		var content_loaded = false;
 		$rootScope.$on('content.load.ok', function() {
@@ -85,6 +92,9 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 		    	//analytics page tracking
 				$window.ga('send', 'pageview', { page: $location.path() });
 			}
+
+			if($route.current.title !== 'Home') angular.element('body').addClass('keys--disabled').removeClass('hide-intro');
+			else angular.element('body').removeClass('keys--disabled');
 
 			//set document title
 			if($route.current.title !== '') $rootScope.documentTitle = $route.current.title;

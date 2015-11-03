@@ -109,7 +109,11 @@
 			.col-#{$percentage} {
 				display: inline-block;
 				box-sizing: border-box;
-				@if($gutter != 0) { width: calc(#{$percentage*1%} - #{$gutter}); }
+				@if($gutter != 0) { 
+					width: calc(#{$percentage*1%} - #{$gutter}); 
+					margin-left: $gutter/2;
+					margin-right: $gutter/2;
+				}
 				@else { width: $percentage*1%; }
 			}
 		}
@@ -124,7 +128,11 @@
 				.col-#{$prefix}-#{$percentage} {
 					display: inline-block;
 					box-sizing: border-box;
-					@if($gutter != 0) { width: calc(#{$percentage*1%} - #{$gutter}); }
+					@if($gutter != 0) { 
+						width: calc(#{$percentage*1%} - #{$gutter}); 
+						margin-left: $gutter/2;
+						margin-right: $gutter/2;
+					}
 					@else { width: $percentage*1%; }
 				}
 			}
