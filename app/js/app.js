@@ -26,13 +26,19 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 	function($routeProvider, $locationProvider, $compileProvider) {
 		var home = {
 			title: 'Home',
-			templateUrl: 'pages/home.html'
+			templateUrl: 'pages/home.html',
+			page: {
+				title: 'Ronnie Cheung - Full Stack Developer'
+			}
 		},
 		projects = {
 			title: 'My work',
 			templateUrl: 'pages/projects.html',
 			menu: {
 				title: 'My work'
+			},
+			page: {
+				title: 'My work - Ronnie Cheung - Full Stack Developer'
 			}
 		},
 		project = {
@@ -45,6 +51,9 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider',
 			templateUrl: 'pages/about.html',
 			menu: {
 				title: 'About me'
+			},
+			page: {
+				title: 'About me - Ronnie Cheung - Full Stack Developer'
 			}
 		};
 
@@ -82,7 +91,7 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 		});
 
 		$rootScope.$on('document.title.change', function(e, title) {
-			$rootScope.documentTitle = title;
+			$rootScope.documentTitle = title + ' - Ronnie Cheung - Full Stack Developer'
 			$rootScope.pageClass = "page--project page--" + title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 		});
 
@@ -97,7 +106,7 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 			else angular.element('body').removeClass('keys--disabled');
 
 			//set document title
-			if($route.current.title !== '') $rootScope.documentTitle = $route.current.title;
+			if($route.current.title !== '') $rootScope.documentTitle = $route.current.page.title || $route.current.title;
 			$rootScope.pageClass = "page--" + $route.current.title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 		});
 }]);

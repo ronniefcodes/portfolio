@@ -44,6 +44,14 @@ a {
 	&.navigation-menu__link {
 		font-family: $font-heading;
 	}
+
+	.section--alternate & {
+		color: $color-type-alternate;
+
+		&:hover, &:focus, &:active, &:visited {
+			color: $color-type-alternate;
+		}
+	}
 }
 
 li {
