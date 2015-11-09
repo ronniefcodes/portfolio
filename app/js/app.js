@@ -104,6 +104,7 @@ app.run(['$rootScope', '$window', '$timeout', '$route', '$location', 'config',
 
 			if($route.current.title !== 'Home') angular.element('body').addClass('keys--disabled').removeClass('hide-intro');
 			else angular.element('body').removeClass('keys--disabled');
+			angular.element('body').removeClass('navigation--opened');
 
 			//set document title
 			if($route.current.title !== '') $rootScope.documentTitle = $route.current.page.title || $route.current.title;

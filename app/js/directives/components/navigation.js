@@ -17,7 +17,8 @@ angular.module('portfolio.directives')
         	}
         	scope.menu = menu_items;
 
-            angular.element(elem).find('.navigation__toggle').bind('click', function() {
+            var element = angular.element(elem);
+            element.find('.navigation__toggle').bind('click', function() {
                 angular.element('body').toggleClass('navigation--opened');
             });
         }

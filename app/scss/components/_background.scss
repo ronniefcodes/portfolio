@@ -1,0 +1,52 @@
+$backgroundcount: 5;
+
+.section__background {
+	@extend %cover-absolute;
+	opacity: 0;
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+	transition: 0.25s opacity;
+
+	&:before {
+		content: '';
+		@extend %cover-absolute;
+		background: $color-background-dark;
+		opacity: 1;
+		transition: 0.5s opacity;
+
+		.site--loaded & {
+			opacity: 0.5;
+		}
+	}
+}
+
+@for $i from 1 through $backgroundcount {
+	.section__background--#{$i} {
+		$url: '/images/splash-mobile--' + #{$i} + '.jpg';
+		background-image: url(#{$url});
+
+		[background='#{$i}'] & {
+			opacity: 1;
+		}
+	}
+}
+
+@include bp-min(tablet) {
+	.section__background {
+		background-position: center center;
+
+		&:before {
+			.site--loaded & {
+				opacity: 0;
+			}
+		}
+	}
+
+	@for $i from 1 through $backgroundcount {
+		.section__background--#{$i} {
+			$url: '/images/splash--' + #{$i} + '.jpg';
+			background-image: url(#{$url});
+		}
+	}
+}

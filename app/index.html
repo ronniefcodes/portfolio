@@ -5,7 +5,19 @@
     </head>
     <body ng-class="pageClass">
     	<portfolio-navigation></portfolio-navigation>
-    	<div class="panel-wrapper place--on-middle" ng-view autoscroll="true">
+    	<div class="panel-wrapper place--on-middle">
+	    	<div class="panel panel--fixed">
+				<section class="section section--index section--full" handle-background default="1" available="5">
+					<div class="section__title col-90 col-tablet-60 col-desktop-35">
+						<h1 ng-bind="person.getFullName()"></h1>
+						<h3 ng-bind="person.title"></h3>
+						<p>Press any key to continue...</p>
+						<portfolio-keyboard></portfolio-keyboard>
+					</div>
+				</section>
+			</div>
+			<div class="panel" ng-view>
+			</div>
     	</div>
         @@include('/includes/_scripts.html')
     </body>

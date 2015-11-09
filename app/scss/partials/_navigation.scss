@@ -32,7 +32,7 @@
 
 		.navigation--opened & {
 			height: 100%;
-			pointer-events: default;
+			pointer-events: auto;
 
 			* {
 				opacity: 1;
