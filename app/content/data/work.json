@@ -3,10 +3,11 @@
         "id": 1,
         "title": ".NET Developer",
         "company": "Sandbox Advertising Inc.",
-        "description": "Functionally full stack developer for Sandbox Advertising.",
+        "description": "<p>Functionally full stack developer for Sandbox Advertising.</p>",
         "url": "http://www.sandboxww.ca",
         "start_date": "2013-10-23T04:00:00.000Z",
-        "projects": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+        "end_date": "2015-11-10",
+        "projects": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
         "skills": [ 7 ],
         "role": []
     },
@@ -14,11 +15,11 @@
         "id": 2,
         "title": "Project Coordinator Co-op",
         "company": "Research In Motion Ltd.",
-        "description": "Project Manager and Web Developer for project management team.",
+        "description": "<p>Project co-ordinator and Web Developer in the engineering project management team.</p>",
         "url": "",
         "start_date": "2012-02-01T05:00:00.000Z",
         "end_date": "2012-05-27T04:00:00.000Z",
-        "projects": [ 9 ],
+        "projects": [ 10 ],
         "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ]
     },
     {
@@ -47,12 +48,14 @@
         "description": "",
         "url": "",
         "start_date": "2010-10-01T04:00:00.000Z",
-        "end_date": "2011-01-01T05:00:00.000Z"
+        "end_date": "2011-01-01T05:00:00.000Z",
+        "skills": [ 1, 2, 9, 10, 11, 16, 17 ]
     },
     {
         "id": 6,
-        "title": "Web Developer",
-        "company": "Freelance Work",
-        "description": ""
+        "title": "Freelance Web Developer",
+        "company": "",
+        "description": "",
+        "projects": [ 11, 12 ]
     }
 ]

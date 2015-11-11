@@ -2,47 +2,47 @@
     {
         "id": 1,
         "title": "Sandbox",
-        "description": "Website for Sandbox Advertising Inc.",
+        "description": "<p>The website for Sandbox Advertising Inc. launched late early October 2015, as part of the rebranding process from One Advertising to Sandbox. The site design was focused on highlighting the company's work through case studies and lessons learned.</p><p>I built this site with AngularJS, building a system to dynamically pull in cases, teams, team members and office information (via JSON files). It is fully responsive, supporting modern devices and browsers, mostly utilizing CSS3 animations where required.</p>",
         "highlight": 2,
         "skills": [ 1, 2, 3, 4, 5, 6 ],
         "media": [{
             "id": 1,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot showing the homepage for the Sandbox website, with a case study preview.",
             "url": "/content/media/sandbox/sndbx-home.jpg"
         }, {
             "id": 2,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot showing the footer for the Sandbox website.",
             "url": "/content/media/sandbox/sndbx-footer.jpg"
         }, {
             "id": 3,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot showing intro to a case study.",
             "url": "/content/media/sandbox/sndbx-case-1.jpg",
             "next": 4
         }, {
             "id": 4,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot showing an example closing tag for a case study.",
             "url": "/content/media/sandbox/sndbx-case-2.jpg",
             "previous": 3
         }, {
             "id": 5,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the home page, with a case study preview.",
             "is_mobile": true,
             "url": "/content/media/sandbox/mobile/sndbx-1.jpg"
         }, {
             "id": 6,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot showing the footer for the Sandbox website.",
             "is_mobile": true,
             "url": "/content/media/sandbox/mobile/sndbx-footer.jpg"
         }, {
             "id": 7,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the works list for the Sandbox website.",
             "is_mobile": true,
             "url": "/content/media/sandbox/mobile/sndbx-the-work.jpg"
         }]
@@ -50,38 +50,38 @@
     {
         "id": 2,
         "title": "Heineken Cities",
-        "description": "Microsite for Heineken Cities of the World campaign.",
+        "description": "<p>Heineken Canada's #LiveLegendary campaign ran through July of 2015. The contest offered one lucky winner a legendary weekend experience (complete with a loft, chef and chaffeur, amongst other things), allowing users to enter via a registration form, or by tagging photos with #livelegendary or #vielegendaire on Instagram.</p><p>The single-page site offered users three use cases: showing off the prizes, providing users with a registration form, and pulling in approved Instagram photos with the relevant hashtags in a gallery form.</p><p>The front end portion of the site utilized a custom-built CSS grid framework, allowing me to place elements in a 3x3 grid, animated like cards that flipped in- one after the other.</p><p>Another custom component, a Javascript gallery library, presented a flexible single entry point that dynamically created the gallery (and its pages) on the fly. As the viewport resized (and the number of viewable images) changed, the gallery would automatically resize and readjust for the correct page.</p><p>The gallery library hooked into a custom MVC WebAPI that distributed Instagram photos via Tint, expanding on the service's default functionality as well as supporting data caching on our end, avoiding potential API access limit issues.</p><p>The registration form component hooked into a simple database, collecting user entries to be selected from a later date.</p>",
         "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
         "media": [{
             "id": 8,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of the landing page of the Heineken Cities site.",
             "url": "/content/media/hkn-cities/index.jpg"
         }, {
             "id": 9,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of a 'prize' page of the Heineken Cities site animating.",
             "url": "/content/media/hkn-cities/grid.jpg"
         }, {
             "id": 10,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of the registration panel of the Heineken Cities site.",
             "url": "/content/media/hkn-cities/register.jpg"
         }, {
             "id": 11,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of the gallery for the Heineken Cities.",
             "url": "/content/media/hkn-cities/gallery.jpg"
         }, {
             "id": 12,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the landing page for Heineken Cities.",
             "is_mobile": true,
             "url": "/content/media/hkn-cities/mobile/index.jpg"
         }, {
             "id": 13,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the gallery for Heineken Cities.",
             "is_mobile": true,
             "url": "/content/media/hkn-cities/mobile/gallery.jpg"
         }]
@@ -89,28 +89,28 @@
     {
         "id": 3,
         "title": "Nikon I Am Uncompromising",
-        "description": "Microsite for Nikon's I Am Uncompromising sale.",
+        "description": "Nikon Canada's I Am Uncompromising sale event from November 2014 to January 2015 launched with a single-page microsite with the purpose of demonstrating the different cameras available along with a group of select photographers and their work.</p><p>The fully responsive microsite, built using AngularJS, was designed to pull data in dynamically, allowing anyone to, with relative ease, make changes to the photos, the photographers and the cameras highlighted.</p>",
         "skills": [ 1, 2, 3, 4, 5, 6 ],
         "media": [{
             "id": 14,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of the photos view.",
             "url": "/content/media/nikon-iam/nk_iam-1a.jpg"
         }, {
             "id": 15,
             "caption": "",
-            "alt": "",
+            "alt": "Screenshot of the photo details view (with photographer information)",
             "url": "/content/media/nikon-iam/nk_iam-1b.jpg"
         }, {
             "id": 16,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the photos view.",
             "is_mobile": true,
             "url": "/content/media/nikon-iam/mobile/nk-iam.jpg"
         }, {
             "id": 17,
             "caption": "",
-            "alt": "",
+            "alt": "Mobile screenshot of the photo details view (with photographer information)",
             "is_mobile": true,
             "url": "/content/media/nikon-iam/mobile/nk_iam-details.jpg"
         }]
@@ -141,7 +141,7 @@
     {
         "id": 5,
         "title": "Molson US Corporate Site",
-        "description": "Site-wide updates to styling and functionality of a Sitecore website.",
+        "description": "<p>Molson Coors' US Corporate website is a site built in Sitecore using a number of custom components that, on occasion, would need updating or additions. I created new components and performed a variety of updates to the site as a part of a redesign process, using a combination of C#, javascript and CSS.</p><p>A huge consideration for the site was the requirement for older IE support, requiring careful development, ensuring that where older techniques were unavailable, polyfills or alternative solutions would be found.</p>",
         "skills": [ 1, 2, 3, 4, 5, 9, 10, 11, 14 ],
         "media": [{
             "id": 21,
@@ -163,8 +163,8 @@
     {
         "id": 6,
         "title": "Air Wick Enchanted Holiday",
-        "description": "",
-        "skills": [ 1, 2, 3, 4, 5 ],
+        "description": "<p>The Enchanted Holiday campaign for Airwick ran during the holiday season in 2014.</p><p>The microsite included content urging users to help donate to Habitats for Humanity by using the hashtag <strong>EnchantWithAirWick</strong>. The site utilized the social feed service Tint, pulling in all previously submitted user content.</p>",
+        "skills": [ 1, 2, 3, 4 ],
         "media": [{
             "id": 24,
             "caption": "",
@@ -221,7 +221,7 @@
     {
         "id": 8,
         "title": "Resolutions you can keep",
-        "description": "",
+        "description": "<p>One Advertising created a number of mugs with humorous advertising-related New Years resolutions as part of their 'holidays' campaign. For this project, I created a site that allowed users to view all the mugs we had designed, and gave them the opportunity to claim the 'resolution' for themselves.</p>",
         "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
         "media": [{
             "id": 32,
@@ -260,8 +260,76 @@
     },
     {
         "id": 9,
+        "title": "Union Gas",
+        "description": "<p>Through two years working at Sandbox, I created numerous pages for Union Gas' websites, including a handful of section overhauls and redesigns. In order to effectively create new content, I had to work with pre-existing frameworks and script content (such as a custom Foundation build) and find creative solutions that would not interfere with pre-existing layouts and processes.</p><p>Given the customer base, Union Gas updates were required to follow strict accessibility guidelines (such as WCAG).</p>",
+        "skills": [ 1, 2, 3, 6, 14 ],
+        "media": [{
+            "id": 39,
+            "caption": "",
+            "alt": "",
+            "url": "/content/media/union-gas/business.jpg"
+        }, {
+            "id": 40,
+            "caption": "",
+            "alt": "",
+            "url": "/content/media/union-gas/cng.jpg"
+        }, {
+            "id": 41,
+            "caption": "",
+            "alt": "",
+            "is_mobile": true,
+            "url": "/content/media/union-gas/mobile/business.jpg"
+        }, {
+            "id": 42,
+            "caption": "",
+            "alt": "",
+            "is_mobile": true,
+            "url": "/content/media/union-gas/mobile/business.jpg"
+        }]
+    }, 
+    {
+        "id": 10,
         "title": "Pulse",
-        "description": "",
-        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ]
+        "description": "<p>While working at Research In Motion, I worked on a project to create a modular dashboard/report generation tool for project management.</p><p>The web application supported the creation of project modules that could be pulled in for multiple reports, allowing for user-defined layouts (drag and drop, and drag resizing), utilizing MVc for the backend component and JQuery for the interactive functionality.</p><p>Given the confidentiality of certain projects, reports were designed to allow or restrict user access by a node-by-node basic, utilizing a complicated access inheritance system that we designed and built.</p>",
+        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
+        "media": [{
+            "id": 38,
+            "url": "/content/media/rim/logo.jpg",
+            "preview_only": true
+        }]
+    },
+    {
+        "id": 11,
+        "title": "Siebu",
+        "description": "<p>Siebu is an unreleased eCommerce platform that I worked on between May and September 2013.</p><p>The project was an all-encompassing eCommerce platform allowing users to create their own products and stores (which would also be incorporated into a 'global' marketplace). The site would support end-to-end user interaction, from store creation and management to customer shopping cart management and checkout (hooking into Paypal).</p><p>I functioned as the lead developer on this project, spearheading development on both front end and backend components, as well as initiating and leading development team meetings, setting timelines and requirements.</p>",
+        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
+        "media": [{
+            "id": 43,
+            "caption": "",
+            "alt": "",
+            "url": "/content/media/siebu/landing.jpg"
+        }, {
+            "id": 44,
+            "caption": "",
+            "alt": "",
+            "url": "/content/media/siebu/store.jpg"
+        }, {
+            "id": 45,
+            "caption": "",
+            "alt": "",
+            "url": "/content/media/siebu/admin.jpg"
+        }]
+    },
+    {
+        "id": 12,
+        "title": "Videogams",
+        "description": "<p></p>",
+        "skills": [ 1, 2, 3, 4, 9, 10, 11, 16, 17 ],
+        "media": [{
+            "id": 46,
+            "caption": "",
+            "alt": "Screenshot of an article for the Videogames website",    
+            "url": "/content/media/videogams/article.jpg"
+        }]
     }
 ]

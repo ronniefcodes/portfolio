@@ -3,8 +3,7 @@
 	"first_name":"Ronnie",
 	"last_name":"Cheung",
 	"title":"Full Stack Developer",
-	"short_description": "<p>I am a full stack developer. I make websites and stuff. Mostly websites, though.</p>",
-	"summary":"<p>I am a full stack developer. I make websites and stuff. Mostly websites, though.</p>",
+	"short_description": "<p>I am a full stack developer. I make websites and stuff. Mostly websites, though.</p><p>Over the last three and a half or so years, I've had the opportunity to work professionally in a variety of different positions, giving me vital insights to the full scope of the development process.</p><p>I've had the chance to work on many cool projects, building browser and device-friendly, responsive websites using modern methodologies and applying web standards.</p>",
 	"work_history":[1,2,3,4,5,6],
-	"contacts":[1,2,3,4]
+	"contacts":[1,2,3,4,5]
 }

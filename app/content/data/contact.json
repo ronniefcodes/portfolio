@@ -26,5 +26,11 @@
         "type": "linkedin",
         "category": "social",
         "prefix": ""
+    },
+    {
+        "id": 5,
+        "value": "/content/documents/ronniecheung_resume.pdf",
+        "type": "resume",
+        "category": "file"
     }
 ]

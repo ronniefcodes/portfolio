@@ -6,4 +6,10 @@
 	dt {
 		display: none;
 	}
+
+	dd {
+		&.date {
+			display: inline;
+		}
+	}
 }

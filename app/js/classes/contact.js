@@ -15,7 +15,7 @@ angular.module('portfolio.classes').factory('Contact', [ function() {
 
 	Contact.prototype = {
 		getLink: function() {
-			return this.type.prefix + this.value;
+			return this.prefix + this.value;
 		}
 	}
 

@@ -19,7 +19,7 @@ angular.module('portfolio.classes').factory('Person',
 		this.last_name = params.last_name || "";
 		this.title = params.title || "";
 		this.short_description = params.short_description || "";
-		this.summary = params.summary || "";
+		this.summary = params.summary || this.short_description;
 
 		if(params.image !== null && params.image instanceof Media)
 			this.image = params.image;

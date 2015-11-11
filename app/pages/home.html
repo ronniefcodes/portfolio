@@ -1,39 +1,47 @@
-<portfolio-header class="place--on-top"></portfolio-header>
-<section class="section section--about section--alternate">
-	<div class="section__content col-90 col-tablet-100">
-		<h2 class="place--left col-tablet-40 col-desktop-30">About me</h2>
-		<div class="col-tablet-60 col-desktop-70">
-			<div class="summary" ng-bind-html="person.short_description"></div>
-			<div class="skills-list">
-				<ul>
-					<li class="skill" ng-repeat="skills in person.skills" ng-bind="skills.name"></li>
-				</ul>
+
+<div class="panel panel--fixed">
+	<section class="section section--index section--full" handle-background default="1" available="5">
+		<div class="section__title col-90 col-tablet-60 col-desktop-35">
+			<h1 ng-bind="person.getFullName()"></h1>
+			<h3 ng-bind="person.title"></h3>
+			<p>Press any key to continue...</p>
+			<portfolio-keyboard></portfolio-keyboard>
+		</div>
+	</section>
+</div>
+
+<div class="panel">
+	<portfolio-header class="place--on-top"></portfolio-header>
+	<section class="section section--about section--alternate">
+		<div class="section__content col-90 col-tablet-100">
+			<h2>About me</h2>
+			<div>
+				<div class="summary" ng-bind-html="person.short_description"></div>
+				<div class="skills-list" style="display: none;">
+					<ul>
+						<li class="skill" ng-repeat="skills in person.skills" ng-bind="skills.name"></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="section section--projects">
-	<portfolio-project-list projects="person.getProjects(5)"></portfolio-project-list>
-</section>
-<section class="section section--contact section--alternate">
-	<div class="section__content col-90 col-tablet-100">
-		<h2 class="place--left col-tablet-40 col-desktop-30">Get in touch</h2>
-		<div class="contact col-tablet-60 col-desktop-70">
-			<p>
-				Thanks for checking out my site!
-			</p>
-			<p>
-				I know, I know. It's a little rough around the edges. I tossed it together relatively quickly to show off some angular ability (and dumb-joke making ability- mostly the dumb joke ability).
-			</p>
-			<p>
-				If you'd like to get in touch, feel free to contact me with one of the methods listed below.
-			</p>
-			<dl class="social-list">
-				<div ng-repeat="contact in person.contacts | filter:{category:'!social'}">
-					<dt ng-bind="contact.type"></dt>
-					<dd><a ng-href="contact.getLink()" ng-class="social--{{contact.type}}" target="_blank" ng-bind="contact.value"></a></dd>
-				</div>
-			</dl>
+	</section>
+	<section class="section section--projects">
+		<portfolio-project-list projects="person.getProjects(10)"></portfolio-project-list>
+	</section>
+	<section class="section section--contact section--alternate">
+		<div class="section__content col-90 col-tablet-100">
+			<h2>Get in touch</h2>
+			<div class="contact">
+				<p>
+					Feel free to contact me with any of the methods listed below. Even if it's just to talk, no big deal.
+				</p>
+				<dl class="social-list">
+					<div ng-repeat="contact in person.contacts">
+						<dt ng-bind="contact.type"></dt>
+						<dd><a ng-href="contact.getLink()" ng-class="social--{{contact.type}}" target="_blank" ng-bind="contact.category !== 'file' ? contact.value : 'download'"></a></dd>
+					</div>
+				</dl>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</div>

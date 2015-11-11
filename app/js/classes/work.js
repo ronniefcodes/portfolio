@@ -70,6 +70,10 @@ angular.module('portfolio.classes').factory('Work',
 			}
 			this.skills = loaded_skills;
 		},
+		formatDate: function(date) {
+			if(date !== null) return "";
+			return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
+		},
 		getSkills: function() {
 			this.skills = this.skills || [];
 			for(var i = 0, len = this.projects.length; i < len; i++) {
